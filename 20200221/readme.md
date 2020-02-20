@@ -40,13 +40,13 @@ Fichier `20200221/donnees.md`
 
 * Modifier des attributs avec CSS
   - [Liste des attributs qui peuvent être définis en CSS](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/Presentation)
-  - [Exemple avec `:hover`](exemples_svg_web/css.html)
-  - [Exemple animation CSS](exemples_svg_web/css_animation.html)
+  - [Exemple avec `:hover`](exemples_svg_web/css.html) - [résultat](http://heig-datavis2020.surge.sh/20200221/exemples_svg_web/css.html)
+  - [Exemple animation CSS](exemples_svg_web/css_animation.html) - [résultat](http://heig-datavis2020.surge.sh/20200221/exemples_svg_web/css_animation.html)
   - [Article MDN sur les animations CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
 * Réagir à des événements avec javascript
-  - [Exemple](exemples_svg_web/js_event.html)
+  - [Exemple](exemples_svg_web/js_event.html) - [résultat](http://heig-datavis2020.surge.sh/20200221/exemples_svg_web/js_event.html)
 * Créer des éléments avec javascript
-  - [Exemple](exemples_svg_web/js.html)
+  - [Exemple](exemples_svg_web/js.html) - [résultat](http://heig-datavis2020.surge.sh/20200221/exemples_svg_web/js.html)
 
 ### Exercice 3
 
