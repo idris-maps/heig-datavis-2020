@@ -23,6 +23,8 @@ Créez un fichier SVG et dessinez quelque chose en utilisant différents éléme
 * [awesome public datasets](https://github.com/awesomedata/awesome-public-datasets) - collection de listes de données
 * [Kaggle](https://www.kaggle.com/datasets) - données pour entrainer les intelligences artificielles
 
+#### [Markdown](https://observablehq.com/@idris-maps/markdown)
+
 ### Exercice 2
 
 Fichier `20200221/donnees.md`
