@@ -1,7 +1,6 @@
 # Liens vers les "repos" de cours
 
-* [Adrien](https://github.com/AdriWard/VisuelDon
-GitHub)
+* [Adrien](https://github.com/AdriWard/VisuelDon)
 * [Andrea](https://github.com/Andreanefer/ViusalDonM47)
 * [Audrey](https://github.com/AudilaraZ/VisualDon)
 * [Emilie]( https://github.com/emilie-imhof/visualisation-de-donnees)
