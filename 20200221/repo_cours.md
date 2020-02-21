@@ -21,7 +21,7 @@
 * [Sébastien]()
 * [Yasmine](https://github.com/yasminehamdan/VisualDonn)
 
-
+## Créer un repo personnel pour le cours
 
 * Créer un dossier `mon-cours`
 * À l'intérieur duquel vous avez un dossier par jour de cours (ex: `mon-cours/20200221`)
