@@ -58,6 +58,10 @@ Fichier `20200221/page.html`
 * Intégrez-le dans une page HTML 
 * Ajoutez des interactions avec CSS et javascript
 
+### Manipulation DOM avec D3
+
+[cours](https://observablehq.com/@idris-maps/introduction-a-d3)
+
 ### Vidéos
 
 Building Better Interfaces With SVG (Sara Soueidan)
