@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "node scripts/publish"
+    "publish": "node scripts/publish",
+    "dev:batons": "parcel 20200228/test/src/index.html --out-dir 20200228/test/dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "surge": "^0.21.3"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
   }
 }
