@@ -18,7 +18,7 @@
 * [Rui Filipe]()
 * [Soraya](https://github.com/Soraya97/VisualDon)
 * [Stéphane](https://github.com/Stephane-panda/datavis)
-* [Sébastien]()
+* [Sébastien](https://github.com/sebastienRay/VisualDon)
 * [Yasmine](https://github.com/yasminehamdan/VisualDonn)
 
 ## Créer un repo personnel pour le cours
