@@ -64,7 +64,7 @@ npm install d3 --save
   * Un fichier `20200228/src/index.html`
   * Un fichier `20200228/src/index.js`
   * Ajouter un script `dev:batons`: `parcel 20200228/src/index.html --out-dir 20200228/dist`
-  * Ajouter `20200228` à `.gitignore`
+  * Ajouter `20200228/dist` et `20200228/.cache` à `.gitignore`
 
 ### D3 - lier des données à des éléments
 
