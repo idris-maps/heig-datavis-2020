@@ -10,6 +10,11 @@
 
 [Structure de données javascript](https://observablehq.com/@idris-maps/structure-de-donnees-javascript)
 
+### Exercice 1
+
+* Copiez le fichier `20200228/exercice_1.js`
+* Utilisez les [méthodes sur une liste](https://observablehq.com/@idris-maps/methodes-sur-une-liste-array) pour avoir le résultat escompté. 
+
 **Logiciels**
 
 * [node.js](https://nodejs.org/en/)
@@ -29,7 +34,7 @@
 
 [Mouvements touristiques des Suisses à l'étranger](https://opendata.swiss/en/dataset/reiseverkehr-der-schweizer-ins-ausland/resource/5533a513-e06f-490a-91d7-183e727808ff)
 
-### Exercice 1
+### Exercice 2
 
 * Trouvez et préparez un jeu de données pour faire un graphique en bâtons.
 * Ajoutez un fichier `20200228/readme.md` où vous expliquez ce que vous avez fait
@@ -74,6 +79,6 @@ npm install d3 --save
 
 [Exemples](https://observablehq.com/@idris-maps/graphiques-en-batons)
 
-### Exercice 2
+### Exercice 3
 
 Créer un graphique en bâtons avec les données préparées plus tôt.
