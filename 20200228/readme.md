@@ -23,18 +23,17 @@
 
 #### CSV
 
-???
+[éléctions conseil national 2019](https://opendata.swiss/en/dataset/eidg-wahlen-2019/resource/001dbea9-820a-48ef-a88b-1b986f07852c)
 
 #### XLS
 
-???
+[Mouvements touristiques des Suisses à l'étranger](https://opendata.swiss/en/dataset/reiseverkehr-der-schweizer-ins-ausland/resource/5533a513-e06f-490a-91d7-183e727808ff)
 
 ### Exercice 1
 
 * Trouvez et préparez un jeu de données pour faire un graphique en bâtons.
 * Ajoutez un fichier `20200228/readme.md` où vous expliquez ce que vous avez fait
 * Le résultat est un fichier `20200228/data.json` avec une liste d'objets contenant au moins un nom pour la légende est une valeur numérique.
-
 
 ## Graphique en bâtons
 
