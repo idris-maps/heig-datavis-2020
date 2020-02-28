@@ -5,3 +5,4 @@ node_modules
 **/._.DS_Store
 examples_site
 20200228/batons/dist
+.cache
