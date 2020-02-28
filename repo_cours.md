@@ -15,7 +15,7 @@
 * [Michelle](https://github.com/michelle-po/VisualDon)
 * [Olivia](https://github.com/olivia-prad/VisualDon)
 * [Robin](https://github.com/robiiiiiiiiiiiin/VisualDon)
-* [Rui Filipe]()
+* [Rui Filipe](https://github.com/nobrega1/VisualDon)
 * [Soraya](https://github.com/Soraya97/VisualDon)
 * [Stéphane](https://github.com/Stephane-panda/datavis)
 * [Sébastien](https://github.com/sebastienRay/VisualDon)
