@@ -7,7 +7,7 @@
 * [Ingrid Elena](https://github.com/ingridsorg/datavis)
 * [Jean](https://github.com/JeanHerbaut/DataVis)
 * [Julie](https://github.com/julie-greset/visualdon/)
-* [Kevin]()
+* [Kevin](https://github.com/Saiykoh/VisuDon)
 * [Laurie](https://github.com/loumloum/VisualDon)
 * [Leyna](https://github.com/leyGir/VisualDon)
 * [Léonard](https://github.com/LeonardMichiels/VisualDon)
