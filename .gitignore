@@ -6,3 +6,4 @@ node_modules
 examples_site
 20200228/batons/dist
 .cache
+**/dist

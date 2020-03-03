@@ -6,12 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "node scripts/publish",
-    "dev:batons": "parcel 20200228/batons/src/index.html --out-dir 20200228/batons/dist"
+    "dev:batons": "parcel 20200228/batons/src/index.html --out-dir 20200228/batons/dist",
+    "recette:billboard": "parcel recettes/billboard/src/index.html --out-dir recettes/billboard/dist",
+    "recette:d3": "parcel recettes/d3/src/index.html --out-dir recettes/d3/dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "billboard.js": "^1.11.1",
     "d3": "^5.15.0",
     "surge": "^0.21.3"
   },
