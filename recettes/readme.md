@@ -1,6 +1,6 @@
 # Recettes
 
-Quelques recettes pour démarrer un site en utilisant quelques librairies
+Quelques recettes pour démarrer un site en utilisant différentes librairies
 
 * [d3]()
 * [billboard]()
