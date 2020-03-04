@@ -173,14 +173,54 @@ console.log(rest) // [2, 3]
 
 [Cours](https://observablehq.com/@idris-maps/methodes-ramda)
 
-### Exercice 2
+### Fetch
 
+[Documentation MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
+```js
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(r => r.json())
+  .then(data => /* faire quelque chose avec les données ici */)
+```
 
+`fetch` n'existe que dans le navigateur. Pour l'utiliser dans node:
+
+```
+npm install node-fetch --save
+```
+
+### API Rest
+
+* [Méthodes HTTP](https://www.restapitutorial.com/lessons/httpmethods.html)
+* [Exemple de serveur REST](https://jsonplaceholder.typicode.com/)
+
+### Exercice 1
+
+Utilisez
+  1. les resources `posts` et  `users` plus haut.
+  2. `fetch` pour télécharger les données
+  3. `ramda` pour créer une liste qui ressemble à ça:
+
+```js
+[
+  {
+    nom_utilisateur: 'Machin',
+    ville: 'Truc',
+    nom_companie: 'Bidule',
+    titres_posts: [
+      'Titre 1',
+      'Titre 2',
+    ]
+  },
+  // ...
+]
+```
+
+Commencez avec les utilisateurs. Il faut extraire le `nom_utilisateur` (`username`), la `ville` (`address.city`) et le `nom_companie` (`company.name`). Après pour chaque utilisateur, allez chercher les `titres_posts` (les `title` dans la ressource `posts`).
 
 ## D3
 
-Autres ressources:
+Autres resources:
 
 * [Tutoriels officiels](https://github.com/d3/d3/wiki/Tutorials)
 * [Lets make a bar chart](https://observablehq.com/@d3/lets-make-a-bar-chart) par [Mike Bostock](https://observablehq.com/@mbostock)
