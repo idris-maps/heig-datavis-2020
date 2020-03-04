@@ -125,9 +125,52 @@ console.log(rest) // [2, 3]
 ## [Observable](https://observablehq.com/@idris-maps/observable)
 
 * "réactif"
-* différences avec le javascript standard
+
+### Conversion des examples observable en js
+
+par example le premier graphique en bâtons [ici](https://observablehq.com/@idris-maps/graphiques-en-batons)
+
+```js
+viewof d3view = {
+  const WIDTH = width
+  const HEIGHT = width / 3
+  const container = DOM.svg(WIDTH, HEIGHT)
+  const svg = d3.select(container)
+  /*
+    vous pouvez reprendre tout ce qui est ici
+  */
+  return container
+}
+```
+
+* `width` est une valeur dynamique crée par observable
+* `DOM` est spécifique à observable
+
+Quand vous créez votre propre site:
+
+* Définissez `WIDTH` et `HEIGHT`, par example:
+
+```js
+const WIDTH = 300
+const HEIGHT = 100
+```
+
+* Définissez la constante `svg`
+
+```js
+const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
+```
 
 ## D3
+
+Autres ressources:
+
+* [Tutoriels officiels](https://github.com/d3/d3/wiki/Tutorials)
+* [How to learn D3.js](https://wattenberger.com/blog/d3) par [Amelia Wattenberger](https://wattenberger.com/)
+* [Introduction to D3](https://observablehq.com/@mitvis/introduction-to-d3) par [MIT visualization group](http://vis.csail.mit.edu/)
+* [Dashing d3.js](https://www.dashingd3js.com/table-of-contents)
+
+Cours:
 
 * [Transitions avec D3](https://observablehq.com/@idris-maps/transitions-avec-d3)
 * [D3 shape](https://observablehq.com/@idris-maps/introduction-a-d3) [docs](https://github.com/d3/d3-shape)
