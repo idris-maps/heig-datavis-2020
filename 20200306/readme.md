@@ -61,6 +61,16 @@ const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
 
 ---
 
+## Visualisations coronavirus
+
+* Le Temps: [article](https://labs.letemps.ch/interactive/2020/carte-coronavirus-monde/) - [repo](https://github.com/labsletemps/coronavirus-world-map-evolution)
+* La [source des données](https://github.com/CSSEGISandData/COVID-19)
+* La [visualisation d'origine](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
+
+* Données [OMS](https://www.worldometers.info/coronavirus/)
+
+---
+
 ## Data
 
 ### `reduce` pour autre chose que faire la somme
