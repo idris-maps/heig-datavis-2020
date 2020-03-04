@@ -2,8 +2,9 @@
 
 Quelques recettes pour démarrer un site en utilisant différentes librairies
 
-* [d3]()
-* [billboard]()
+* [d3](https://github.com/idris-maps/heig-datavis-2020/tree/master/recettes/d3)
+* [billboard](https://github.com/idris-maps/heig-datavis-2020/tree/master/recettes/billboard)
+* [chartjs](https://github.com/idris-maps/heig-datavis-2020/tree/master/recettes/chartjs)
 
 ### 1. S'assurer que `.gitignore` contient
 
@@ -35,7 +36,7 @@ parcel <CHEMIN>/src/index.html --out-dir <CHEMIN>/dist
 
 voir les scriptes dans mon [package.json](https://github.com/idris-maps/heig-datavis-2020/blob/master/package.json)
 
-Lancer le script:
+Lancez le script:
 
 ```
 npm run <NOM_DU_SCRIPT>
