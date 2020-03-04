@@ -87,7 +87,7 @@ const getName = ({ name }) => name
 est une autre manière de dire:
 
 ```javascript
-const getName = per[1, 2, 3, 4]son => person.name
+const getName = person => person.name
 ```
 
 #### Copier
