@@ -9,9 +9,16 @@
 
 Terminer l'[exercice 3](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200228#exercice-3) du 28 Février
 
+---
+
 ## [Observable](https://observablehq.com/@idris-maps/observable)
 
 [Collection de "notebooks" relatif au cours](https://observablehq.com/collection/@idris-maps/heig-visdom-2020)
+
+Alternatives:
+
+* [iodide](https://alpha.iodide.io/)
+* [jupyter notebooks](https://jupyter.org/)
 
 ### Conversion des examples observable en js
 
@@ -51,6 +58,8 @@ const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
 ### Différentes manières de définir la taille du SVG
 
 [Exemple](http://heig-datavis2020.surge.sh/20200306/exemples/taille_svg.html) - [Code](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200306/examples/taille_svg.html)
+
+---
 
 ## Data
 
@@ -102,9 +111,11 @@ const compterLesNoms = (res, d) => {
 const resultat = data.reduce(compterLesNoms, valeurDeDepart)
 ```
 
-### Déstructurer et copier un objet
+### Déstructurer
 
-#### Déstructurer
+#### `Object`
+
+##### Déstructurer
 
 ```javascript
 const obj = { name: 'Bernadette', age: 26 }
@@ -137,7 +148,7 @@ est une autre manière de dire:
 const getName = person => person.name
 ```
 
-#### Copier
+##### Copier
 
 ```javascript
 const obj1 = { name: 'Bernadette', age: 26 }
@@ -153,7 +164,7 @@ console.log(name) // 'Bernadette'
 console.log(rest) // { age: 26, city: 'Yverdon' }
 ```
 
-### Déstructurer et copier un `Array`
+#### `Array`
 
 ```js
 const arr1 = [1, 2, 3]
@@ -196,6 +207,8 @@ npm install node-fetch --save
 
 ### Exercice 1
 
+Fichier: `20200306/fetch_rest.js`
+
 Utilisez
   1. les resources `posts` et  `users` plus haut.
   2. `fetch` pour télécharger les données
@@ -218,7 +231,11 @@ Utilisez
 
 Commencez avec les utilisateurs. Il faut extraire le `nom_utilisateur` (`username`), la `ville` (`address.city`) et le `nom_companie` (`company.name`). Après pour chaque utilisateur, allez chercher les `titres_posts` (les `title` dans la ressource `posts`).
 
+---
+
 ## D3
+
+[Introduction à D3](https://observablehq.com/@idris-maps/introduction-a-d3)
 
 Autres resources:
 
@@ -244,4 +261,12 @@ Cours:
 
 * [Transitions avec D3](https://observablehq.com/@idris-maps/transitions-avec-d3)
 * [D3 shape](https://observablehq.com/@idris-maps/introduction-a-d3) [docs](https://github.com/d3/d3-shape)
+
+### Exercice 2
+
+Dossier `20200306/graphique-d3`
+
+Créez un graphique autre qu'un graphique en bâtons avec D3. Utilisez les données que vous souhaitez (les données pour le graphique en bâtons par exemple).
+
+Utilisez la "recette" [d3](https://github.com/idris-maps/heig-datavis-2020/tree/master/recettes/d3).
 
