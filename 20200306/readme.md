@@ -252,6 +252,7 @@ Autres resources:
 * [Tutoriels officiels](https://github.com/d3/d3/wiki/Tutorials)
 * [Lets make a bar chart](https://observablehq.com/@d3/lets-make-a-bar-chart) par [Mike Bostock](https://observablehq.com/@mbostock)
 * [How to learn D3.js](https://wattenberger.com/blog/d3) par [Amelia Wattenberger](https://wattenberger.com/)
+* [D3 gallery](https://observablehq.com/@d3/gallery)
 * [Introduction to D3](https://observablehq.com/@mitvis/introduction-to-d3) par [MIT visualization group](http://vis.csail.mit.edu/)
 * [Dashing d3.js](https://www.dashingd3js.com/table-of-contents)
 
