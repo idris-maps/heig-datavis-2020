@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <style>
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+    </style>
+  </head>
+  <body>
+    <h2>Une "div" avec un "svg" dont la taille est définie par "viewBox"</h2>
+    <div>
+      <svg viewBox="0 0 200 100">
+        <rect width="200" height="100" fill="indianred" />
+        <circle cx="100" cy="50" r="40" fill="steelblue" />
+      </svg>
+    </div>
+    <h2>La même chose avec une "width" définie (200px) sur la "div"</h2>
+    <div style="width:200px">
+      <svg viewBox="0 0 200 100">
+        <rect width="200" height="100" fill="indianred" />
+        <circle cx="100" cy="50" r="40" fill="steelblue" />
+      </svg>
+    </div>
+    <h2>Un "svg" avec la taille définie en fonction de l'écran</h2>
+    <svg id="example-3-svg">
+      <rect width="200" height="100" fill="indianred" />
+      <circle cx="100" cy="50" r="40" fill="steelblue" />
+    </svg>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+
+const svg = d3.select('#example-3-svg')
+const rect = svg.select('rect')
+const circle = svg.select('circle')
+
+const onResize = () => {
+  const WIDTH = window.innerWidth
+  const HEIGHT = window.innerHeight
+  svg.attr('width', WIDTH)
+  svg.attr('height', HEIGHT)
+  rect.attr('width', WIDTH)
+  rect.attr('height', HEIGHT)
+  circle.attr('cx', WIDTH / 2)
+  circle.attr('cy', HEIGHT / 2)
+  circle.attr('r', HEIGHT * 0.4)
+}
+
+
+window.addEventListener('load', onResize)
+window.addEventListener('resize', onResize)
+
+    </script>
+  </body>
+</html>

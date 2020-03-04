@@ -8,13 +8,18 @@
     "publish": "node scripts/publish",
     "dev:batons": "parcel 20200228/batons/src/index.html --out-dir 20200228/batons/dist",
     "recette:billboard": "parcel recettes/billboard/src/index.html --out-dir recettes/billboard/dist",
-    "recette:d3": "parcel recettes/d3/src/index.html --out-dir recettes/d3/dist"
+    "recette:d3": "parcel recettes/d3/src/index.html --out-dir recettes/d3/dist",
+    "recette:chartjs": "parcel recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist",
+    "build:recette:billboard": "rm -rf recettes/billboard/dist && parcel build recettes/billboard/src/index.html --out-dir recettes/billboard/dist",
+    "build:recette:d3": "rm -rf recettes/d3/dist && parcel build recettes/d3/src/index.html --out-dir recettes/d3/dist",
+    "build:recette:chartjs": "rm -rf recettes/chartjs/dist && parcel build recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "billboard.js": "^1.11.1",
+    "chart.js": "^2.9.3",
     "d3": "^5.15.0",
     "surge": "^0.21.3"
   },

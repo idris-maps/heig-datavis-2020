@@ -1,9 +1,56 @@
 # 6 Mars
 
-## Graphiques en bâtons
+## Graphique en bâtons (suite)
 
-* [Recettes]()
+* [Recettes](https://github.com/idris-maps/heig-datavis-2020/tree/master/recettes)
 * [Axes](https://observablehq.com/@idris-maps/d3-definir-les-axes)
+
+### Exercice
+
+Terminer l'[exercice 3](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200228#exercice-3) du 28 Février
+
+## [Observable](https://observablehq.com/@idris-maps/observable)
+
+[Collection de "notebooks" relatif au cours](https://observablehq.com/collection/@idris-maps/heig-visdom-2020)
+
+### Conversion des examples observable en js
+
+par example le premier graphique en bâtons [ici](https://observablehq.com/@idris-maps/graphiques-en-batons)
+
+```js
+viewof d3view = {
+  const WIDTH = width
+  const HEIGHT = width / 3
+  const container = DOM.svg(WIDTH, HEIGHT)
+  const svg = d3.select(container)
+  /*
+    vous pouvez reprendre tout ce qui est ici
+  */
+  return container
+}
+```
+
+* `width` est une valeur dynamique crée par observable
+* `DOM` est spécifique à observable
+
+Quand vous créez votre propre site:
+
+* Définissez `WIDTH` et `HEIGHT`, par example:
+
+```js
+const WIDTH = 300
+const HEIGHT = 100
+```
+
+* Définissez la constante `svg`
+
+```js
+const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
+```
+
+### Différentes manières de définir la taille du SVG
+
+[Exemple](http://heig-datavis2020.surge.sh/20200306/exemples/taille_svg.html) - [Code](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200306/examples/taille_svg.html)
 
 ## Data
 
@@ -122,12 +169,78 @@ console.log(premier) // 1
 console.log(rest) // [2, 3]
 ```
 
-## [Observable](https://observablehq.com/@idris-maps/observable)
+### Ramda
 
-* "réactif"
-* différences avec le javascript standard
+[Cours](https://observablehq.com/@idris-maps/methodes-ramda)
+
+### Fetch
+
+[Documentation MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+
+```js
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(r => r.json())
+  .then(data => /* faire quelque chose avec les données ici */)
+```
+
+`fetch` n'existe que dans le navigateur. Pour l'utiliser dans node:
+
+```
+npm install node-fetch --save
+```
+
+### API Rest
+
+* [Méthodes HTTP](https://www.restapitutorial.com/lessons/httpmethods.html)
+* [Exemple de serveur REST](https://jsonplaceholder.typicode.com/)
+
+### Exercice 1
+
+Utilisez
+  1. les resources `posts` et  `users` plus haut.
+  2. `fetch` pour télécharger les données
+  3. `ramda` pour créer une liste qui ressemble à ça:
+
+```js
+[
+  {
+    nom_utilisateur: 'Machin',
+    ville: 'Truc',
+    nom_companie: 'Bidule',
+    titres_posts: [
+      'Titre 1',
+      'Titre 2',
+    ]
+  },
+  // ...
+]
+```
+
+Commencez avec les utilisateurs. Il faut extraire le `nom_utilisateur` (`username`), la `ville` (`address.city`) et le `nom_companie` (`company.name`). Après pour chaque utilisateur, allez chercher les `titres_posts` (les `title` dans la ressource `posts`).
 
 ## D3
+
+Autres resources:
+
+* [Tutoriels officiels](https://github.com/d3/d3/wiki/Tutorials)
+* [Lets make a bar chart](https://observablehq.com/@d3/lets-make-a-bar-chart) par [Mike Bostock](https://observablehq.com/@mbostock)
+* [How to learn D3.js](https://wattenberger.com/blog/d3) par [Amelia Wattenberger](https://wattenberger.com/)
+* [Introduction to D3](https://observablehq.com/@mitvis/introduction-to-d3) par [MIT visualization group](http://vis.csail.mit.edu/)
+* [Dashing d3.js](https://www.dashingd3js.com/table-of-contents)
+
+Tutoriels sur youtube:
+
+[![Creative Data Visualizations with SVG and D3.js](https://img.youtube.com/vi/TKv_cUZd9sM/0.jpg)](https://www.youtube.com/watch?v=TKv_cUZd9sM)
+
+[![Let's learn D3.js](https://img.youtube.com/vi/C4t6qfHZ6Tw/0.jpg)](https://www.youtube.com/watch?v=C4t6qfHZ6Tw)
+
+Examples utilisateurs:
+
+* [Sirley Wu](https://sxywu.com/)
+* [Danielle Carrick](http://daniellecarrick.com/)
+* [Nadieh Bremer](https://www.visualcinnamon.com/)
+
+Cours:
 
 * [Transitions avec D3](https://observablehq.com/@idris-maps/transitions-avec-d3)
 * [D3 shape](https://observablehq.com/@idris-maps/introduction-a-d3) [docs](https://github.com/d3/d3-shape)

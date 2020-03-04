@@ -3,8 +3,16 @@ const { promisify } = require('util')
 const { exec } = require('child_process')
 
 const DIR = 'examples_site'
+const BUILDS = [
+  'npm run build:recette:d3',
+  'npm run build:recette:billboard',
+  'npm run build:recette:chartjs',
+]
 const FOLDERS = [
   '20200221/exemples_svg_web',
+  'recettes/d3/dist',
+  'recettes/billboard/dist',
+  'recettes/chartjs/dist',
 ]
 
 const readdir = promisify(fs.readdir)
@@ -26,13 +34,11 @@ const loop = async (index, items, func) => {
 
 const copyFolder = async dir => {
   const files = await readdir(dir)
-  const title = dir.split('/')[0]
-  //await run(`mkdir exemples_site/${dir}`)
   const foldersToCreate = dir.split('/').map((d, i, a) => {
     const prev = Array.from(Array(i)).map((d, i) => a[i])
     return [...prev, d].join('/')
   })
-  await loop(0, foldersToCreate, d => run(`mkdir ${DIR}/${d}`))
+  await loop(0, foldersToCreate, d => run(`mkdir -p ${DIR}/${d}`))
   const data = files.map(d => ({
     input: `${dir}/${d}`,
     output: `${DIR}/${dir}/${d}`,
@@ -48,6 +54,7 @@ const indexFile = `
 `
 
 const publish = async () => {
+  await Promise.all(BUILDS.map(run))
   await run(`rm -rf ${DIR}`)
   await run(`mkdir ${DIR}`)
   await run(`echo \'${indexFile}\' > ${DIR}/index.html`)
