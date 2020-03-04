@@ -166,9 +166,22 @@ const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
 Autres ressources:
 
 * [Tutoriels officiels](https://github.com/d3/d3/wiki/Tutorials)
+* [Lets make a bar chart](https://observablehq.com/@d3/lets-make-a-bar-chart) par [Mike Bostock](https://observablehq.com/@mbostock)
 * [How to learn D3.js](https://wattenberger.com/blog/d3) par [Amelia Wattenberger](https://wattenberger.com/)
 * [Introduction to D3](https://observablehq.com/@mitvis/introduction-to-d3) par [MIT visualization group](http://vis.csail.mit.edu/)
 * [Dashing d3.js](https://www.dashingd3js.com/table-of-contents)
+
+Tutoriels sur youtube:
+
+[![Creative Data Visualizations with SVG and D3.js](https://img.youtube.com/vi/TKv_cUZd9sM/0.jpg)](https://www.youtube.com/watch?v=TKv_cUZd9sM)
+
+[![Let's learn D3.js](https://img.youtube.com/vi/C4t6qfHZ6Tw/0.jpg)](https://www.youtube.com/watch?v=C4t6qfHZ6Tw)
+
+Examples utilisateurs:
+
+* [Sirley Wu](https://sxywu.com/)
+* [Danielle Carrick](http://daniellecarrick.com/)
+* [Nadieh Bremer](https://www.visualcinnamon.com/)
 
 Cours:
 
