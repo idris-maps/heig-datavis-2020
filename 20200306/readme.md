@@ -1,9 +1,56 @@
 # 6 Mars
 
-## Graphiques en bâtons
+## Graphique en bâtons (suite)
 
-* [Recettes]()
+* [Recettes](https://github.com/idris-maps/heig-datavis-2020/tree/master/recettes)
 * [Axes](https://observablehq.com/@idris-maps/d3-definir-les-axes)
+
+### Exercice
+
+Terminer l'[exercice 3](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200228#exercice-3) du 28 Février
+
+## [Observable](https://observablehq.com/@idris-maps/observable)
+
+[Collection de "notebooks" relatif au cours](https://observablehq.com/collection/@idris-maps/heig-visdom-2020)
+
+### Conversion des examples observable en js
+
+par example le premier graphique en bâtons [ici](https://observablehq.com/@idris-maps/graphiques-en-batons)
+
+```js
+viewof d3view = {
+  const WIDTH = width
+  const HEIGHT = width / 3
+  const container = DOM.svg(WIDTH, HEIGHT)
+  const svg = d3.select(container)
+  /*
+    vous pouvez reprendre tout ce qui est ici
+  */
+  return container
+}
+```
+
+* `width` est une valeur dynamique crée par observable
+* `DOM` est spécifique à observable
+
+Quand vous créez votre propre site:
+
+* Définissez `WIDTH` et `HEIGHT`, par example:
+
+```js
+const WIDTH = 300
+const HEIGHT = 100
+```
+
+* Définissez la constante `svg`
+
+```js
+const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
+```
+
+### Différentes manières de définir la taille du SVG
+
+[Exemple](http://heig-datavis2020.surge.sh/20200306/exemples/taille_svg.html) - [Code](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200306/examples/taille_svg.html)
 
 ## Data
 
@@ -122,44 +169,14 @@ console.log(premier) // 1
 console.log(rest) // [2, 3]
 ```
 
-## [Observable](https://observablehq.com/@idris-maps/observable)
+### Ramda
 
-* "réactif"
+[Cours](https://observablehq.com/@idris-maps/methodes-ramda)
 
-### Conversion des examples observable en js
+### Exercice 2
 
-par example le premier graphique en bâtons [ici](https://observablehq.com/@idris-maps/graphiques-en-batons)
 
-```js
-viewof d3view = {
-  const WIDTH = width
-  const HEIGHT = width / 3
-  const container = DOM.svg(WIDTH, HEIGHT)
-  const svg = d3.select(container)
-  /*
-    vous pouvez reprendre tout ce qui est ici
-  */
-  return container
-}
-```
 
-* `width` est une valeur dynamique crée par observable
-* `DOM` est spécifique à observable
-
-Quand vous créez votre propre site:
-
-* Définissez `WIDTH` et `HEIGHT`, par example:
-
-```js
-const WIDTH = 300
-const HEIGHT = 100
-```
-
-* Définissez la constante `svg`
-
-```js
-const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
-```
 
 ## D3
 
