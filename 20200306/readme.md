@@ -61,13 +61,23 @@ const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
 
 ---
 
-## Visualisations coronavirus
+## Visualisations
+
+### Coronavirus
 
 * Le Temps: [article](https://labs.letemps.ch/interactive/2020/carte-coronavirus-monde/) - [repo](https://github.com/labsletemps/coronavirus-world-map-evolution)
 * La [source des données](https://github.com/CSSEGISandData/COVID-19)
 * La [visualisation d'origine](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
 
 * Données [OMS](https://www.worldometers.info/coronavirus/)
+
+### [Sigma awards](https://datajournalism.com/awards/)
+
+* [Made in france - disclose.ngo](https://made-in-france.disclose.ngo/fr) ( [données SIPRI](https://gist.github.com/jsvine/9cb3300588ed402160fe) ventes d'armes )
+* [Your smartphone is causing you ‘text neck’ syndrome - South China Morning Post](https://multimedia.scmp.com/lifestyle/article/2183329/text-neck/)
+* [Un algoritmo contra la corrupción - ojo-publico.com](https://ojo-publico.com/especiales/funes/)
+
+
 
 ---
 
