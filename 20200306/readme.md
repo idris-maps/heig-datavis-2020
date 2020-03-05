@@ -279,7 +279,7 @@ Tutoriels sur youtube:
 Examples utilisation:
 
 * [D3 gallery](https://observablehq.com/@d3/gallery)
-* [Sirley Wu](https://sxywu.com/)
+* [Shirley Wu](https://sxywu.com/)
 * [Danielle Carrick](http://daniellecarrick.com/)
 * [Nadieh Bremer](https://www.visualcinnamon.com/)
 
