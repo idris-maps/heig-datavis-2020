@@ -77,8 +77,6 @@ const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
 * [Your smartphone is causing you ‘text neck’ syndrome - South China Morning Post](https://multimedia.scmp.com/lifestyle/article/2183329/text-neck/)
 * [Un algoritmo contra la corrupción - ojo-publico.com](https://ojo-publico.com/especiales/funes/)
 
-
-
 ---
 
 ## Data
@@ -135,8 +133,6 @@ const resultat = data.reduce(compterLesNoms, valeurDeDepart)
 
 #### `Object`
 
-##### Déstructurer
-
 ```javascript
 const obj = { name: 'Bernadette', age: 26 }
 const { name, age } = obj
@@ -168,7 +164,7 @@ est une autre manière de dire:
 const getName = person => person.name
 ```
 
-##### Copier
+##### Copier un `Object`
 
 ```javascript
 const obj1 = { name: 'Bernadette', age: 26 }
@@ -202,7 +198,7 @@ console.log(rest) // [2, 3]
 
 ### Ramda
 
-[Cours](https://observablehq.com/@idris-maps/methodes-ramda)
+[Cours](https://observablehq.com/@idris-maps/methodes-ramda) [Documentation](https://ramdajs.com/docs/)
 
 ### Fetch
 
@@ -213,6 +209,8 @@ fetch('https://jsonplaceholder.typicode.com/posts')
   .then(r => r.json())
   .then(data => /* faire quelque chose avec les données ici */)
 ```
+
+`fetch` retourne une "promesse" ([Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)).
 
 `fetch` n'existe que dans le navigateur. Pour l'utiliser dans node:
 
@@ -262,7 +260,6 @@ Autres resources:
 * [Tutoriels officiels](https://github.com/d3/d3/wiki/Tutorials)
 * [Lets make a bar chart](https://observablehq.com/@d3/lets-make-a-bar-chart) par [Mike Bostock](https://observablehq.com/@mbostock)
 * [How to learn D3.js](https://wattenberger.com/blog/d3) par [Amelia Wattenberger](https://wattenberger.com/)
-* [D3 gallery](https://observablehq.com/@d3/gallery)
 * [Introduction to D3](https://observablehq.com/@mitvis/introduction-to-d3) par [MIT visualization group](http://vis.csail.mit.edu/)
 * [Dashing d3.js](https://www.dashingd3js.com/table-of-contents)
 
@@ -272,8 +269,9 @@ Tutoriels sur youtube:
 
 [![Let's learn D3.js](https://img.youtube.com/vi/C4t6qfHZ6Tw/0.jpg)](https://www.youtube.com/watch?v=C4t6qfHZ6Tw)
 
-Examples utilisateurs:
+Examples utilisation:
 
+* [D3 gallery](https://observablehq.com/@d3/gallery)
 * [Sirley Wu](https://sxywu.com/)
 * [Danielle Carrick](http://daniellecarrick.com/)
 * [Nadieh Bremer](https://www.visualcinnamon.com/)
