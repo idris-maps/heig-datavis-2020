@@ -223,12 +223,17 @@ npm install node-fetch --save
 * [Méthodes HTTP](https://www.restapitutorial.com/lessons/httpmethods.html)
 * [Exemple de serveur REST](https://jsonplaceholder.typicode.com/)
 
+#### Listes d'APIs
+
+* [github.com/public-apis](https://github.com/public-apis/public-apis)
+* [github.com/n0shake/Public-APIs](https://github.com/n0shake/Public-APIs)
+
 ### Exercice 1
 
 Fichier: `20200306/fetch_rest.js`
 
 Utilisez
-  1. les resources `posts` et  `users` plus haut.
+  1. les resources `posts` et `users` de [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/)
   2. `fetch` pour télécharger les données
   3. `ramda` pour créer une liste qui ressemble à ça:
 
