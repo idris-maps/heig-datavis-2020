@@ -57,7 +57,7 @@ const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
 
 ### Différentes manières de définir la taille du SVG
 
-[Exemple](http://heig-datavis2020.surge.sh/20200306/exemples/taille_svg.html) - [Code](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200306/examples/taille_svg.html)
+[Exemple](http://heig-datavis2020.surge.sh/20200306/exemples/taille_svg.html) - [Code](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200306/exemples/taille_svg.html)
 
 ---
 
@@ -68,8 +68,9 @@ const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
 * Le Temps: [article](https://labs.letemps.ch/interactive/2020/carte-coronavirus-monde/) - [repo](https://github.com/labsletemps/coronavirus-world-map-evolution)
 * La [source des données](https://github.com/CSSEGISandData/COVID-19)
 * La [visualisation d'origine](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6)
+* La même dans un [journal suèdois](https://www.svd.se/det-har-vet-vi-om-coronaviruset-3784)
 
-* Données [OMS](https://www.worldometers.info/coronavirus/)
+* Données [worldometers](https://www.worldometers.info/coronavirus/)
 
 ### [Sigma awards](https://datajournalism.com/awards/)
 
@@ -80,54 +81,6 @@ const svg = d3.select('body') // ou l'"id" d'un élément de votre HTML
 ---
 
 ## Data
-
-### `reduce` pour autre chose que faire la somme
-
-Nous souhaitons compter les noms suivants
-
-```js
-const data = [
-  { name: 'A' },
-  { name: 'C' },
-  { name: 'A' },
-  { name: 'A' },
-  { name: 'B' },
-  { name: 'B' },
-  { name: 'C' },
-  { name: 'A' },
-  { name: 'B' },
-  { name: 'A' },
-]
-```
-
-Pour avoir un résultat:
-
-```js
-[
-  { name: 'C', count: 2 },
-  { name: 'B', count: 3 },
-  { name: 'A', count: 5 },
-]
-```
-
-```js
-const valeurDeDepart = []
-const compterLesNoms = (res, d) => {
-  const exist = res.find(({ name }) => name === d.name)
-  if (!exist) {
-    return [
-      ...res,
-      { name: d.name, count: 1 },
-    ]
-  }
-  return [
-    ...res.filter(({ name }) => name !== d.name),
-    { ...exist, count: exist.count + 1 },
-  ]
-}
-
-const resultat = data.reduce(compterLesNoms, valeurDeDepart)
-```
 
 ### Déstructurer
 
@@ -196,9 +149,58 @@ console.log(premier) // 1
 console.log(rest) // [2, 3]
 ```
 
+### `reduce` pour autre chose que faire la somme
+
+Nous souhaitons compter les noms suivants
+
+```js
+const data = [
+  { name: 'A' },
+  { name: 'C' },
+  { name: 'A' },
+  { name: 'A' },
+  { name: 'B' },
+  { name: 'B' },
+  { name: 'C' },
+  { name: 'A' },
+  { name: 'B' },
+  { name: 'A' },
+]
+```
+
+Pour avoir un résultat:
+
+```js
+[
+  { name: 'C', count: 2 },
+  { name: 'B', count: 3 },
+  { name: 'A', count: 5 },
+]
+```
+
+```js
+const valeurDeDepart = []
+const compterLesNoms = (res, d) => {
+  const exist = res.find(({ name }) => name === d.name)
+  if (!exist) {
+    return [
+      ...res,
+      { name: d.name, count: 1 },
+    ]
+  }
+  return [
+    ...res.filter(({ name }) => name !== d.name),
+    { ...exist, count: exist.count + 1 },
+  ]
+}
+
+const resultat = data.reduce(compterLesNoms, valeurDeDepart)
+```
+
 ### Ramda
 
-[Cours](https://observablehq.com/@idris-maps/methodes-ramda) [Documentation](https://ramdajs.com/docs/)
+* [Cours](https://observablehq.com/@idris-maps/methodes-ramda)
+* [Documentation](https://ramdajs.com/docs/)
 
 ### Fetch
 
@@ -212,7 +214,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
 `fetch` retourne une "promesse" ([Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)).
 
-`fetch` n'existe que dans le navigateur. Pour l'utiliser dans node:
+`fetch` n'existe que dans le navigateur. Pour l'utiliser dans `node`:
 
 ```
 npm install node-fetch --save
@@ -284,7 +286,7 @@ Examples utilisation:
 Cours:
 
 * [Transitions avec D3](https://observablehq.com/@idris-maps/transitions-avec-d3)
-* [D3 shape](https://observablehq.com/@idris-maps/introduction-a-d3) [docs](https://github.com/d3/d3-shape)
+* [D3 shape](https://observablehq.com/@idris-maps/introduction-a-d3) ([docs](https://github.com/d3/d3-shape))
 
 ### Exercice 2
 
