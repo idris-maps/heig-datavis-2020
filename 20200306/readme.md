@@ -287,6 +287,7 @@ Cours:
 
 * [D3 shape](https://observablehq.com/@idris-maps/introduction-a-d3) ([docs](https://github.com/d3/d3-shape))
 * [Transitions avec D3](https://observablehq.com/@idris-maps/transitions-avec-d3)
+* [Représenter un réseau avec D3](https://observablehq.com/@idris-maps/representer-un-reseau-avec-d3)
 
 ### Exercice 2
 
