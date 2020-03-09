@@ -71,10 +71,3 @@ const onYearChange = year => {
 
 input.addEventListener('input', e => onYearChange(Number(e.target.value)))
 window.addEventListener('load', () => onYearChange(2019))
-
-svg.on('click', () => console.log('SVG'))
-circles.on('click', d => {
-  console.log(d)
- event.stopPropagation()
-
-})

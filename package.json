@@ -14,7 +14,8 @@
     "build:recette:billboard": "rm -rf recettes/billboard/dist && parcel build recettes/billboard/src/index.html --out-dir recettes/billboard/dist",
     "build:recette:d3": "rm -rf recettes/d3/dist && parcel build recettes/d3/src/index.html --out-dir recettes/d3/dist",
     "build:recette:chartjs": "rm -rf recettes/chartjs/dist && parcel build recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist",
-    "rosling": "parcel 20200320/rosling/src/index.html --out-dir 20200320/rosling/dist"
+    "rosling": "parcel 20200320/rosling/src/index.html --out-dir 20200320/rosling/dist",
+    "rosling-react": "parcel 20200320/rosling-react/src/index.html --out-dir 20200320/rosling-react/dist"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,8 @@
     "node-fetch": "^2.6.0",
     "npm": "^6.14.2",
     "ramda": "^0.27.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "surge": "^0.21.3",
     "xlsx": "^0.15.5"
   },
