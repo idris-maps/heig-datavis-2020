@@ -13,7 +13,8 @@
     "dev:batons-suite": "parcel 20200306/batons_suite/src/index.html --out-dir 202000306/batons_suite/dist",
     "build:recette:billboard": "rm -rf recettes/billboard/dist && parcel build recettes/billboard/src/index.html --out-dir recettes/billboard/dist",
     "build:recette:d3": "rm -rf recettes/d3/dist && parcel build recettes/d3/src/index.html --out-dir recettes/d3/dist",
-    "build:recette:chartjs": "rm -rf recettes/chartjs/dist && parcel build recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist"
+    "build:recette:chartjs": "rm -rf recettes/chartjs/dist && parcel build recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist",
+    "rosling": "parcel 20200320/rosling/src/index.html --out-dir 20200320/rosling/dist"
   },
   "keywords": [],
   "author": "",
