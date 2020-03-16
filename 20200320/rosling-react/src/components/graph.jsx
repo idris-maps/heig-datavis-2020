@@ -10,10 +10,9 @@ import YearDisplay from './yearDisplay'
 
 export default () => {
   const [year, setYear] = useState(2019)
-  const [] = useState()
   return <>
-    <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} onClick={() => console.log('SVG')}>
-      <Circles year={year} onClick={v => console.log('C', v)}/>
+    <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`}>
+      <Circles year={year} />
       <YearDisplay year={year} />
       <Axis />
     </svg>

@@ -1,0 +1,6 @@
+{
+  "files.watcherExclude": {
+    "**/dist/**": true,
+    "examples_site/**": true
+  }
+}
