@@ -38,7 +38,7 @@ Nous avons 4 jeux de données:
 * [Population](https://docs.google.com/spreadsheets/d/18Ep3s1S0cvlT1ovQG9KdipLEoQ1Ktz5LtTTQpDcWbX0/export?format=xlsx)
 * [Régions](https://docs.google.com/spreadsheets/d/1qHalit8sXC0R8oVXibc2wa2gY7bkwGzOybEMTWp-08o/export?format=xlsx)
 
-Chacun de ces jeux de données représente une liste de pays avec des données par année. Ils ont tous une colonne `geo` avec le code en trois lettres [iso-3166-1-alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3). Nous allons utiliser cette colonne pour joindre les données. Toutes ces données sont fournies par [gapminder](https://www.gapminder.org/data/documentation/gd000/). Il rare qu'il soit aussi facile de joindre des séries de données. Nous avons de la chance.
+Chacun de ces jeux de données représente une liste de pays avec des données par année. Ils ont tous une colonne `geo` avec le code en trois lettres [iso-3166-1-alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3). Nous allons utiliser cette colonne pour joindre les données. Toutes ces données sont fournies par [gapminder](https://www.gapminder.org/data/documentation/gd000/). Il est rare qu'il soit aussi facile de joindre des séries de données. Nous avons de la chance.
 
 #### Télécharger les données
 
@@ -166,7 +166,7 @@ node xlsxToCsv population data-countries-etc-by-year > temp/population.csv
 node xlsxToCsv regions list-of-countries-etc > temp/regions.csv
 ```
 
-#### Conversion `csv` > `json`
+#### Qu'est ce que nous avons dans ces fichiers `csv`?
 
 Dans les fichiers `esperance_de_vie.csv` et `pnb_p_habitant.csv`, chaque ligne représente un pays. Nous avons:
 
@@ -200,6 +200,8 @@ Dans le fichier `regions.csv`, seul les colonnes `geo` et `name` et `six_regions
 | afg | Afghanistan | asia         | asia_west     | south_asia               | g77              | 33       | 66        | 19/11/1946      | South Asia                 | Low income                         |                                    | 
 | alb | Albania     | europe       | europe_east   | europe_central_asia      | others           | 41       | 20        | 14/12/1955      | Europe & Central Asia      | Upper middle income                |                                    | 
 | dza | Algeria     | africa       | africa_north  | middle_east_north_africa | g77              | 28       | 3         | 8/10/1962       | Middle East & North Africa | Upper middle income                |                                    | 
+
+#### Conversion `csv` > `json`
 
 Il nous faut trois scriptes différents pour convertir ces fichiers `csv` en `json`.
 
@@ -384,7 +386,7 @@ console.log(
 )
 ```
 
-Convertissons nos deux fichiers:
+Convertissons nos deux fichiers avec les commandes:
 
 ```bash
 node toJSON_year_columns esperance_de_vie > temp/esperance_de_vie.json
@@ -474,7 +476,7 @@ retourne
 Deux choses à faire pour avoir le format que nous souhaitons:
 
 * renommer `time` > `year` et `population` > `value`
-* changer les valeurs de `year` et `value` en nombre (ce sont actuellement de chaine de caractères)
+* changer les valeurs de `year` et `value` en nombre (ce sont actuellement des chaine de caractères)
 
 ```js
 const getDataByGeo = geo =>
@@ -504,7 +506,7 @@ retourne
 ]
 ```
 
-Parfait, il ne nous reste qu'à garder `geo` et mettre toutes ces valeurs sous la clé `pop` (pour population).
+Il ne nous reste qu'à garder `geo` et mettre toutes ces valeurs sous la clé `pop` (pour population).
 
 ```js
 const getDataByGeo = geo => ({
@@ -521,12 +523,7 @@ const getDataByGeo = geo => ({
 ```
 
 ```js
-console.{
-  geo: 'afg',
-  pop: [
-    { year: 1800, value: 3280000 },
-    { year: 1801, value: 3280000 },
-log(getDataByGeo(geos[0]))
+console.log(getDataByGeo(geos[0]))
 ```
 
 retourne
@@ -542,7 +539,7 @@ retourne
 }
 ```
 
-C'est ce que nous voulons. Appliquons `getDataByGeo` à tous les `geo`, transformons le tout en chaine de caractères avec `JSON.stringify` et envoyons la à la console avec `console.log`.
+C'est ce que nous voulons. Appliquons `getDataByGeo` à tous les `geos`, transformons le tout en chaine de caractères avec `JSON.stringify` et envoyons ça à la console avec `console.log`.
 
 ```js
 console.log(
@@ -556,4 +553,71 @@ Nous pouvons maintenant créer `population.json` avec la commande
 
 ```
 node toJSON_population > temp/population.json
+```
+
+##### `20200320/rosling_data/toJSON_regions.js`
+
+Le dernier, `regions.csv` est le plus facile, nous avons une ligne par pays. Et les valeurs qui nous intéressent sont l'identifiant `geo`, le nom du pays et la région `six_regions`.
+
+Ouvrons le fichier `csv` et transformons le en `json` avec `d3.parseCsv`.
+
+```js
+const d3 = require('d3')
+const fs = require('fs')
+
+const csv = fs.readFileSync(`${__dirname}/temp/regions.csv`, 'utf-8')
+const json = d3.csvParse(csv)
+```
+
+Voyons à quoi ressemble le premier élément de `json`.
+
+```js
+console.log(json[0])
+```
+
+retourne
+
+```js
+{
+  geo: 'afg',
+  name: 'Afghanistan',
+  four_regions: 'asia',
+  eight_regions: 'asia_west',
+  six_regions: 'south_asia',
+  members_oecd_g77: 'g77',
+  Latitude: '33',
+  Longitude: '66',
+  'UN member since': '19/11/1946',
+  'World bank region': 'South Asia',
+  'World bank, 4 income groups 2017': 'Low income',
+  'World bank, 3 income groups 2017': ''
+}
+```
+
+Une fonction pour garder les données qui nous intéressent.
+
+```js
+const getData = ({ geo, name, six_regions }) => ({
+  geo,
+  name,
+  region: six_regions,
+})
+```
+
+Appliquons la fonction sur tous les éléments de `json`, enlevons les `geo` avec une valeur de `''` et utilisons `console.log` et `JSON.stringify` comme avec les autres.
+
+```js
+console.log(
+  JSON.stringify(
+    json
+      .map(getData)
+      .filter(d => d.geo !== ''),
+  )
+)
+```
+
+Et pour créer `regions.json`:
+
+```
+node toJSON_regions > temp/regions.json
 ```
