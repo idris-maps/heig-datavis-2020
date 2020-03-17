@@ -192,7 +192,7 @@ Dans le fichier `population.csv` nous avons une ligne par pays et année:
 | afg | Afghanistan | 1801 | 3280000 |
 | afg | Afghanistan | 1802 | 3280000 |
 
-WTF
+Dans le fichier `regions.csv`, seul les colonnes `geo` et `name` et `six_regions` nous intéressent. Il y a une ligne par pays.
 
 
 | geo | name        | four_regions | eight_regions | six_regions              | members_oecd_g77 | Latitude | Longitude | UN member since | World bank region          | "World bank, 4 income groups 2017" | "World bank, 3 income groups 2017" |
