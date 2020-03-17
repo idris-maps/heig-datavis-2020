@@ -204,16 +204,14 @@ Dans le fichier `regions.csv`, seul les colonnes `geo` et `name` et `six_regions
 Il nous faut trois scriptes différents pour convertir ces fichiers `csv` en `json`.
 
 1. `20200320/rosling_data/toJSON_year_columns.js` pour `esperance_de_vie.csv` et `pnb_par habitant.csv`
-
-[explication]() [scripte]()
-
+  * [explication]()
+  * [scripte]()
 2. `20200320/rosling_data/toJSON_population.js` pour `population.csv`
-
-[explication]() [scripte]()
-
+  * [explication]()
+  * [scripte]()
 3. `20200320/rosling_data/toJSON_regions.js` pour `regions.csv`
-
-[explication]() [scripte]()
+  * [explication]()
+  * [scripte]()
 
 ##### `20200320/rosling_data/toJSON_year_columns.js`
 
