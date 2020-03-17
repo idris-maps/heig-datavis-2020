@@ -184,6 +184,14 @@ Dans les fichiers `esperance_de_vie.csv` et `pnb_p_habitant.csv`, chaque ligne r
 | Albania               | Life expectancy | alb       | lex       | 35.4  | 35.4  | 35.4  | 35.4  | 35.4  |
 | Algeria               | Life expectancy | dza       | lex       | 28.82 | 28.82 | 28.82 | 28.82 | 28.82 |
 
+test
+
+| geo | name | time | population |
+|-----|------|------|------------|
+| afg | Afghanistan | 1800 | 3280000 |
+| afg | Afghanistan | 1801 | 3280000 |
+| afg | Afghanistan | 1802 | 3280000 |
+
 Nous allons convertir chaque ligne en objet json comme suit:
 
 ```js
@@ -213,7 +221,7 @@ const csv = fs.readFileSync(__dirname + `/temp/${fileName}.csv`, 'utf-8')
 const jsonD3 = d3.csvParse(csv)
 ```
 
-`csvParse` est une fonction `d3` qui essaye de convertir un fichier `csv` en `json`, voyons à quoi ressemble les valeurs pour l'Afghanistan:
+[`csvParse`](https://github.com/d3/d3-dsv#api-reference) est une fonction `d3` qui essaye de convertir un fichier `csv` en `json`, voyons à quoi ressemble les valeurs pour l'Afghanistan:
 
 ```js
 console.log(jsonD3[1])
@@ -351,6 +359,16 @@ C'est ce que nous voulons, appliquons `fixJsonItem` à tous les éléments de `j
 
 ```js
 console.log(
-  jsonD3.map(fixJsonItem)
+  JSON.stringify(
+    jsonD3.map(fixJsonItem)
+  )
 )
+```
+
+Convertissons nos deux fichiers:
+
+```bash
+node toJSON_year_columns esperance_de_vie > temp/esperance_de_vie.json
+
+node toJSON_year_columns pnb_p_habitant > temp/pnb_p_habitant.json
 ```
