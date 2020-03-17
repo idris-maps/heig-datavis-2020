@@ -201,8 +201,23 @@ Dans le fichier `regions.csv`, seul les colonnes `geo` et `name` et `six_regions
 | alb | Albania     | europe       | europe_east   | europe_central_asia      | others           | 41       | 20        | 14/12/1955      | Europe & Central Asia      | Upper middle income                |                                    | 
 | dza | Algeria     | africa       | africa_north  | middle_east_north_africa | g77              | 28       | 3         | 8/10/1962       | Middle East & North Africa | Upper middle income                |                                    | 
 
+Il nous faut trois scriptes différents pour convertir ces fichiers `csv` en `json`.
 
-Nous allons convertir chaque ligne en objet json comme suit:
+1. `20200320/rosling_data/toJSON_year_columns.js` pour `esperance_de_vie.csv` et `pnb_par habitant.csv`
+
+[explication]() [scripte]()
+
+2. `20200320/rosling_data/toJSON_population.js` pour `population.csv`
+
+[explication]() [scripte]()
+
+3. `20200320/rosling_data/toJSON_regions.js` pour `regions.csv`
+
+[explication]() [scripte]()
+
+##### `20200320/rosling_data/toJSON_year_columns.js`
+
+Nous allons convertir chaque ligne en objet `json` comme suit:
 
 ```js
 {
@@ -214,10 +229,6 @@ Nous allons convertir chaque ligne en objet json comme suit:
   ]
 }
 ```
-
-Créons un scripte pour convertir ces fichiers où les années sont sous forme de colonnes:
-
-`20200320/rosling_data/toJSON_year_columns.js`
 
 ```js
 const fs = require('fs')
@@ -231,7 +242,7 @@ const csv = fs.readFileSync(__dirname + `/temp/${fileName}.csv`, 'utf-8')
 const jsonD3 = d3.csvParse(csv)
 ```
 
-[`csvParse`](https://github.com/d3/d3-dsv#api-reference) est une fonction `d3` qui essaye de convertir un fichier `csv` en `json`, voyons à quoi ressemble les valeurs pour l'Afghanistan:
+[`csvParse`](https://github.com/d3/d3-dsv#api-reference) est une fonction `d3` qui essaye de convertir au mieux un fichier `csv` en `json`, voyons à quoi ressemble les valeurs pour l'espérance de vie en Afghanistan (il n'y a pas de donnée pour le premier, l'Abkhasie):
 
 ```js
 console.log(jsonD3[1])
@@ -311,9 +322,9 @@ Créons une fonction qui va transformer chaque élément du JSON converti par D3
 const fixJsonItem = object => {
   // garder geo et indicator de l'object converti par d3
   const { geo, indicator } = object
-  // les années sont les clé qui sont aussi des nombres
+  // les années sont les clés qui sont aussi des nombres
   const years = Object.keys(object).filter(key => !isNaN(key))
-  // chaque objet au format qui nous intéresse
+
   return {
     geo, // l'identifiant pays
     // pour l'indicateur trouver la valeur pour chaque année
@@ -381,4 +392,170 @@ Convertissons nos deux fichiers:
 node toJSON_year_columns esperance_de_vie > temp/esperance_de_vie.json
 
 node toJSON_year_columns pnb_p_habitant > temp/pnb_p_habitant.json
+```
+
+##### `20200320/rosling_data/toJSON_population.js`
+
+Dans le fichier `population.csv`, nous avons une ligne par pays et année, contrairement aux deux fichiers précèdants où nous avions une ligne par pays et toutes les années en colonnes.
+
+Commençons par ouvrir le fichier `csv` et le transformer en `json` avec `d3.parseCsv`.
+
+```js
+const d3 = require('d3')
+const fs = require('fs')
+const R = require('ramda')
+
+const csv = fs.readFileSync(`${__dirname}/temp/population.csv`, 'utf-8')
+const json = d3.csvParse(csv)
+```
+
+Voyons à quoi ressemble le premier élément de `json`.
+
+```js
+console.log(json[0])
+```
+
+retourne:
+
+```js
+{
+  geo: 'afg',
+  name: 'Afghanistan',
+  time: '1800',
+  population: '3280000'
+}
+```
+
+Il nous faut tous les identifiants pays `geo`.
+
+```js
+const geos = R.uniq(json.map(R.prop('geo')))
+
+console.log(geos)
+```
+
+Un identifiant pays est `''`, enlevons le.
+
+```js
+const geos = R.uniq(json.map(R.prop('geo'))).filter(d => d !== '')
+```
+
+Il nous faut une fonction qui récupère tous les éléments liés à un identifiant pays.
+
+```js
+const getDataByGeo = geo =>
+  json.filter(d => d.geo === geo)
+```
+
+Essayons avec le premier `geo`.
+
+```js
+console.log(getDataByGeo(geos[0]))
+```
+
+retourne
+
+```js
+[
+  {
+    geo: 'afg',
+    name: 'Afghanistan',
+    time: '1800',
+    population: '3280000'
+  },
+  {
+    geo: 'afg',
+    name: 'Afghanistan',
+    time: '1801',
+    population: '3280000'
+  },
+  // ...
+]
+```
+
+Deux choses à faire pour avoir le format que nous souhaitons:
+
+* renommer `time` > `year` et `population` > `value`
+* changer les valeurs de `year` et `value` en nombre (ce sont actuellement de chaine de caractères)
+
+```js
+const getDataByGeo = geo =>
+  json
+    // prendre tous les élément liés à ce "geo"
+    .filter(d => d.geo === geo)
+    // renommer les clés et transformer les valeurs en nombre
+    .map(d => ({
+      year: Number(d.time),
+      value: Number(d.population)
+    }))
+```
+
+Maintenant
+
+```js
+console.log(getDataByGeo(geos[0]))
+```
+
+retourne
+
+```js
+[
+  { year: 1800, value: 3280000 },
+  { year: 1801, value: 3280000 },
+  // ...
+]
+```
+
+Parfait, il ne nous reste qu'à garder `geo` et mettre toutes ces valeurs sous la clé `pop` (pour population).
+
+```js
+const getDataByGeo = geo => ({
+  geo,
+  pop: json
+    // prendre tous les élément liés à ce "geo"
+    .filter(d => d.geo === geo)
+    // renommer les clés et transformer les valeurs en nombre
+    .map(d => ({
+      year: Number(d.time),
+      value: Number(d.population)
+    }))
+})
+```
+
+```js
+console.{
+  geo: 'afg',
+  pop: [
+    { year: 1800, value: 3280000 },
+    { year: 1801, value: 3280000 },
+log(getDataByGeo(geos[0]))
+```
+
+retourne
+
+```js
+{
+  geo: 'afg',
+  pop: [
+    { year: 1800, value: 3280000 },
+    { year: 1801, value: 3280000 },
+    // ...
+  ]
+}
+```
+
+C'est ce que nous voulons. Appliquons `getDataByGeo` à tous les `geo`, transformons le tout en chaine de caractères avec `JSON.stringify` et envoyons la à la console avec `console.log`.
+
+```js
+console.log(
+  JSON.stringify(
+    geos.map(getDataByGeo)
+  )
+)
+```
+
+Nous pouvons maintenant créer `population.json` avec la commande
+
+```
+node toJSON_population > temp/population.json
 ```
