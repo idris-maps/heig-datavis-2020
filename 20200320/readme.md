@@ -20,6 +20,17 @@ Dans les graphiques que nous avons créé jusqu'ici (bâtons, camemberts...), un
 
 ### Les données
 
+---
+
+# :question:
+
+Fichier: `questions/rosling_donnees.md`
+
+1. Pourquoi créer un scripte pour télécharger et transformer les données?
+2. Dans un scripte `nodejs`, comment peut-on lire les arguments d'une commande?
+
+---
+
 Nous avons 4 jeux de données:
 
 * [Espérance de vie](https://raw.githubusercontent.com/Gapminder-Indicators/lex/master/lex-by-gapminder.xlsx)
@@ -28,13 +39,6 @@ Nous avons 4 jeux de données:
 * [Régions](https://docs.google.com/spreadsheets/d/1qHalit8sXC0R8oVXibc2wa2gY7bkwGzOybEMTWp-08o/export?format=xlsx)
 
 Chacun de ces jeux de données représente une liste de pays avec des données par année. Ils ont tous une colonne `geo` avec le code en trois lettres [iso-3166-1-alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3). Nous allons utiliser cette colonne pour joindre les données. Toutes ces données sont fournies par [gapminder](https://www.gapminder.org/data/documentation/gd000/). Il rare qu'il soit aussi facile de joindre des séries de données. Nous avons de la chance.
-
----
-# :question:
-
-* one
-* two
----
 
 #### Télécharger les données
 
@@ -76,7 +80,9 @@ Nous devons passer le chemin vers le fichier pour qu'il puisse être lu. Puis la
 
 Nous pourrions créer un scripte pour chaque jeu de données. Pour ne pas nous répéter nous allons en créer un seul auquel nous pouvons passer le chemin vers le fichier et le nom de la feuille.
 
-##### Lire les arguments de la console dans un script `nodejs`
+---
+
+### :point_up: Lire les arguments de la console dans un script `nodejs`
 
 Imaginons un scripte `20200320/lire_argv.js` comme ceci:
 
@@ -121,7 +127,9 @@ La console retourne:
 
 Nous voyons que nous pouvons passer des informations au script tout simplement en les ajoutant à la commande.
 
-Revenons à nos données. Pour chaque fichier nous allons passer le nom du fichier et la feuille au scripte qui va convertir les `xlsx` en `csv`.
+---
+
+Revenons à nos données. Pour chaque fichier nous allons passer le nom du fichier et la "feuille" au scripte qui va convertir les `xlsx` en `csv`.
 
 Créons un scripte `20200320/rosling_data/xslxToCsv.js`:
 
