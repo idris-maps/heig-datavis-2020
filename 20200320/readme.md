@@ -6,7 +6,7 @@
 
 [![Hans Rosling's 200 Countries, 200 Years, 4 Minutes](https://img.youtube.com/vi/jbkSRLYSojo/0.jpg)](https://www.youtube.com/watch?v=jbkSRLYSojo)
 
-Le [graphique] que nous allons reproduire.
+Le [graphique](https://www.gapminder.org/tools/#$chart-type=bubbles) que nous allons reproduire.
 
 ![Graphique gapminder](images/gapminder.png)
 
@@ -22,12 +22,15 @@ Dans les graphiques que nous avons créé jusqu'ici (bâtons, camemberts...), un
 
 Nous avons 4 jeux de données:
 
-* [espérance de vie](https://raw.githubusercontent.com/Gapminder-Indicators/lex/master/lex-by-gapminder.xlsx)
+* [Espérance de vie](https://raw.githubusercontent.com/Gapminder-Indicators/lex/master/lex-by-gapminder.xlsx)
 * [PNB par habitant](https://raw.githubusercontent.com/Gapminder-Indicators/gdppc_cppp/master/gdppc_cppp-by-gapminder.xlsx)
 * [Population](https://docs.google.com/spreadsheets/d/18Ep3s1S0cvlT1ovQG9KdipLEoQ1Ktz5LtTTQpDcWbX0/export?format=xlsx)
 * [Régions](https://docs.google.com/spreadsheets/d/1qHalit8sXC0R8oVXibc2wa2gY7bkwGzOybEMTWp-08o/export?format=xlsx)
 
 Chacun de ces jeux de données représente une liste de pays avec des données par année. Ils ont tous une colonne `geo` avec le code en trois lettres [iso-3166-1-alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3). Nous allons utiliser cette colonne pour joindre les données. Toutes ces données sont fournies par [gapminder](https://www.gapminder.org/data/documentation/gd000/). Il rare qu'il soit aussi facile de joindre des séries de données. Nous avons de la chance.
+
+✍ **test**
+
 
 #### Télécharger les données
 
@@ -92,7 +95,7 @@ La console retourne:
 ]
 ```
 
-C'est un tableau de chaines de charactères. Le premier élément est où le programme `node` est installé, le deuxième est le chemin vers le scripte.
+C'est un tableau de chaines de caractères. Le premier élément est où le programme `node` est installé, le deuxième est le chemin vers le scripte.
 
 Essayons maintenant d'ajouter des arguments:
 
@@ -116,7 +119,7 @@ Nous voyons que nous pouvons passer des informations au script tout simplement e
 
 Revenons à nos données. Pour chaque fichier nous allons passer le nom du fichier et la feuille au scripte qui va convertir les `xlsx` en `csv`.
 
-Créeons un scripte `20200320/rosling_data/xslxToCsv.js`:
+Créons un scripte `20200320/rosling_data/xslxToCsv.js`:
 
 ```js
 const xlsx = require('xlsx')
