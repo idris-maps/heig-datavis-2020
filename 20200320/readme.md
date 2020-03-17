@@ -184,13 +184,23 @@ Dans les fichiers `esperance_de_vie.csv` et `pnb_p_habitant.csv`, chaque ligne r
 | Albania               | Life expectancy | alb       | lex       | 35.4  | 35.4  | 35.4  | 35.4  | 35.4  |
 | Algeria               | Life expectancy | dza       | lex       | 28.82 | 28.82 | 28.82 | 28.82 | 28.82 |
 
-test
+Dans le fichier `population.csv` nous avons une ligne par pays et année:
 
 | geo | name | time | population |
 |-----|------|------|------------|
 | afg | Afghanistan | 1800 | 3280000 |
 | afg | Afghanistan | 1801 | 3280000 |
 | afg | Afghanistan | 1802 | 3280000 |
+
+WTF
+
+
+| geo | name        | four_regions | eight_regions | six_regions              | members_oecd_g77 | Latitude | Longitude | UN member since | World bank region          | "World bank, 4 income groups 2017" | "World bank, 3 income groups 2017" |
+|-----|-------------|--------------|---------------|--------------------------|------------------|----------|-----------|-----------------|----------------------------|------------------------------------|------------------------------------|
+| afg | Afghanistan | asia         | asia_west     | south_asia               | g77              | 33       | 66        | 19/11/1946      | South Asia                 | Low income                         |                                    | 
+| alb | Albania     | europe       | europe_east   | europe_central_asia      | others           | 41       | 20        | 14/12/1955      | Europe & Central Asia      | Upper middle income                |                                    | 
+| dza | Algeria     | africa       | africa_north  | middle_east_north_africa | g77              | 28       | 3         | 8/10/1962       | Middle East & North Africa | Upper middle income                |                                    | 
+
 
 Nous allons convertir chaque ligne en objet json comme suit:
 
