@@ -183,3 +183,174 @@ Dans les fichiers `esperance_de_vie.csv` et `pnb_p_habitant.csv`, chaque ligne r
 | Akrotiri and Dhekelia | Life expectancy | akr_a_dhe | lex       |       |       |       |       |       |
 | Albania               | Life expectancy | alb       | lex       | 35.4  | 35.4  | 35.4  | 35.4  | 35.4  |
 | Algeria               | Life expectancy | dza       | lex       | 28.82 | 28.82 | 28.82 | 28.82 | 28.82 |
+
+Nous allons convertir chaque ligne en objet json comme suit:
+
+```js
+{
+  "geo": "afg", // l'identifiant pays
+  "lex": [ // les valeurs par année de l'indicateur
+    { "year": 1800, "value": 28.21 },
+    { "year": 1801, "value": 28.2 },
+    // ...
+  ]
+}
+```
+
+Créons un scripte pour convertir ces fichiers où les années sont sous forme de colonnes:
+
+`20200320/rosling_data/toJSON_year_columns.js`
+
+```js
+const fs = require('fs')
+const d3 = require('d3')
+
+// le nom de fichier passé en argument de la console
+const fileName = process.argv[2]
+// ouvrir le fichier csv
+const csv = fs.readFileSync(__dirname + `/temp/${fileName}.csv`, 'utf-8')
+// convertir en json avec csvParse de d3
+const jsonD3 = d3.csvParse(csv)
+```
+
+`csvParse` est une fonction `d3` qui essaye de convertir un fichier `csv` en `json`, voyons à quoi ressemble les valeurs pour l'Afghanistan:
+
+```js
+console.log(jsonD3[1])
+```
+
+retourne
+
+```js
+{
+  'geo.name': 'Afghanistan',
+  'indicator.name': 'Life expectancy',
+  geo: 'afg',
+  indicator: 'lex',
+  '1800': '28.21',
+  '1801': '28.2',
+  '1802': '28.19',
+  // ...
+}
+```
+
+Nous avons `geo` et `indicator`, il nous faut convertir les années de
+
+```js
+{
+  '1800': '28.21',
+  '1801': '28.2',
+  // ... 
+}
+```
+
+à
+
+```js
+{
+  lex: [
+    { "year": 1800, "value": 28.21 },
+    { "year": 1801, "value": 28.2 },
+    // ...
+  ]
+}
+```
+
+Utilisons [`Object.keys`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) pour avoir les clés de l'objet Afghanistan:
+
+```js
+console.log(Object.keys(jsonD3[1]))
+```
+
+retourne:
+
+```js
+[
+  'geo.name',
+  'indicator.name',
+  'geo',
+  'indicator',
+  '1800',
+  '1801',
+  // ...
+]
+```
+
+Seuls les années nous intéressent, c'est à dire les clés qui sont des nombres. Utilisons [`isNaN`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN) (is Not a Number) qui retourne `false` si c'est un nombre, `true` si c'en est pas un. 
+
+```js
+console.log(
+  Object.keys(jsonD3[1])
+    .filter(key => !isNaN(Number(key)))
+)
+```
+
+ne retourne que les années.
+
+Créons une fonction qui va transformer chaque élément du JSON converti par D3 en ce que nous souhaitons avoir.
+
+```js
+const fixJsonItem = object => {
+  // garder geo et indicator de l'object converti par d3
+  const { geo, indicator } = object
+  // les années sont les clé qui sont aussi des nombres
+  const years = Object.keys(object).filter(key => !isNaN(key))
+  // chaque objet au format qui nous intéresse
+  return {
+    geo, // l'identifiant pays
+    // pour l'indicateur trouver la valeur pour chaque année
+    [indicator]: years
+      .map(year => ({
+        year: Number(year),
+        value: Number(object[year]),
+      }))
+      // enlevons les élément où la valeur est 0
+      .filter(({ value }) => value !== 0)
+  }
+}
+```
+
+---
+
+### :point_up: définir une clé avec `[]`
+
+Nous pouvons définir une clé d'un objet javascript en l'entourant de `[]`. Par example.
+
+```js
+const key = 'ma_clé'
+
+const object = { [key]: 1 }
+
+console.log(object) // { "ma_clé": 1 }
+```
+
+C'est ce que nous faisons avec `[indicator]` dans `fixJsonItem`
+
+---
+
+Utilisons `fixJsonItem` avec les données pour l'Afghanistan:
+
+```js
+console.log(fixJsonItem(jsonD3[1]))
+```
+
+retourne
+
+```js
+{
+  geo: 'afg',
+  lex: [
+    { year: 1800, value: 28.21 },
+    { year: 1801, value: 28.2 },
+    // ...
+  ]
+}
+```
+
+C'est ce que nous voulons, appliquons `fixJsonItem` à tous les éléments de `jsonD3` et transformons le résultat en chaine de caractères pour pouvoir le sauver dans un fichier.
+
+```js
+console.log(
+  jsonD3.map(fixJsonItem)
+)
+```
