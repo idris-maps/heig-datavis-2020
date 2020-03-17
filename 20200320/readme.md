@@ -46,17 +46,19 @@ Nous utilisons [curl](https://curl.haxx.se/) pour télécharger les données dan
 
 ```bash
 curl https://raw.githubusercontent.com/Gapminder-Indicators/lex/master/lex-by-gapminder.xlsx \
-> rosling_data/temp/esperance_de_vie.xlsx
+> temp/esperance_de_vie.xlsx
 
 curl https://raw.githubusercontent.com/Gapminder-Indicators/gdppc_cppp/master/gdppc_cppp-by-gapminder.xlsx \
-> rosling_data/temp/pnb_p_habitant.xlsx
+> temp/pnb_p_habitant.xlsx
 
 curl https://docs.google.com/spreadsheets/d/18Ep3s1S0cvlT1ovQG9KdipLEoQ1Ktz5LtTTQpDcWbX0/export?format=xlsx \
-> rosling_data/temp/population.xlsx
+> temp/population.xlsx
 
 curl https://docs.google.com/spreadsheets/d/1qHalit8sXC0R8oVXibc2wa2gY7bkwGzOybEMTWp-08o/export?format=xlsx \
-> rosling_data/temp/regions.xlsx
+> temp/regions.xlsx
 ```
+
+#### Conversion `xlsx` > `csv`
 
 Tous les fichiers sont au format `xlsx`. En parlant de différents formats de données lors du [cours du 28 Février](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200228#formats), j'ai dit que la manière la plus facile de traiter ce type de fichier est de copier-coller la partie qui vous intéresse dans un fichier `csv`. Le problème avec toutes les manipulations manuelles est qu'on ne se souvient pas toujours de ce qu'on a fait. Et même si nous avons pris note de la procédure, nous devons répéter ces gestes à chaque fois que nous souhaitons mettre à jour ces données. 
 
@@ -151,16 +153,33 @@ console.log(xlsx.utils.sheet_to_csv(xlsxFile.Sheets[sheet]))
 Nous pouvons maintenant utiliser ce même scripte pour convertir les quatre fichiers en utilisant ce format:
 
 ```bash
-node data/xlsxToCsv NOM_DU_FICHIER NOM_DE_LA_FEUILLE > FICHIER_CSV
+node xlsxToCsv NOM_DU_FICHIER NOM_DE_LA_FEUILLE > FICHIER_CSV
 ```
 
 ```bash
-node data/xlsxToCsv esperance_de_vie countries_and_territories > data/temp/esperance_de_vie.csv
+node xlsxToCsv esperance_de_vie countries_and_territories > temp/esperance_de_vie.csv
 
-node data/xlsxToCsv pnb_p_habitant countries_and_territories > data/temp/pnb_p_habitant.csv
+node xlsxToCsv pnb_p_habitant countries_and_territories > temp/pnb_p_habitant.csv
 
-node data/xlsxToCsv population data-countries-etc-by-year > data/temp/population.csv
+node xlsxToCsv population data-countries-etc-by-year > temp/population.csv
 
-node data/xlsxToCsv regions list-of-countries-etc > data/temp/regions.csv
+node xlsxToCsv regions list-of-countries-etc > temp/regions.csv
 ```
 
+#### Conversion `csv` > `json`
+
+Dans les fichiers `esperance_de_vie.csv` et `pnb_p_habitant.csv`, chaque ligne représente un pays. Nous avons:
+
+* `geo.name`, le nom du pays
+* `indicator.name` la description de l'indicateur
+* `geo` le code pays
+* `indicator` le code indicateur
+* `1800`, `1801`, `1802` ... les valeurs par année
+
+| geo.name              | indicator.name  | geo       | indicator | 1800  | 1801  | 1802  | 1803  | 1804  |
+|-----------------------|-----------------|-----------|-----------|-------|-------|-------|-------|-------|
+| Abkhazia              | Life expectancy | abkh      | lex       |       |       |       |       |       |
+| Afghanistan           | Life expectancy | afg       | lex       | 28.21 | 28.2  | 28.19 | 28.18 | 28.17 |
+| Akrotiri and Dhekelia | Life expectancy | akr_a_dhe | lex       |       |       |       |       |       |
+| Albania               | Life expectancy | alb       | lex       | 35.4  | 35.4  | 35.4  | 35.4  | 35.4  |
+| Algeria               | Life expectancy | dza       | lex       | 28.82 | 28.82 | 28.82 | 28.82 | 28.82 |
