@@ -9,15 +9,15 @@ const csv = fs.readFileSync(__dirname + `/temp/${fileName}.csv`, 'utf-8')
 const jsonD3 = d3.csvParse(csv)
 
 const fixJsonItem = object => {
-  // garder geo et indicator de l'object converti par d3
-  const { geo, indicator } = object
+  // garder geo de l'object converti par d3
+  const { geo } = object
   // les années sont les clé qui sont aussi des nombres
   const years = Object.keys(object).filter(key => !isNaN(key))
   // chaque objet au format qui nous intéresse
   return {
     geo, // l'identifiant pays
-    // pour l'indicateur trouver la valeur pour chaque année
-    [indicator]: years
+    // trouver la valeur pour chaque année
+    data: years
       .map(year => ({
         year: Number(year),
         value: Number(object[year]),

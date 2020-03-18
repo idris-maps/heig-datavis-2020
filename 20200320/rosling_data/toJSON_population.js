@@ -11,7 +11,7 @@ const geos = R.uniq(json.map(d => d.geo)).filter(d => d !== '')
 // une fonction pour cherchers les données par "geo"
 const getDataByGeo = geo => ({
   geo,
-  pop: json
+  data: json
     // prendre tous les élément liés à ce "geo"
     .filter(d => d.geo === geo)
     // renommer les clés et transformer les valeurs en nombre

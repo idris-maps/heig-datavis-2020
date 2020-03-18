@@ -1,50 +1,56 @@
 const R = require('ramda')
+
+// les données par pays
 const regions = require('./temp/regions.json')
 const pop = require('./temp/population.json')
 const lex = require('./temp/esperance_de_vie.json')
-const gdp = require('./temp/pnb_p_habitant.json')
+const gdppc_cppp = require('./temp/pnb_p_habitant.json')
 
+
+const getValueByGeoAndYear = 
+/*
+// renommer la clé gdppc_cppp > gdp
+const gdp = gdp_1.map(({ geo, gdppc_cppp }) => ({ geo, gdp: gdppc_cppp }))
+
+// une fonction pour chercher toutes les données par geo
 const getData = geo => ({
   pop: R.propOr([], 'pop', pop.find(R.propEq('geo', geo))),
   lex: R.propOr([], 'lex', lex.find(R.propEq('geo', geo))),
   gdp: R.propOr([], 'gdp', gdp.find(R.propEq('geo', geo))),
 })
-const withData = regions.map(d => ({
+
+// les pays avec toutes les données
+const countriesWithData = regions.map(d => ({
   ...d,
   ...getData(d.geo),
 }))
 
+// toutes les années de 1800 à 2020
+const years = R.range(1800, 2020)
 
-const allYears = Array.from(Array(220)).map((d, i) => i + 1800)
+countriesWithData.map(({ geo, lex, pop, gdp }) => ({
+  geo,
+  data: years.map(year => ([
+    year,
+
+  ]))
+}))
+
+
+// une fonction pour voir si un pays a toutes les valeurs par année pour une clé "key"
 const hasAllYearsOf = (key, d) =>
   allYears.every(year => R.prop(key, d).map(R.prop('year')).includes(year))
+
+// une fonction pour voir si un pays a toutes les valeurs
 const hasAllYears = d =>
   hasAllYearsOf('pop', d)
   && hasAllYearsOf('lex', d)
   && hasAllYearsOf('gdp', d)
-const withAllYears = withData.filter(hasAllYears)
 
-const getDataForYearByKey = (key, country, year) =>
-  R.prop('value', R.prop(key, country).find(d => d.year === year))
-const getDataForYear = country => year => ([
-  year,
-  getDataForYearByKey('gdp', country, year),
-  getDataForYearByKey('lex', country, year),
-  getDataForYearByKey('pop', country, year),
-])
-const compress = country => R.omit(['pop', 'lex', 'gdp'], {
-  ...country,
-  data: allYears.map(getDataForYear(country))
-})
+// les pays qui ont toutes les données
+const countriesWithAllYears = countriesWithData.filter(hasAllYears)
 
 console.log(
-`
-const data = [
-${withAllYears.map(compress).map(d => JSON.stringify(d)).join(',\n')}
-]
-
-export default data
-`
+  JSON.stringify(countriesWithAllYears)
 )
-
-
+*/
