@@ -165,7 +165,7 @@ export const yScale = scaleLinear().domain([20, 85]).range([GRAPH_HEIGHT, 0])
 export const rScale = scalePow().domain([25000, 1000000000]).range([2, 40])
 ```
 
-Les échelles `scaleLinear`, `scaleLog` et `scalePow` sont importées de `d3` et la largeur et hauteur sont importés de `config.js` créé plus haut.
+Les échelles [`scaleLinear`, `scaleLog` et `scalePow`](https://github.com/d3/d3-scale) sont importées de `d3` et la largeur et hauteur sont importés de `config.js` créé plus haut.
 
 Pendant que nous y sommes, ajoutons une fonction qui retourne une couleur en fonction de la région.
 
@@ -192,7 +192,7 @@ Dans `index.js`
 import data from '../../data/data.json'
 ```
 
-Nous allons utiliser `select` de `d3` pour séléctionner la `<div id="graph">`, y ajouter un `<svg>` avec les dimension définies dans `config.js`. Au SVG nous ajoutons un groupe, `<g>`, dans lequel nous créons un élément `<circle>` pour chaque pays dans `data`.
+Nous allons utiliser [`select`](https://github.com/d3/d3-selection) de `d3` pour séléctionner la `<div id="graph">`, y ajouter un `<svg>` avec les dimension définies dans `config.js`. Au SVG nous ajoutons un groupe, `<g>`, dans lequel nous créons un élément `<circle>` pour chaque pays dans `data`.
 
 ```js
 import data from '../../data/data.json'
@@ -361,7 +361,7 @@ const onYearChange = year => {
 
 ### Afficher les axes
 
-Comme décrit dans le [cours sur les axes d3](https://observablehq.com/@idris-maps/d3-definir-les-axes), nous allons utiliser les fonctions `axisBottom` et `axisLeft` pour générer les axes. Nous allons les définir dans `elements.js`. 
+Comme décrit dans le [cours sur les axes d3](https://observablehq.com/@idris-maps/d3-definir-les-axes), nous allons utiliser les fonctions `d3` [`axisBottom` et `axisLeft`](https://github.com/d3/d3-axis) pour générer les axes. Définissons-les dans `elements.js`. 
 
 ```js
 const axisGroup = svg.append('g').attr('class', 'axis')
@@ -457,9 +457,9 @@ bubbles.on('mouseover', function(d) {
 })
 ```
 
-Quand la souris passe par dessus une bulle, son contour devient noir plutôt que la couleur de la région. Nous avons encore utilisé `this`, cette fois pour séléctionner la bulle pour rendre pour lui donner un `stroke` noir.
+Quand la souris passe par dessus une bulle, son contour devient noir plutôt que la couleur de la région. Nous avons encore utilisé `this`, cette fois pour séléctionner la bulle pour lui donner un `stroke` noir.
 
-Nous avons un problème de plus, chaque bulle sur laquelle nous sommes passé a maintenant un contour noir. Pour le résoudre, ainsi que le problème 1 plus haut, il nous faut ajouter un événement quand la souris n'est plus au dessus de la bulle.
+Nous avons un problème de plus, chaque bulle sur laquelle nous sommes passés a maintenant un contour noir. Pour le résoudre, ainsi que le problème 1 plus haut, il nous faut ajouter un événement quand la souris n'est plus au dessus de la bulle.
 
 ```js
 bubbles.on('mouseout', function() {
@@ -482,7 +482,7 @@ bubbles.on('mousemove', function() {
 })
 ```
 
-Quand la souris bouge, nous dépaçons `countryDisplay`.
+Quand la souris bouge, nous déplaçons `countryDisplay`.
 
 ---
 

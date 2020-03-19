@@ -57,7 +57,7 @@ Nous pourrions créer un scripte pour chaque jeu de données. Pour ne pas nous r
 
 ### :point_up: Lire les arguments de la console dans un script `nodejs`
 
-Imaginons un scripte `20200320/lire_argv.js` comme ceci:
+Imaginons un scripte `modules/rosling/data/lire_argv.js` comme ceci:
 
 ```js
 console.log(process.argv)
@@ -104,7 +104,7 @@ Nous voyons que nous pouvons passer des informations au scripte tout simplement 
 
 Revenons à nos données. Pour chaque fichier nous allons passer le nom du fichier et la "feuille" au scripte qui va convertir les `xlsx` en `csv`.
 
-Créons un scripte `20200320/rosling_data/xslxToCsv.js`:
+Créons un scripte `modules/rosling/data/xslxToCsv.js`:
 
 ```js
 const xlsx = require('xlsx')
@@ -164,7 +164,7 @@ Dans le fichier `population.csv` nous avons une ligne par pays et année:
 | afg | Afghanistan | 1801 | 3280000 |
 | afg | Afghanistan | 1802 | 3280000 |
 
-Dans le fichier `regions.csv`, seuls les colonnes `geo` et `name` et `six_regions` nous intéressent. Il y a une ligne par pays.
+Dans le fichier `regions.csv`, seules les colonnes `geo` et `name` et `six_regions` nous intéressent. Il y a une ligne par pays.
 
 
 | geo | name        | four_regions | eight_regions | six_regions              | members_oecd_g77 | Latitude | Longitude | UN member since | World bank region          | "World bank, 4 income groups 2017" | "World bank, 3 income groups 2017" |
@@ -179,13 +179,13 @@ Tous les jeux de données ont une colonne `geo` avec le code en trois lettres [i
 
 Commençons par convertir chaque `csv` en `json`. Il nous faut trois scriptes différents:
 
-1. `20200320/rosling_data/toJSON_year_columns.js` pour `esperance_de_vie.csv` et `pnb_par habitant.csv`
+1. `modules/rosling/data/toJSON_year_columns.js` pour `esperance_de_vie.csv` et `pnb_par habitant.csv`
   * [explication]()
   * [scripte]()
-2. `20200320/rosling_data/toJSON_population.js` pour `population.csv`
+2. `modules/rosling/data/toJSON_population.js` pour `population.csv`
   * [explication]()
   * [scripte]()
-3. `20200320/rosling_data/toJSON_regions.js` pour `regions.csv`
+3. `modules/rosling/data/toJSON_regions.js` pour `regions.csv`
   * [explication]()
   * [scripte]()
 
@@ -217,7 +217,7 @@ const years = R.range(1800, 2021)
 
 ---
 
-### `20200320/rosling_data/toJSON_year_columns.js`
+### `modules/rosling/data/toJSON_year_columns.js`
 
 Pour `esperance_de_vie.csv` et `pnb_par habitant.csv`, nous allons convertir chaque ligne en objet `json` comme suit:
 
@@ -325,7 +325,7 @@ node toJSON_year_columns esperance_de_vie > temp/esperance_de_vie.json
 node toJSON_year_columns pnb_p_habitant > temp/pnb_p_habitant.json
 ```
 
-### `20200320/rosling_data/toJSON_population.js`
+### `modules/rosling/data/toJSON_population.js`
 
 Dans le fichier `population.csv`, nous avons une ligne par pays et année, contrairement aux deux fichiers précèdants où nous avions une ligne par pays et toutes les années en colonnes.
 
@@ -440,7 +440,7 @@ Le fichier `population.json` est créé avec la commande:
 node toJSON_population > temp/population.json
 ```
 
-### `20200320/rosling_data/toJSON_regions.js`
+### `modules/rosling/data/toJSON_regions.js`
 
 Le dernier, `regions.csv` est le plus facile, nous avons une ligne par pays. Et les valeurs qui nous intéressent sont l'identifiant `geo`, le nom du pays et la région `six_regions`.
 
@@ -526,7 +526,7 @@ Prenons le fichier `regions.json` comme point de départ. Le premier élément r
 
 Pour chacun des autres fichiers nous allons chercher l'élément qui correspond à cet identifiant pays, `geo`.
 
-Chargeons toutes les données dans le scripte `20200320/rosling_data/joinData.js`
+Chargeons toutes les données dans le scripte `modules/rosling/data/joinData.js`
 
 ```js
 const R = require('ramda')

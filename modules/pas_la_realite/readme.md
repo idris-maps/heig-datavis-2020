@@ -4,7 +4,9 @@ Toute visualisation est une abstraction. Quand nous nous créons une visualisati
 
 ## Mentir avec un graphique
 
-Dans son livre [How charts lie](http://albertocairo.com/wp-content/uploads/2019/07/How-Charts-Lie-cover_high.jpg), le journaliste [Alberto Cairo](http://albertocairo.com/) démontre différentes manières de mentir avec un graphique.
+Dans son livre [How charts lie](http://www.thefunctionalart.com/2019/10/how-charts-lie-few-corrections.html), le journaliste [Alberto Cairo](http://albertocairo.com/) démontre différentes manières de mentir avec un graphique.
+
+![How charts lie - Alberto Cairo](http://albertocairo.com/wp-content/uploads/2019/07/How-Charts-Lie-cover_high.jpg)
 
 ### Mentir en visualisant
 
@@ -38,7 +40,7 @@ La version corrigée ne donne pas la même impression de succès.
 
 Cairo cite un [article de la BBC](https://www.bbc.com/news/business-43156286), selon lequel les femmes gagnent 43% de moins que les hommes à la banque Barclays. Le chiffre n'est pas un mensonge en soit. Mais le sous-entendu que cette différence est uniquement due au sexe est erroné.
 
-Le répartions des employés en catégories salariale et par sexe.
+Le répartions des employés en catégories salariales et par sexe.
 
 ![Employés de Barclays](images/barclays.png)
 
@@ -88,7 +90,7 @@ Sur une population de 1 million d'enfants, 990'000 sont vaccinés, 10'000 ne le 
 
 Dans le conte [Del rigor en la ciencia](https://es.wikipedia.org/wiki/Del_rigor_en_la_ciencia), le poète argentin [Jorge Luis Borges](https://fr.wikipedia.org/wiki/Jorge_Luis_Borges), raconte l'histoire d'un empire qui créa une carte de son territoire à l'échelle 1:1 pour pouvoir représenter tout ce qui s'y trouve. Quelques fragments sont encore visibles dans le désert...
 
-La cartographie, encore plus que les autres formes de visualisations, est l'art de choisir de représenter une séléction de la réalité.
+Une carte représentant absoluement tout, ne sert à rien. La cartographie, encore plus que les autres formes de visualisations, est l'art de choisir de représenter une séléction de la réalité.
 
 Ceci est une carte du parcours de chez moi à la HEIG.
 
