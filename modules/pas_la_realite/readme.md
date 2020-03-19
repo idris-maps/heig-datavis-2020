@@ -1,6 +1,6 @@
 # Une visualisation n'est pas la réalité
 
-Toute visualisation est une abstraction. Quand nous nous créons un graphique, nous montrons une version subjective de la réalité.
+Toute visualisation est une abstraction. Quand nous nous créons une visualisation, nous montrons une version subjective de la réalité.
 
 ## Mentir avec un graphique
 
@@ -24,7 +24,7 @@ Quelle que soit la raison pour la baisse de prévention du cancer, elle peut dif
 
 #### Graphiques en 3D
 
-Les graphiques en trois dimension sont rarement une bonne idée. À moins que le but soit d'embrouiller le lecteur. Un cas de figure imaginé par Cairo est un rapport annuel dans lequel une entreprise fictive souhaite montrer des résultats plus positifs qu'ils le sont vraiment.
+Les graphiques en trois dimension sont rarement une bonne idée. À moins que le but soit d'embrouiller le lecteur. Un cas de figure imaginé par Cairo est un rapport annuel dans lequel une entreprise fictive souhaite montrer des résultats plus positifs qu'ils ne le sont vraiment.
 
 ![Ventes en 3D](images/3d_3.png)
 
@@ -68,7 +68,7 @@ Pour contrer le graphique au-dessus, un partisan démocrate a créé un graphiqu
 
 ![Abonnements porno et vote](images/porn_politics_3.png)
 
-Cette fois la consomation de pornographie n'est plus représentées par le nombre de pages vues sur PornHub mais par le nombre d'abonnements à des sites pornographiques payants par état.
+Cette fois la consomation de pornographie n'est plus représentée par le nombre de pages vues sur PornHub mais par le nombre d'abonnements à des sites pornographiques payants par état.
 
 Mis à part le côté puéril d'essayer de discréditer ses adversaires en fonction de leur consommation supposée de pornographie, la morale est qu'en choisissant bien vos données, vous pouvez faire dire ce que vous voulez à un graphique.
 
@@ -96,6 +96,4 @@ Ceci est une carte du parcours de chez moi à la HEIG.
 
 Ne pouvant pas représenter chaque bâtiment, chaque champs, chaque arbre... que je passe en chemin, j'ai choisi de ne montrer que les moyens de transports et les lieux où je passe d'un moyen de transport à un autre. Il manque même des repères aussi grands que le Jura ou le lac de Neuchâtel.
 
-
-
-
+Un cartographe ne vous montre que ce qu'il veut, ou peut, montrer.
