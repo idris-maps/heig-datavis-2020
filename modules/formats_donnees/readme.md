@@ -78,7 +78,7 @@ Comme lors du téléchargement, `>`sert à sauver le texte affiché dans la cons
 
 ## CSV
 
-Le format [CSV])(https://fr.wikipedia.org/wiki/Comma-separated_values), Comma Separated Values. Comme son nom l'indique, il ressemble à ça:
+Le format [CSV](https://fr.wikipedia.org/wiki/Comma-separated_values), Comma Separated Values. Comme son nom l'indique, il ressemble à ça:
 
 ```csv
 A,B,C
@@ -86,7 +86,7 @@ A,B,C
 4,5,6
 ```
 
-C'est comme une feuille excel avec unique les données (sans les fonctions). Chaque cellule est séparée par une virgule.
+C'est comme une feuille excel avec uniquement les données (sans les fonctions). Chaque cellule est séparée par une virgule.
 
 | A | B | C |
 |---|---|---|
@@ -127,7 +127,7 @@ Divisons le fichier par ligne
 console.log(file.split('\n'))
 ```
 
-`.split` est une méthode sur une chaine de caractères qui prends un argument, les caractères au niveau desquels sont souhaitons faire la division. Ici `\n` signifie "à la ligne".
+[`.split`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) est une méthode sur une chaine de caractères qui prends un argument, les caractères au niveau desquels nous souhaitons faire la division. Ici `\n` signifie "à la ligne".
 
 Quand nous lançons la commande à nouveau
 

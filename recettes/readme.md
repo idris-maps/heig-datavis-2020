@@ -14,15 +14,13 @@ node_modules
 **/dist
 ```
 
-### 2. Installer les librairies
+### 2. Installer [`parcel`](https://parceljs.org/)
 
-`parcel`
+`parcel`, comme [`rollup`](https://rollupjs.org/guide/en/) et [`webpack`](https://webpack.js.org/), sert à compiler les fichiers de développements en un site web. Contrairement aux autres, il n'y a pas besoin de fichier de configuration pour expliquer à `parcel` ce qu'il doit faire. On lui donne simplement un fichier de départ, généralement un HTML, et il compile tous les fichiers CSS et JS liés à celui-ci.
 
 ```
 npm install parcel-bundler --save-dev
 ```
-
-voir chaque recette pour les autres librairies
 
 ### 3. Ajouter un script à `package.json`
 
