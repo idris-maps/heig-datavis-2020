@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "node scripts/publish",
-    "dev:batons": "parcel 20200228/batons/src/index.html --out-dir 20200228/batons/dist",
+    "batons:1": "parcel modules/graphique_batons_1/src/index.html --out-dir modules/graphique_batons_1/dist",
     "recette:billboard": "parcel recettes/billboard/src/index.html --out-dir recettes/billboard/dist",
     "recette:d3": "parcel recettes/d3/src/index.html --out-dir recettes/d3/dist",
     "recette:chartjs": "parcel recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist",
