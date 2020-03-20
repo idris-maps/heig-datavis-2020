@@ -18,7 +18,7 @@ const DATA = [
   { nom: 'Vevey', population: 19827 },
 ]
 
-const MARGIN_LEFT = 100
+const MARGIN_LEFT = 50
 const MARGIN_BOTTOM = 50
 const BAR_WIDTH = (WIDTH - MARGIN_LEFT) / DATA.length
 
@@ -40,19 +40,19 @@ batons.selectAll('rect')
   .attr('height', d => HEIGHT - MARGIN_BOTTOM - yScale(d.population))
   .attr('fill', 'steelblue')
 
-  batons.selectAll('text')
-    .data(DATA)
-    .enter()
-    .append('text')
-    .text(d => d.nom)
-    .attr('x', (d, i) =>  i * BAR_WIDTH + BAR_WIDTH / 2)
-    .attr('y', HEIGHT - MARGIN_BOTTOM / 2)
-    .attr('text-anchor', 'middle')
+batons.selectAll('text')
+  .data(DATA)
+  .enter()
+  .append('text')
+  .text(d => d.nom)
+  .attr('x', (d, i) =>  i * BAR_WIDTH + BAR_WIDTH / 2)
+  .attr('y', HEIGHT - MARGIN_BOTTOM / 2)
+  .attr('text-anchor', 'middle')
 
-const axis = d3.axisLeft(yScale)
-  .ticks(5)
+const axisY = d3.axisLeft().scale(yScale)
   .tickFormat(d => `${d / 1000}k`)
+  .ticks(5)
 
-const gAxis = svg.append('g')
-  .attr('transform', `translate(${MARGIN_LEFT  * 0.7}, 0)`)
-  .call(axis)
+svg.append('g')
+  .attr('transform', `translate(${MARGIN_LEFT - 3})`)
+  .call(axisY)
