@@ -1,6 +1,6 @@
 # Utiliser react plutôt que d3.select
 
-[react](https://reactjs.org/) est une libraire créée par facebook pour créer des interfaces utilisateur. Dans cet example nous allons remplacer la fonction `select` de `d3` par `react`.
+[react](https://reactjs.org/) est une libraire créée par facebook pour générer des interfaces utilisateur. Dans cet exemple nous allons remplacer la fonction [`select`](https://github.com/d3/d3-selection) de `d3` par `react`.
 
 ## Mise en place
 
@@ -34,9 +34,9 @@ npm run rosling
 
 ### :point_up: JSX
 
-React, comme d'autres librairies, utilise une format appellé JSX. C'est une manière de décrire le DOM qui ne fait pas partie du javascript standard. Le JSX doit être compilé en "vrai" javascript.
+React, comme d'autres librairies, utilise un format appellé JSX. C'est une manière de manipuler le [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) qui ne fait pas partie du javascript standard. Le JSX doit être compilé en "vrai" javascript.
 
-`parcel` que j'utilise ici le fait automatiquement. Si vous utilisez `webpack` vous devez utiliser [`babel-loader`](https://github.com/babel/babel-loader) pour compiler le JSX en JS.
+`parcel` que j'utilise, ici le fait automatiquement. Si vous utilisez `webpack` vous devez utiliser [`babel-loader`](https://github.com/babel/babel-loader) pour compiler le JSX en JS.
 
 Il n'est pas nécessaire de savoir exactement comment JSX est traduit en JS pour utiliser `react` mais si les détails vous intéressent, jetez un coup d'oeil à cet article: [WTF is JSX?](https://jasonformat.com/wtf-is-jsx/)
 
@@ -78,11 +78,13 @@ Nous importons `react` et la fonction `render` de `react-dom`. Les éléments `i
 
 `Graph` est un composant react, par convention et pour les différencier des autres fonctions, ils commencent par une lettre majuscule. `Graph` prend un argument `year`, l'année, et retourne un élément `<p>`. Ce n'est pas à proprement parler un élément HTML mais ça en a l'aire. Et c'est tout l'intéret du JSX, d'avoir l'impression d'écrire des fonctions qui retournent du HTML.
 
-Nous utilisons `render` pour ajouter le composant `Graph` à la `div`. Comme dans l'example avec d3, 2020 est l'année par défaut. À chaque fois que l'année change nous appelons `render` avec la nouvelle année.
+Nous utilisons `render` pour ajouter le composant `Graph` à la `div`. Comme dans l'exemple avec `d3`, 2020 est l'année par défaut. À chaque fois que l'année change nous appelons `render` avec la nouvelle année.
 
 ## Créer les bulles
 
-Pour l'instant notre composant `Graph` n'est qu'un paragraphe qui affiche `L'année est {year}` où `year` vient du "slider". Créons des composants pour les bulles.
+Pour l'instant notre composant `Graph` n'est qu'un paragraphe qui affiche `L'année est {year}` où `year` vient du "slider".
+
+Créons des composants qui génère une bulle.
 
 ```jsx
 const Bubble = ({ data, yearIndex }) =>
@@ -94,16 +96,20 @@ const Bubble = ({ data, yearIndex }) =>
     stroke={ getColorByRegion(data) }
     fillOpacity="0.4"
     />
+```
 
+Nous avons un composant qui prends un objet avec deux clés `data` et `yearIndex`. `data` corresponds aux données pour cette bulle en particulier. `yearIndex` est l'indexe pour sortir la valeur pour une année en particulier. Nous utilisons les mêmes échelles, et la fonction pour la couleur par région, que pour le graphique créé uniquement avec `d3`.
+
+Avec JSX, nous pouvons avoir des attributs dynamiques en entourant le résultat de `{}`. Les attributs statiques, comme `fillOpacity` sont définis comme en HTML. Observez qu'en HTML, le nom de l'attribut s'écrit `fill-opacity`. Le JSX étant un dialecte de javascript, si nous utilisons un tiret, l'ordinateur va le lire comme une soustraction, `fill` moins `opacity`. Du coup, tous les noms d'attributs sont en [camelCase](https://fr.wikipedia.org/wiki/Camel_case).
+
+```jsx
 const Bubbles = ({ year }) =>
   data.map(d => <Bubble key={d.geo} data={d} yearIndex={ year - 1800 }/>)
 ```
 
-Nous avons un composant qui prends un objet avec deux clés `data` et `yearIndex`. `data` corresponds aux données pour cette bulle en particulier. `yearIndex` est l'indexe pour sortir la valeur pour une année en particulier. Nous utilisons les mêmes échelles, et la fonction pour la couleur par région, que pour le graphique créé uniquement avec d3.
+Pour le composant `Bubbles` (au pluriel) nous utilisons la méthode `.map()` sur nos données `data`. La fonction à l'intérieur de `map` retourne un élément `Bubble` (singulier). Nous passons `data` et `yearIndex` comme si c'était des attributs d'un élément HTML.
 
-Avec JSX, nous pouvons avoir des attributs dynamiques en entourant le résultat de `{}`. Les attributs statiques, comme `fillOpacity` sont définis comme en HTML. Observez qu'en HTML, le nom de l'attribut s'écrit `fill-opacity`. Le JSX étant un dialecte de javascript, si nous utilisons un tiret l'ordinateur va le lire comme une soustraction, `fill` moins `opacity`. Du coup tous les noms d'attributs sont en [camelCase](https://fr.wikipedia.org/wiki/Camel_case).
-
-Pour le composant `Bubbles` (au pluriel) nous utilisons la méthode `.map()` sur nos données `data`. La fonction à l'intérieur de `map` retourne un élément `Bubble` (singulier). Nous passons `data` et `yearIndex` comme si c'était des attributs d'un élément HTML. `key` doit prendre un identifiant unique, nous lui passons l'identifiant pays `geo`. Si nous itérons des éléments react, il est recommandé d' ajouter `key` pour des raisons de performance. Si nous ne le faisons pas, nous avons des erreurs dans la console.
+`key` doit prendre un identifiant unique, nous lui passons l'identifiant pays `geo`. Quand nous itérons des composants `react`, il est recommandé d'ajouter `key`. Pour des raisons de performance. Et si nous ne le faisons pas, nous avons des erreurs dans la console.
 
 ## Montrer l'année
 

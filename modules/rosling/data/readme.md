@@ -197,7 +197,7 @@ Pour les données chiffrées, il nous faut les valeurs pour chaque année entre 
 
 Avec la fonction [`range`](https://ramdajs.com/docs/#range) de `ramda` nous pouvons créer un tableau de nombres entre deux valeurs:
 
-Par example:
+Par exemple:
 
 ```js
 R.range(3, 6)
@@ -573,7 +573,7 @@ const addData = R.pipe(
 
 ### :point_up: définir une clé avec `[]`
 
-Nous pouvons définir une clé d'un objet javascript en l'entourant de `[]`. Par example.
+Nous pouvons définir une clé d'un objet javascript en l'entourant de `[]`. Par exemple.
 
 ```js
 const key = 'ma_clé'

@@ -192,7 +192,7 @@ Dans `index.js`
 import data from '../../data/data.json'
 ```
 
-Nous allons utiliser [`select`](https://github.com/d3/d3-selection) de `d3` pour séléctionner la `<div id="graph">`, y ajouter un `<svg>` avec les dimension définies dans `config.js`. Au SVG nous ajoutons un groupe, `<g>`, dans lequel nous créons un élément `<circle>` pour chaque pays dans `data`.
+Nous allons utiliser [`select`](https://github.com/d3/d3-selection) de `d3` pour séléctionner la `<div id="graph">`. Et y ajouter un `<svg>` avec les dimension définies dans `config.js`. Au `<svg>` nous ajoutons un groupe, `<g>`, dans lequel nous créons un élément `<circle>` pour chaque pays dans `data`.
 
 ```js
 import data from '../../data/data.json'
@@ -242,7 +242,7 @@ const onYearChange = year => {
 }
 ```
 
-Pour chaque pays, les données sont sous forme de tableau allant de la première année, 1800, à la dernière, 2020. Nous trouvons l'indexe en soustrayant la première année à l'année que nous souhaitons montrer. Nous utilisons les échelles définies dans `scales.js`.
+Pour chaque pays, les données sont sous forme de tableau allant de la première année, 1800, à la dernière, 2020. Nous trouvons l'indexe en soustrayant la première année à l'année que nous souhaitons montrer. Et utilisons les échelles définies dans `scales.js`.
 
 Maintenant en changeant la position du "slider", nous voyons les bulles changer de place. Le problème est que nous ne voyons aucune bulle quand la page charge. Celles-ci n'apparaissent que quand nous changeons l'année.
 
@@ -377,7 +377,7 @@ axisGroup.append('g')
 
 Nous ajoutons un élément `<g>` au svg appellé `axisGroup` dans lequel nous ajoutons les deux axes en appellant les fonctions `axisBottom` et `axisLeft` avec l'échelle correspondante.
 
-Les axes ne disent rien au lecteur en tant que telles. Ajoutons des textes pour décrire ce qu'ils représentent.
+Les axes ne disent rien au lecteur en tant que tels. Ajoutons des textes pour décrire ce qu'ils représentent.
 
 ```js
 axisGroup.append('text')
@@ -395,7 +395,7 @@ axisGroup.append('text')
   .attr('font-size', AXIS_LABEL_SIZE)
 ```
 
-Puisque les noms de pays sont en anglais, j'utilise cette même langue pour la description des axes. Les axes et leurs définitions ne vont pas changer dépendant de l'année. Nous n'avons pas besoin de les exporter.
+Puisque les noms de pays sont en anglais, j'utilise cette même langue pour la description des axes. Les axes et leurs définitions ne vont pas changer dépendant de l'année, nous n'avons pas besoin de les exporter.
 
 ### Afficher le nom du pays quand la souris passe sur une bulle
 
@@ -422,17 +422,17 @@ bubbles.on('mouseover', function(d) {
 
 Quand la souris passe sur une bulle (l'événement `mouseover`), nous utilisons la fonction `mouse` de d3 pour calculer sa position par rapport au SVG.
 
-Le nom du pays (`d.name`) devient le contenu de `countryDisplay`. Et l'élément est positionné au dessus de la souris (`.attr('y', y - 20)`).
+Le nom du pays, `d.name`, devient le contenu de `countryDisplay`. Et l'élément est positionné au dessus de la souris: `.attr('y', y - 20)`.
 
 ---
 
 ### :point_up: `this` en javascript
 
-Si vous êtes obeservateurs, vous avez remarqué que j'ai utilisé une fonction "à l'ancienne" ici. `function(d) {}` plutôt que `d =>` comme nous l'avons fait jusqu'ici. La raison est que si nous utilisons `d =>` la fonction n'a pas de contexte `this`.
+Si vous êtes bons observateurs, vous avez remarqué que j'ai utilisé une fonction "à l'ancienne" ici. `function(d) {}` plutôt que `d =>` comme nous l'avons fait jusqu'ici. La raison est que si nous utilisons `d =>` la fonction n'a pas de contexte `this`.
 
 [`this` expliqué par MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
-`this` porte beaucoup à confusion, il est en général préférable de ne pas l'utiliser si possible. Enfin c'est ma statégie personnelle. Vous faites comme vous voulez. Ici nous n'avons de toutes manières pas le choix. Pour faire court, `this` est le context dans lequel une fonction est appellée. Ici il s'agit de l'élément sur lequel la souris passe. La fonction `mouse` de d3 nécessite ce contexte.
+`this` porte beaucoup à confusion, il est en général préférable de ne pas l'utiliser si possible. Enfin c'est ma statégie personnelle. Vous faites comme vous voulez. Ici nous n'avons de toutes manières pas le choix. Pour faire court, `this` est le contexte dans lequel une fonction est appellée. Ici il s'agit de l'élément sur lequel la souris passe. La fonction `mouse` de d3 nécessite ce contexte.
 
 ---
 
@@ -482,7 +482,6 @@ bubbles.on('mousemove', function() {
 })
 ```
 
-Quand la souris bouge, nous déplaçons `countryDisplay`.
 
 ---
 

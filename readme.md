@@ -25,7 +25,7 @@ cours HEIG 2020
 
 ### Autres librairies
 
-* [Examples avec le même graphique en bâtons](https://observablehq.com/@idris-maps/graphiques-en-batons)
+* [Exemples avec le même graphique en bâtons](https://observablehq.com/@idris-maps/graphiques-en-batons)
 
 ## Web
 

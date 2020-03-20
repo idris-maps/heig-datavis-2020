@@ -22,7 +22,7 @@ Alternatives:
 
 ### Conversion des examples observable en js
 
-par example le premier graphique en bâtons [ici](https://observablehq.com/@idris-maps/graphiques-en-batons)
+par exemple le premier graphique en bâtons [ici](https://observablehq.com/@idris-maps/graphiques-en-batons)
 
 ```js
 viewof d3view = {
@@ -42,7 +42,7 @@ viewof d3view = {
 
 Quand vous créez votre propre site:
 
-* Définissez `WIDTH` et `HEIGHT`, par example:
+* Définissez `WIDTH` et `HEIGHT`, par exemple:
 
 ```js
 const WIDTH = 300
@@ -276,7 +276,7 @@ Tutoriels sur youtube:
 
 [![Let's learn D3.js](https://img.youtube.com/vi/C4t6qfHZ6Tw/0.jpg)](https://www.youtube.com/watch?v=C4t6qfHZ6Tw)
 
-Examples utilisation:
+Exemples utilisation:
 
 * [D3 gallery](https://observablehq.com/@d3/gallery)
 * [Shirley Wu](https://sxywu.com/)
