@@ -26,7 +26,7 @@ Au départ, il y avait deux formats concurrents: [VHS et Betamax](https://en.wik
 
 Une autre histoire, tout aussi répandue, est qu'au début d'internet, la majorité des connections étaient pour chercher du porno. Que ce soit vrai ou non, il est certain que c'était une idée assez répandue. Au début des années 2000, j'enseignais dans un lycée professionnel. Etant à cours d'inspiration, j'ai pris la classe à la bibliothèque. Il y avait deux ordinateurs connectés à internet. Un gamin qui n'avait jamais vu internet s'est assis devant l'un deux et à demandé: "Où est-ce qu'on trouve les filles?"
 
-La pornographie n'influence peut être pas autant l'évolution technologique que ces légendes le laisse entendre. Quoique je puisse tout à fait imaginer un père de famille acheter un magnétoscope en disant "C'est pour les enfants", avec l'idée de faire un tour dans la partie adulte du "vidéo-club". Une chose est certaine, l'industrie poronographique est très rapide à adopter les nouveaux médias.
+La pornographie n'influence peut être pas autant l'évolution technologique que ces légendes le laisse entendre. Une chose est certaine, l'industrie poronographique est très rapide à adopter les nouveaux médias.
 
 ### La première visualisation de PornHub insights 2019
 
@@ -48,7 +48,7 @@ On peut aussi imaginer une raison économique. Vu le nombre d'utilisateurs, il p
 
 En voyant ces chiffres de milliers de petabytes par ci, de millions de vues par là, je me dis que ça doit couter une blinde en serveurs cette histoire. La première question que je me pose est "comment font-ils de l'argent?". Cette visualisation n'y réponds pas.
 
-On peut comprendre qu'ils préfèrent montrer une image "cool" et sans tabous de leurs contenus. Plutôt que les montages fiscaux du département des finances ou les efforts de modération de l'équipe légale pour tenir les contenus illégaux (pédophiles) à distance.
+On peut comprendre qu'ils préfèrent montrer une image "cool" et sans tabous de leurs contenus. Plutôt que les montages fiscaux du département des finances. Ou les efforts de modération de l'équipe légale pour tenir les contenus illégaux (pédophiles) à distance. Quand vous faites une visualisation, ou rendez des données publiques, vous choisissez ce que vous souhaitez monter.
 
 ### Quelques autres visualisation du rapport
 
@@ -82,7 +82,7 @@ Pour le reste (âge, genre...), c'est plus compliqué. Heureusement la réponse 
 
 ![Commentaire](https://github.com/idris-maps/heig-datavis-2020/blob/master/20200228/screenshot_comment.png)
 
-Le commentaire n'est pas lié aux données. C'est une utilisatrice qui demande pourquoi les données pour les hommes homosexuels sont séparées. Alors que celles pour les femmes homosexuelles sont mélangées au reste. "Lésbien" est par conséquent une des catégories les plus recherchées pour les femmes. Mais "Gay" ne fait pas partie des catégories les plus recherchées par les hommes. Bonne question. La réponse du modérateur est que "lésbien" est aussi une catégorie populaire pour les hétéros Ils ont un site dédié pour les hommes homosexuels mais pas pour les lésbiennes.
+Le commentaire n'est pas lié aux données. C'est une utilisatrice qui demande pourquoi les données pour les hommes homosexuels sont séparées. Alors que celles pour les femmes homosexuelles sont mélangées au reste. "Lésbien" est par conséquent une des catégories les plus recherchées pour les femmes. Mais "Gay" ne fait pas partie des catégories les plus recherchées par les hommes. Bonne question. La réponse du modérateur est que "lésbien" est aussi une catégorie populaire pour les hétéros. Ils ont un site dédié pour les hommes homosexuels, mais pas pour les lésbiennes.
 
 La première phrase de la réponse est assez intéressante. Ils n'utilisent pas les données des utilisateurs enregistrés, mais les données de Google. Pour des raisons de vie privée... En gros ils ne vont pas bafouer la vie privée des utilisateurs enregistrés. Par contre ils ne se gênent pas pour utiliser les données collectées par Google. On peut se demander comment Google connait l'âge ou le genre des utilisateurs. Mais ça c'est une autre histoire.
 
