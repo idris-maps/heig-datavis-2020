@@ -8,6 +8,8 @@ node_modules
 # fichiers générés par parcel
 .cache
 **/dist
+# fichiers générés par l'éditeur de texte
+.vscode
 # dossiers internes
 scans
 examples_site
