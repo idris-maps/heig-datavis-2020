@@ -6,7 +6,7 @@ La situation est exceptionelle, je vais utiliser des emojis. Les questions resse
 
 ---
 
-### :question: Thèmes
+### :question: Theme
 
 Fichier `exercices/question.md`
 
