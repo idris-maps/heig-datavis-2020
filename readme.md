@@ -7,6 +7,8 @@ Cours HEIG 2020
 * [6 Mars 2020](2020-03-06.md)
 * [27 Mars 2020](2020-03-27.md)
 
+[Procédure pour les cours à distance](cours_a_distance.md)
+
 [repos de cours](repo_cours.md)
 
 ## Données
