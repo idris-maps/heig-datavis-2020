@@ -180,14 +180,8 @@ Tous les jeux de données ont une colonne `geo` avec le code en trois lettres [i
 Commençons par convertir chaque `csv` en `json`. Il nous faut trois scriptes différents:
 
 1. `modules/rosling/data/toJSON_year_columns.js` pour `esperance_de_vie.csv` et `pnb_par habitant.csv`
-  * [explication]()
-  * [scripte]()
 2. `modules/rosling/data/toJSON_population.js` pour `population.csv`
-  * [explication]()
-  * [scripte]()
 3. `modules/rosling/data/toJSON_regions.js` pour `regions.csv`
-  * [explication]()
-  * [scripte]()
 
 Pour les données chiffrées, il nous faut les valeurs pour chaque année entre 1800 et 2020.
 
@@ -217,7 +211,7 @@ const years = R.range(1800, 2021)
 
 ---
 
-### `modules/rosling/data/toJSON_year_columns.js`
+### [`toJSON_year_columns.js`](toJSON_year_columns.js)
 
 Pour `esperance_de_vie.csv` et `pnb_par habitant.csv`, nous allons convertir chaque ligne en objet `json` comme suit:
 
@@ -325,7 +319,7 @@ node toJSON_year_columns esperance_de_vie > temp/esperance_de_vie.json
 node toJSON_year_columns pnb_p_habitant > temp/pnb_p_habitant.json
 ```
 
-### `modules/rosling/data/toJSON_population.js`
+### [`toJSON_population.js`](toJSON_population.js)
 
 Dans le fichier `population.csv`, nous avons une ligne par pays et année, contrairement aux deux fichiers précèdants où nous avions une ligne par pays et toutes les années en colonnes.
 
@@ -440,7 +434,7 @@ Le fichier `population.json` est créé avec la commande:
 node toJSON_population > temp/population.json
 ```
 
-### `modules/rosling/data/toJSON_regions.js`
+### [`toJSON_regions.js`](toJSON_regions.js)
 
 Le dernier, `regions.csv` est le plus facile, nous avons une ligne par pays. Et les valeurs qui nous intéressent sont l'identifiant `geo`, le nom du pays et la région `six_regions`.
 
@@ -526,7 +520,7 @@ Prenons le fichier `regions.json` comme point de départ. Le premier élément r
 
 Pour chacun des autres fichiers nous allons chercher l'élément qui correspond à cet identifiant pays, `geo`.
 
-Chargeons toutes les données dans le scripte `modules/rosling/data/joinData.js`
+Chargeons toutes les données dans le scripte [`joinData.js`](joinData.js)
 
 ```js
 const R = require('ramda')

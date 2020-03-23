@@ -6,7 +6,7 @@
 
 Dans le dossier `modules/rosling/graphique_d3/src`
 
-### Un fichier HTML, `index.html`
+### Un fichier HTML, [`index.html`](src/index.html)
 
 ```html
 <!DOCTYPE html>
@@ -29,9 +29,9 @@ Dans le dossier `modules/rosling/graphique_d3/src`
 
 * La `<div id="graph">` est où nous allons dessiner le graphique.
 * L'élément [`<input type="range">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) est le "slider" qui définira quelle année visualiser.
-* Nous référençons un fichier CSS `index.css` et un fichier javascript `index.js`
+* Nous référençons un fichier CSS [`index.css`](src/index.css) et un fichier javascript [`index.js`](src/index.js)
 
-### Un fichier CSS, `index.css`
+### Un fichier CSS, [`index.css`](src/index.css)
 
 ```css
 html, body {
@@ -72,7 +72,7 @@ a {
 }
 ```
 
-### Un fichier JavaScript `index.js`
+### Un fichier JavaScript [`index.js`](src/index.js)
 
 Le fichier `index.js` sera le point de départ de notre scripte. Pour ne pas tout écrire dans le même scripte, nous allons diviser le code en plusieurs fichiers pour après les importer dans `index.js`.
 
@@ -112,7 +112,7 @@ La page s'affiche, le CSS semble fonctionner et `"salut"` s'affiche dans la cons
 
 Nous souhaitons savoir quelle année représenter quand on bouge le "slider".
 
-Dans `index.js`
+Dans [`index.js`](src/index.js)
 
 ```js
 // prendre l'"input" avec l'"id" "year-input"
@@ -132,7 +132,7 @@ Quand nous bougeons le "slider", l'année s'affiche dans la console.
 
 ## Les dimensions du graphique
 
-Avant de commencer à dessiner le graphique, il nous faut en définir les dimensions. Nous le faisons dans un fichier `config.js`
+Avant de commencer à dessiner le graphique, il nous faut en définir les dimensions. Nous le faisons dans un fichier [`config.js`](src/config.js)
 
 ```js
 export const WIDTH = 1000
@@ -154,7 +154,7 @@ Il nous faut des échelles pour trois dimensions
 * L'axe y, basé sur l'espérance de vie
 * Le rayon de chaque bulle, basé sur la population
 
-que nous mettons dans un fichier `scales.js`
+que nous mettons dans un fichier [`scales.js`](src/scales.js)
 
 ```js
 import { scaleLinear, scaleLog, scalePow } from 'd3'
@@ -165,7 +165,7 @@ export const yScale = scaleLinear().domain([20, 85]).range([GRAPH_HEIGHT, 0])
 export const rScale = scalePow().domain([25000, 1000000000]).range([2, 40])
 ```
 
-Les échelles [`scaleLinear`, `scaleLog` et `scalePow`](https://github.com/d3/d3-scale) sont importées de `d3` et la largeur et hauteur sont importés de `config.js` créé plus haut.
+Les échelles [`scaleLinear`, `scaleLog` et `scalePow`](https://github.com/d3/d3-scale) sont importées de `d3` et la largeur et hauteur sont importés de [`config.js`](src/config.js) créé plus haut.
 
 Pendant que nous y sommes, ajoutons une fonction qui retourne une couleur en fonction de la région.
 
@@ -184,9 +184,9 @@ export const getColorByRegion = ({ region }) => {
 
 ## Créer les bulles
 
-Pour créer les bulles, il nous faut importer les données, le fichier `data.json` crées tout à l'heure.
+Pour créer les bulles, il nous faut importer les données, le fichier `data.json` créé tout à l'heure.
 
-Dans `index.js`
+Dans [`index.js`](src/index.js)
 
 ```js
 import data from '../../data/data.json'
@@ -226,7 +226,7 @@ La position des bulles (les attributs `cx` et `cy`) ainsi que le rayon, `r`, dé
   .attr('stroke', getColorByRegion)
 ```
 
-où nous utilisons la fonction `getColorByRegion` définie dans `scales.js`. Le remplissage des bulles est légèrement transparent pour qu'on puisse voir les bulles plus petites cachées derrière les grosses.
+où nous utilisons la fonction `getColorByRegion` définie dans [`scales.js`](src/scales.js). Le remplissage des bulles est légèrement transparent pour qu'on puisse voir les bulles plus petites cachées derrière les grosses.
 
 ## Mettre à jour les bulles en fonction de l'année
 
@@ -242,7 +242,7 @@ const onYearChange = year => {
 }
 ```
 
-Pour chaque pays, les données sont sous forme de tableau allant de la première année, 1800, à la dernière, 2020. Nous trouvons l'indexe en soustrayant la première année à l'année que nous souhaitons montrer. Et utilisons les échelles définies dans `scales.js`.
+Pour chaque pays, les données sont sous forme de tableau allant de la première année, 1800, à la dernière, 2020. Nous trouvons l'indexe en soustrayant la première année à l'année que nous souhaitons montrer. Et utilisons les échelles définies dans [`scales.js`](src/scales.js).
 
 Maintenant en changeant la position du "slider", nous voyons les bulles changer de place. Le problème est que nous ne voyons aucune bulle quand la page charge. Celles-ci n'apparaissent que quand nous changeons l'année.
 
@@ -275,7 +275,7 @@ Il nous faut quelques éléments pour que le lecteur comprenne le graphique:
 * Montrer ce que signifient les axes
 * Montrer le nom du pays quand la souris passe au dessus d'une bulle
 
-Comme notre fichier `index.js` commence à être un peu chargé, nous allons mettre tous les éléments dans un fichier `elements.js`:
+Comme notre fichier [`index.js`](src/index.js) commence à être un peu chargé, nous allons mettre tous les éléments dans un fichier [`elements.js`](src/elements.js):
 
 ```js
 import data from '../../data/data.json'
@@ -309,7 +309,7 @@ export const bubbles = bubblesGroup.selectAll('circle')
 export const input = document.getElementById('year-input')
 ```
 
-`bubbles` et `input` sont exportés pour que nous puissions les utiliser dans `index.js`. C'est dans ce fichier que nous allons "orchestrer" les événements.
+`bubbles` et `input` sont exportés pour que nous puissions les utiliser dans [`index.js`](src/index.js). C'est dans ce fichier que nous allons "orchestrer" les événements.
 
 ```js
 import { bubbles, input } from './elements'
@@ -326,11 +326,11 @@ const onYearChange = year => {
 input.addEventListener('input', e => onYearChange(Number(e.target.value)))
 ```
 
-Dans `index.js` nous ne gardons que l'événement `onYearChange`.
+Dans [`index.js`](src/index.js) nous ne gardons que l'événement `onYearChange`.
 
 ### Afficher l'année
 
-Dans `elements.js` nous initialisons et exportons `yearDisplay`:
+Dans [`elements.js`](src/elements.js) nous initialisons et exportons `yearDisplay`:
 
 ```js
 const YEAR_DISPLAY_SIZE = 100
@@ -344,7 +344,7 @@ export const yearDisplay = svg.append('text')
   .text(2020)
 ```
 
-Comme avec les bulles la valeur de départ est 2020. Dans `index.js` nous allons mettre à jour le contenu quand l'année change.
+Comme avec les bulles la valeur de départ est 2020. Dans [`index.js`](src(index.js)) nous allons mettre à jour le contenu quand l'année change.
 
 ```js
 const onYearChange = year => {
@@ -361,7 +361,7 @@ const onYearChange = year => {
 
 ### Afficher les axes
 
-Comme décrit dans le [cours sur les axes d3](https://observablehq.com/@idris-maps/d3-definir-les-axes), nous allons utiliser les fonctions `d3` [`axisBottom` et `axisLeft`](https://github.com/d3/d3-axis) pour générer les axes. Définissons-les dans `elements.js`. 
+Comme décrit dans le [cours sur les axes d3](https://observablehq.com/@idris-maps/d3-definir-les-axes), nous allons utiliser les fonctions `d3` [`axisBottom` et `axisLeft`](https://github.com/d3/d3-axis) pour générer les axes. Définissons-les dans [`elements.js`](src/elements.js). 
 
 ```js
 const axisGroup = svg.append('g').attr('class', 'axis')
@@ -399,7 +399,7 @@ Puisque les noms de pays sont en anglais, j'utilise cette même langue pour la d
 
 ### Afficher le nom du pays quand la souris passe sur une bulle
 
-Dans `elements.js`, créons un élément `<text>` dont le contenu sera rempli et placé quand la souris passe sur une bulle.
+Dans [`elements.js`](src/elements.js), créons un élément `<text>` dont le contenu sera rempli et placé quand la souris passe sur une bulle.
 
 ```js
 export const countryDisplay = bubblesGroup.append('text')
@@ -409,7 +409,7 @@ export const countryDisplay = bubblesGroup.append('text')
 
 Nous ne définissons que l'élément et deux attributs de présentation, `font-size` et `text-anchor`. La position et le contenu doivent être définis quand la souris passe par dessus une bulle. 
 
-Définissons ces événements dans `index.js`.
+Définissons ces événements dans [`index.js`](src/index.js).
 
 ```js
 bubbles.on('mouseover', function(d) {

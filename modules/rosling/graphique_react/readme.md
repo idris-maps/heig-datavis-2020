@@ -36,13 +36,13 @@ npm run rosling
 
 React, comme d'autres librairies, utilise un format appellé JSX. C'est une manière de manipuler le [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) qui ne fait pas partie du javascript standard. Le JSX doit être compilé en "vrai" javascript.
 
-`parcel` que j'utilise, ici le fait automatiquement. Si vous utilisez `webpack` vous devez utiliser [`babel-loader`](https://github.com/babel/babel-loader) pour compiler le JSX en JS.
+`parcel` que j'utilise ici, le fait automatiquement. Si vous utilisez `webpack` vous devez utiliser [`babel-loader`](https://github.com/babel/babel-loader) pour compiler le JSX en JS.
 
 Il n'est pas nécessaire de savoir exactement comment JSX est traduit en JS pour utiliser `react` mais si les détails vous intéressent, jetez un coup d'oeil à cet article: [WTF is JSX?](https://jasonformat.com/wtf-is-jsx/)
 
 ---
 
-Les fichiers `index.html` et `index.css` sont les même que pour le [graphique fait avec d3](../graphique_d3/readme.md). Nous pouvons également garder `config.js` et `scales.js`.
+Les fichiers [`index.html`](src/index.html) et [`index.css`](src/index.css) sont les même que pour le [graphique fait avec d3](../graphique_d3/readme.md). Nous pouvons également garder [`config.js`](src/config.js) et [`scales.js`](src/scales.js).
 
 ## Initialiser react
 
@@ -54,7 +54,7 @@ Dans le HTML:
 <script src="index.jsx"></script>
 ```
 
-Le fichier `index.jsx`
+Le fichier [`index.jsx`](src/index.jsx)
 
 ```jsx
 import React from 'react'
@@ -109,7 +109,7 @@ const Bubbles = ({ year }) =>
 
 Pour le composant `Bubbles` (au pluriel) nous utilisons la méthode `.map()` sur nos données `data`. La fonction à l'intérieur de `map` retourne un élément `Bubble` (singulier). Nous passons `data` et `yearIndex` comme si c'était des attributs d'un élément HTML.
 
-`key` doit prendre un identifiant unique, nous lui passons l'identifiant pays `geo`. Quand nous itérons des composants `react`, il est recommandé d'ajouter `key`. Pour des raisons de performance. Et si nous ne le faisons pas, nous avons des erreurs dans la console.
+`key` doit prendre un identifiant unique, nous lui passons l'identifiant pays `geo`. Quand nous itérons des composants `react`, il est recommandé d'ajouter `key` pour des raisons de performance. Et si nous ne le faisons pas, nous avons des erreurs dans la console.
 
 ## Montrer l'année
 
@@ -140,3 +140,4 @@ const Graph = year =>
   </svg>
 ```
 
+Nous n'allons pas refaire tout le graphique. Le but est de montrer comment nous pouvons remplacer `select` de `d3` avec une autre librairie comme `react` tout en gardant certaines fonctions `d3` comme les échelles.

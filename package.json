@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "node scripts/publish",
+    "publish": "surge examples_site http://heig-datavis2020.surge.sh",
     "batons:1": "parcel modules/graphique_batons_1/src/index.html --out-dir modules/graphique_batons_1/dist",
     "batons:2": "parcel modules/graphique_batons_2/src/index.html --out-dir modules/graphique_batons_2/dist",
     "recette:billboard": "parcel recettes/billboard/src/index.html --out-dir recettes/billboard/dist",
