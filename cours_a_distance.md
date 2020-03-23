@@ -16,7 +16,7 @@ Ma question
 
 # :warning:
 
-J'ai un scripte qui va télécharger ces réponses. Il est impératifs que vous utilisiez **exactement** les noms de fichiers demandés. Commencez par créer un dossier `exercices` dans vos repos de cours.
+J'ai un scripte qui va télécharger ces réponses. Il est important que vous utilisiez **exactement** les noms de fichiers demandés. Commencez par créer un dossier `exercices` dans vos repos de cours.
 
 Les réponses aux questions feront office de feuille de présence. Elle compterons aussi pour votre note "devoirs" (10% de la note finale). J'annoncerais sur slack à quelle heure je télécharge vos réponses pour chaque question.
 

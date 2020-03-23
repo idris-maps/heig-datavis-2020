@@ -51,7 +51,7 @@ const Graph = year =>
 render(Graph(2020), document.getElementById('graph'))
 ```
 
-## Prgrammation orientée objets et fonctionelles
+## Programmation orientée objets et programmation fonctionelle
 
 Ces deux approches ne se ressemblent pas beaucoup. Elles sont inspirées de deux paradigmes de programmation différents:
 
@@ -62,15 +62,15 @@ Il existe des languages de programmation basés sur un seul paradigme. [Haskell]
 
 On peut dire que l'approche de `d3` plus haut est plutôt orientée objets et celle de `react` plutôt fonctionelle.
 
-Avec `d3.select`, nous créons un objet `div` qui a des méthodes telles que `.append` ou `.selectAll` qui permettent d'ajouter des élément.
+Avec `d3.select`, nous créons un **objet** `div` qui a des méthodes telles que `.append` ou `.selectAll` qui permettent d'ajouter des élément.
 
-Dans notre version avec `react`, nous avons une fonction `Graph` qui prends une année `year` et crée un DOM virtuel qui est ajouté au "vrai" DOM avec `render`.
+Dans notre version avec `react`, nous avons une **fonction** `Graph` qui prends une année `year` et crée un DOM virtuel qui est ajouté au "vrai" DOM avec `render`.
 
 ### Vidéos
 
-Les deux vidéos qui suivent sont à mon avis les meilleures explication de ces paradigmes. Ce sont des discours de [Anjana Vakil](http://vakila.github.io/about/) qui a fait des études de philosophie et travaillé comme prof d'anglais avant de faire du développement informatique. Du coup elle a une manière très claire de les expliquer. Les différences entre POO et FP sont aussi l'objet d'une gué-guerre entre geeks barbus qui ont misé leurs carrières sur l'une ou l'autre approche. Comme nous avons vu les deux approches sont tout à fait valable. Et peuvent être combinées dans un même programme.
+Les deux vidéos qui suivent sont à mon avis les meilleures explications de ces paradigmes. Ce sont des discours de [Anjana Vakil](http://vakila.github.io/about/) qui a fait des études de philosophie et travaillé comme prof d'anglais avant de faire du développement informatique. Du coup elle a une manière très claire de les expliquer sans vous embrouiller avec des détails. Les différences entre POO et FP sont aussi l'objet d'une gué-guerre entre geeks barbus qui ont misé leurs carrières sur l'une ou l'autre approche.Dans ce contexte, il est plus intéressant d'avoir un point du vu extérieur.
 
-Il est intéressant de voir ces vidéos dans l'ordre. Dans la première, elle est super enthousiaste de découvrir la PF. Dans la deuxième, elle se rends compte que la POO n'est pas si mal et que les deux approches se ressemblent beaucoup.
+Il est préferable de voir ces vidéos dans l'ordre. Dans la première, elle est super enthousiaste de découvrir la PF. Dans la deuxième, elle se rends compte que la POO n'est pas si mal et que les deux approches se ressemblent beaucoup.
 
 [![Learning Functional Programming with JavaScript](https://img.youtube.com/vi/e-5obm1G_FY/0.jpg)](https://www.youtube.com/watch?v=e-5obm1G_FY)
 
@@ -152,11 +152,11 @@ Une fonction est pure si elle retourne toujours la même chose avec les mêmes a
 *impure*
 
 ```javascript
+let a = 2
 const add = b => {
   a = a + b
   return a
 }
-let a = 2
 console.log(add(3)) // 5
 console.log(add(3)) // 8
 ```
@@ -175,9 +175,11 @@ Ici si nous donnons les arguments `2` et `3` `add`, retourne toujours `5`.
 
 L'intérêt est d'avoir plus de contrôle sur notre programme. Quand nous utilisons une fonction, nous savons exactement ce qui va se passer puisqu'elle retourne toujours la même chose si on lui donne les mêmes arguments.
 
+[`ramda`](https://ramdajs.com/) est une librairie inspirée par cette approche.
+
 ### Programmation orientée objets en javascript
 
-En POO, un objet est contient un état interne et des méthodes pour modifier cet état. En javascript nous utilisons [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) pour créer ce type d'objet.
+En POO, un objet contient un état interne et des méthodes pour modifier cet état. En javascript nous utilisons [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) pour créer ce type d'objet.
 
 ```js
 class Person {
@@ -194,7 +196,7 @@ class Person {
 }
 ```
 
-Nous avons une classe `Person`. Quand nous créons une nouvelle personne nous devons lui passer un nom, `constructor(name)`. Son état interne est une liste d'amis, `friends = []`. Nous avons deux méthodes pour interagir avec cet état `.addFriend` pour ajouter un ami et `talk` pour dire combien d'ami elle a.
+Nous avons une classe `Person`. Quand nous créons une nouvelle personne nous devons lui passer un nom, `constructor(name)`. Son état interne est une liste d'amis, `friends = []`. Nous avons deux méthodes pour interagir avec cet état `.addFriend` pour ajouter un ami et `talk` pour dire combien d'amis elle a.
 
 ```js
 const anne = new Person('Anne')
