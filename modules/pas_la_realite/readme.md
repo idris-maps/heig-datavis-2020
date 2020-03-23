@@ -42,11 +42,11 @@ La version corrigée ne donne pas la même impression de succès.
 
 Cairo cite un [article de la BBC](https://www.bbc.com/news/business-43156286), selon lequel les femmes gagnent 43% de moins que les hommes à la banque Barclays. Le chiffre n'est pas un mensonge en soit. Mais le titre sous-entends qu'il est question de différences de salaires pour une même position.
 
-Le répartions des employés en catégories salariales et par sexe:
+Le répartition des employés en catégories salariales et par sexe:
 
 ![Employés de Barclays](images/barclays.png)
 
-Les femmes ne sont pas payées moins que les hommes pour le même boulot. Ce pourrait être le cas mais ces données ne nous disent rien là dessus. En revanche ce que nous disent les données est que plus de femmes travaillent dans des rôles "junior". Forcément moins bien payés que les postes de direction, où les hommes sont majoritaires.
+Les femmes ne sont pas payées moins que les hommes pour le même boulot. Ce pourrait être le cas mais ces données ne nous disent rien là dessus. En revanche ce que nous disent les données est que plus de femmes travaillent dans des rôles "junior". Moins bien payés que les postes de direction, où les hommes sont majoritaires.
 
 Le "mensonge" de l'article est le fait de parler de différences hommes-femmes au niveau du salaire plutôt qu'au niveau des chances d'avoir un poste mieux rémunéré.
 
