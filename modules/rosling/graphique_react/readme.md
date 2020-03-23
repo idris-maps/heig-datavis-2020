@@ -27,7 +27,7 @@ Ajoutons une commande dans `package.json`, pour créer le site.
 Nous pouvons démarrer le serveur de développement avec:
 
 ```
-npm run rosling
+npm run rosling-react
 ```
 
 ---
@@ -84,7 +84,7 @@ Nous utilisons `render` pour ajouter le composant `Graph` à la `div`. Comme dan
 
 Pour l'instant notre composant `Graph` n'est qu'un paragraphe qui affiche `L'année est {year}` où `year` vient du "slider".
 
-Créons des composants qui génère une bulle.
+Créons un composant qui génère une bulle.
 
 ```jsx
 const Bubble = ({ data, yearIndex }) =>
