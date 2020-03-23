@@ -1,9 +1,17 @@
+# les librairies téléchargée
 node_modules
+# fichiers créés par les ordinateurs apple
 .DS_Store
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
-examples_site
-20200228/batons/dist
+# fichiers générés par parcel
 .cache
 **/dist
+# fichiers générés par l'éditeur de texte
+.vscode
+# dossiers internes
+scans
+examples_site
+# autres
+modules/rosling/data/temp/*

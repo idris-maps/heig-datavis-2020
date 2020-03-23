@@ -5,15 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "node scripts/publish",
-    "dev:batons": "parcel 20200228/batons/src/index.html --out-dir 20200228/batons/dist",
+    "publish": "surge examples_site http://heig-datavis2020.surge.sh",
+    "batons:1": "parcel modules/graphique_batons_1/src/index.html --out-dir modules/graphique_batons_1/dist",
+    "batons:2": "parcel modules/graphique_batons_2/src/index.html --out-dir modules/graphique_batons_2/dist",
     "recette:billboard": "parcel recettes/billboard/src/index.html --out-dir recettes/billboard/dist",
     "recette:d3": "parcel recettes/d3/src/index.html --out-dir recettes/d3/dist",
     "recette:chartjs": "parcel recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist",
     "dev:batons-suite": "parcel 20200306/batons_suite/src/index.html --out-dir 202000306/batons_suite/dist",
     "build:recette:billboard": "rm -rf recettes/billboard/dist && parcel build recettes/billboard/src/index.html --out-dir recettes/billboard/dist",
     "build:recette:d3": "rm -rf recettes/d3/dist && parcel build recettes/d3/src/index.html --out-dir recettes/d3/dist",
-    "build:recette:chartjs": "rm -rf recettes/chartjs/dist && parcel build recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist"
+    "build:recette:chartjs": "rm -rf recettes/chartjs/dist && parcel build recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist",
+    "rosling": "parcel modules/rosling/graphique_d3/src/index.html --out-dir modules/rosling/graphique_d3/dist",
+    "rosling-react": "parcel modules/rosling/graphique_react/src/index.html --out-dir modules/rosling/graphique_react/dist"
   },
   "keywords": [],
   "author": "",
@@ -24,9 +27,14 @@
     "chart.js": "^2.9.3",
     "d3": "^5.15.0",
     "express": "^4.17.1",
+    "install": "^0.13.0",
     "node-fetch": "^2.6.0",
+    "npm": "^6.14.3",
     "ramda": "^0.27.0",
-    "surge": "^0.21.3"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "surge": "^0.21.3",
+    "xlsx": "^0.15.5"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
