@@ -98,6 +98,6 @@ Ceci est une carte du parcours de chez moi à la HEIG.
 
 ![Le parcours de chez moi à la HEIG](images/mon_parcours.jpg)
 
-Ne pouvant pas représenter chaque bâtiment, chaque champs, chaque arbre... que je passe en chemin, j'ai choisi de ne montrer que les moyens de transports et les lieux où je passe d'un moyen de transport à un autre. Il manque même des repères aussi grands que le Jura ou le lac de Neuchâtel.
+Ne pouvant pas représenter chaque bâtiment, chaque champs, chaque arbre... que je passe en chemin, j'ai choisi de ne montrer que les moyens de transports et les lieux où je passe d'un moyen de transport à un autre. Il manque même des repères aussi grands que le Jura ou les lacs de Bienne et de Neuchâtel.
 
-Un cartographe ne vous montre que ce qu'il veut, ou peut, montrer.
+Un cartographe ne vous montre que ce qu'il veut montrer. Ou peut montrer. J'aurais bien ajouté quelques détails pour des raisons ésthétiques mais je suis limité par mes talents de dessinateur. Trouver les données était facile, c'est ce que je faisais à chaque cours avant le "confinement". Mais ce n'est pas très intéressant. La difficulté est de trouver des données intéressantes.
