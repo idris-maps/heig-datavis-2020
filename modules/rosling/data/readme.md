@@ -9,7 +9,7 @@ Nous avons 4 jeux de données:
 
 Ces données sont fournies par [gapminder](https://www.gapminder.org/data/documentation/gd000/).
 
-Nous allons télécharger les données, les préparer et les joindre pour au final avoir un fichier `data.json`. Nous utiliserons ce dernier pour la visualisation plus tard. Nous allons avoir quelques fichiers intérmédiaire que nous mettrons dans un dossier temporaire, `temp`.
+Nous allons télécharger les données, les préparer et les joindre pour au final avoir un fichier `data.json`. Nous utiliserons ce dernier pour la visualisation plus tard. Nous allons avoir quelques fichiers intermédiaire que nous mettrons dans un dossier temporaire, `temp`.
 
 ## Télécharger les données
 
@@ -243,7 +243,7 @@ const json = d3.csvParse(csv)
 console.log(json[1])
 ```
 
-Et utilsons le scripte sur le fichier `esperance_de_vie.csv`:
+Et utilisons le scripte sur le fichier `esperance_de_vie.csv`:
 
 ```
 node toJSON_year_columns esperance_de_vie
@@ -302,7 +302,7 @@ C'est ce que nous voulons. Appliquons `formatOne` a tous les éléments.
 const hasAllYears = item =>
   item.data.filter(Boolean).length === years.length
 
-// envoyer le résultat à la console en tant que chaine de caractères
+// envoyer le résultat à la console en tant que chaîne de caractères
 console.log(
   JSON.stringify(
     json.map(formatOne).filter(hasAllYears)
@@ -321,7 +321,7 @@ node toJSON_year_columns pnb_p_habitant > temp/pnb_p_habitant.json
 
 ### [`toJSON_population.js`](toJSON_population.js)
 
-Dans le fichier `population.csv`, nous avons une ligne par pays et année, contrairement aux deux fichiers précèdants où nous avions une ligne par pays et toutes les années en colonnes.
+Dans le fichier `population.csv`, nous avons une ligne par pays et année, contrairement aux deux fichiers précédents où nous avions une ligne par pays et toutes les années en colonnes.
 
 Commençons par ouvrir le fichier `csv` et le transformer en `json` avec `d3.parseCsv`.
 
@@ -626,7 +626,7 @@ const hasAllData = country =>
   && hasAllYears('lex', country)
   && hasAllYears('gdp', country)
 
-// envoyer le résultat à la console en tant que chaine de caractères
+// envoyer le résultat à la console en tant que chaîne de caractères
 console.log(
   JSON.stringify(
     regions.map(addData).filter(hasAllData)
@@ -697,7 +697,7 @@ Explications:
 * `#!/bin/bash` est la définition du type de fichier pour expliquer à la machine comment il doit être lu.
 * Les lignes commençant par `#` sont des commentaires, ils ne seront pas lus.
 * `\` sert à revenir à la ligne pour que le fichier soit plus lisible. Pour la console c'est une seule ligne,
-* Les commandes sont executées les unes après les autres.
+* Les commandes sont exécutées les unes après les autres.
 
 Maintenant nous pouvons effacer le dossier `temp` et `data.json`. Pour répéter la procédure, il nous suffit d'utiliser la commande:
 

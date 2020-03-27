@@ -108,7 +108,7 @@ npm run rosling
 
 La page s'affiche, le CSS semble fonctionner et `"salut"` s'affiche dans la console.
 
-## Ecouter les changements d'année
+## Écouter les changements d'année
 
 Nous souhaitons savoir quelle année représenter quand on bouge le "slider".
 
@@ -192,7 +192,7 @@ Dans [`index.js`](src/index.js)
 import data from '../../data/data.json'
 ```
 
-Nous allons utiliser [`select`](https://github.com/d3/d3-selection) de `d3` pour séléctionner la `<div id="graph">`. Et y ajouter un `<svg>` avec les dimension définies dans `config.js`. Au `<svg>` nous ajoutons un groupe, `<g>`, dans lequel nous créons un élément `<circle>` pour chaque pays dans `data`.
+Nous allons utiliser [`select`](https://github.com/d3/d3-selection) de `d3` pour sélectionner la `<div id="graph">`. Et y ajouter un `<svg>` avec les dimension définies dans `config.js`. Au `<svg>` nous ajoutons un groupe, `<g>`, dans lequel nous créons un élément `<circle>` pour chaque pays dans `data`.
 
 ```js
 import data from '../../data/data.json'
@@ -338,7 +338,7 @@ const YEAR_DISPLAY_SIZE = 100
 export const yearDisplay = svg.append('text')
   .attr('x', WIDTH)
   .attr('y', HEIGHT - MARGIN_BOTTOM - 20)
-  .attr('font-size', 100)
+  .attr('font-size', YEAR_DISPLAY_SIZE)
   .attr('text-anchor', 'end')
   .attr('opacity', 0.5)
   .text(2020)
@@ -432,7 +432,7 @@ Si vous êtes bons observateurs, vous avez remarqué que j'ai utilisé une fonct
 
 [`this` expliqué par MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
-`this` porte beaucoup à confusion, il est en général préférable de ne pas l'utiliser si possible. Enfin c'est ma statégie personnelle. Vous faites comme vous voulez. Ici nous n'avons de toutes manières pas le choix. Pour faire court, `this` est le contexte dans lequel une fonction est appellée. Ici il s'agit de l'élément sur lequel la souris passe. La fonction `mouse` de d3 nécessite ce contexte.
+`this` porte beaucoup à confusion, il est en général préférable de ne pas l'utiliser si possible. Enfin c'est ma stratégie personnelle. Vous faites comme vous voulez. Ici nous n'avons de toutes manières pas le choix. Pour faire court, `this` est le contexte dans lequel une fonction est appellée. Ici il s'agit de l'élément sur lequel la souris passe. La fonction `mouse` de d3 nécessite ce contexte.
 
 ---
 
@@ -457,7 +457,7 @@ bubbles.on('mouseover', function(d) {
 })
 ```
 
-Quand la souris passe par dessus une bulle, son contour devient noir plutôt que la couleur de la région. Nous avons encore utilisé `this`, cette fois pour séléctionner la bulle pour lui donner un `stroke` noir.
+Quand la souris passe par dessus une bulle, son contour devient noir plutôt que la couleur de la région. Nous avons encore utilisé `this`, cette fois pour sélectionner la bulle pour lui donner un `stroke` noir.
 
 Nous avons un problème de plus, chaque bulle sur laquelle nous sommes passés a maintenant un contour noir. Pour le résoudre, ainsi que le problème 1 plus haut, il nous faut ajouter un événement quand la souris n'est plus au dessus de la bulle.
 

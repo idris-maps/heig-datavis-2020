@@ -1,6 +1,6 @@
 # Formats de données
 
-Comme nous allons utiliser des technologies "web" pour créer nos visualisation, il nous faut convertir les données en un format utililisable en javascript.
+Comme nous allons utiliser des technologies "web" pour créer nos visualisation, il nous faut convertir les données en un format utilisable en javascript.
 
 ## JSON
 
@@ -62,7 +62,7 @@ nous voyons le résultat dans la console
 ]
 ```
 
-Si nous souhaitons sauver ces données dans un fichier, il nous faut convertir le résultat en chaine de caractères. Pour cela, utilisons [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+Si nous souhaitons sauver ces données dans un fichier, il nous faut convertir le résultat en chaîne de caractères. Pour cela, utilisons [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
 
 ```js
 console.log(JSON.stringify(result))
@@ -127,7 +127,7 @@ Divisons le fichier par ligne
 console.log(file.split('\n'))
 ```
 
-[`.split`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) est une méthode sur une chaine de caractères qui prends un argument, les caractères au niveau desquels nous souhaitons faire la division. Ici `\n` signifie "à la ligne".
+[`.split`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) est une méthode sur une chaîne de caractères qui prends un argument, les caractères au niveau desquels nous souhaitons faire la division. Ici `\n` signifie "à la ligne".
 
 Quand nous lançons la commande à nouveau
 
@@ -149,7 +149,7 @@ Nous voyons
 
 Nous avons maintenant un tableau de chaines de caractères, chacun étant une ligne du fichier.
 
-Divisons chaque ligne au niveau du point-virgule. Le format a beau s'appeller "**comma** separated values", le séparateur de cellules n'a pas besoin d'être une virgule.
+Divisons chaque ligne au niveau du point-virgule. Le format a beau s'appeler "**comma** separated values", le séparateur de cellules n'a pas besoin d'être une virgule.
 
 ```js
 console.log(
@@ -279,7 +279,7 @@ retourne
 
 On y est presque. Trois détails à regler:
 
-1. `elus` est une chaine de caractères, nous voulons cette valeur sous forme de nombre
+1. `elus` est une chaîne de caractères, nous voulons cette valeur sous forme de nombre
 2. Le premier élément ne sert à rien, `{ elus: 'anzahl_gewaehlte', parti: ...}`
 3. Utiliser `JSON.stringify` pour pouvoir sauver le résultat dans un fichier
 
@@ -310,6 +310,6 @@ Nous n'avons pas besoin de faire ce travail de diviser par ligne, puis par cellu
 
 ## XLS
 
-XLS est le format utilisé par le logiciel Excel. La manière la plus facile d'utiliser ce type de fichier est de copier les cellules qui vous intéressent. Et les coller dans un editeur de texte et sauver le fichier comme `.csv`.
+XLS est le format utilisé par le logiciel Excel. La manière la plus facile d'utiliser ce type de fichier est de copier les cellules qui vous intéressent. Et les coller dans un éditeur de texte et sauver le fichier comme `.csv`.
 
 Il est possible d'ouvrir les fichier XLS avec `node`, pour cela vous pouvez aussi jeter un coup d'oeil à [la préparation de données pour le graphique Gapminder](../rosling/data).

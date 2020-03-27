@@ -18,7 +18,7 @@ const bubbles = svg.selectAll('circle')
 Ceci est la procédure de `d3` pour joindre des données à des éléments. Nous l'avons vues plusieurs fois:
 
 - On prends un objet, `svg`, auquel nous souhaitons ajouter des éléments
-- On séléctionne les éléments, qui n'existent pas encore: `.selectAll()`
+- On sélectionne les éléments, qui n'existent pas encore: `.selectAll()`
 - On joint les données `.data()`
 - Quand une donnée "entre", `.enter()`, nous ajoutons un élément, `.append()`
 
@@ -51,7 +51,7 @@ const Graph = year =>
 render(Graph(2020), document.getElementById('graph'))
 ```
 
-## Programmation orientée objets et programmation fonctionelle
+## Programmation orientée objets et programmation fonctionnelle
 
 Ces deux approches ne se ressemblent pas beaucoup. Elles sont inspirées de deux paradigmes de programmation différents:
 
@@ -60,7 +60,7 @@ Ces deux approches ne se ressemblent pas beaucoup. Elles sont inspirées de deux
 
 Il existe des languages de programmation basés sur un seul paradigme. [Haskell](https://www.haskell.org/) pour la PF et [SmallTalk](http://www.smalltalk.org/) pour la POO, par example. En javascript, nous pouvons utiliser les deux.
 
-On peut dire que l'approche de `d3` plus haut est plutôt orientée objets et celle de `react` plutôt fonctionelle.
+On peut dire que l'approche de `d3` plus haut est plutôt orientée objets et celle de `react` plutôt fonctionnelle.
 
 Avec `d3.select`, nous créons un **objet** `div` qui a des méthodes telles que `.append` ou `.selectAll` qui permettent d'ajouter des élément.
 
@@ -114,7 +114,7 @@ Le but des deux paradigmes, POO et PF, est de nous permettre d'écrire du code d
 
 #### pas de mutation
 
-Dans l'approche fonctionelle, nous essayons de ne pas changer des valeurs en dehors de la fonction.
+Dans l'approche fonctionnelle, nous essayons de ne pas changer des valeurs en dehors de la fonction.
 
 *mutation*
 
@@ -173,7 +173,7 @@ console.log(add(2, 3)) // 5
 
 Ici si nous donnons les arguments `2` et `3` `add`, retourne toujours `5`.
 
-L'intérêt est d'avoir plus de contrôle sur notre programme. Quand nous utilisons une fonction, nous savons exactement ce qui va se passer puisqu'elle retourne toujours la même chose si on lui donne les mêmes arguments.
+L'intérêt est d'avoir plus de contrôle sur notre programme. Quand nous utilisons une fonction, nous savons exactement ce qui va se passer puis qu'elle retourne toujours la même chose si on lui donne les mêmes arguments.
 
 [`ramda`](https://ramdajs.com/) est une librairie inspirée par cette approche.
 

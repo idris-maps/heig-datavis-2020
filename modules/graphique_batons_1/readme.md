@@ -21,7 +21,7 @@ Le scripte dans `package.json`:
 }
 ```
 
-La commande pour lancer le serveur de dévélopement
+La commande pour lancer le serveur de développement
 
 ```
 npm run batons:1
@@ -88,7 +88,7 @@ Nous utilisons la fonction [`scaleLinear`](https://github.com/d3/d3-scale#linear
 Lier les données `DATA` à des éléments `<rect>`
 
 ```js
-// selectionner les "rect" qui n'existent pas encore
+// sélectionner les "rect" qui n'existent pas encore
 svg.selectAll('rect')
   // lier les données à ces "rect"s
   .data(DATA)
@@ -110,5 +110,5 @@ svg.selectAll('rect')
 
 Avec `d3`, les attributs peuvent être définis en fonction des données auxquelles l'élément est joint. `y` est défini en fonction de l'échelle `yScale`. Nous devons passer la clé `population` à l'échelle pour calculer la position `y` de chaque élément: `d => yScale(d.population)`.
 
-Dit autrement, la valeur d'un attribut peut être défini par une fonction qui prends la donnée liée à cet élément en premier argument. Nous appellons cette donnée `d`. Le deuxième argument est l'indexe, appellé `i` ici. Ce dernier représente la position d'un élément par rapport aux autres. Nous l'utilisons pour l'attribut `x` pour que le premier ait `0 * BAR_WIDTH` , le deuxième, `1 * BAR_WIDTH`, le troisième, `2 * BAR_WIDTH`... et ainsi de suite.
+Dit autrement, la valeur d'un attribut peut être défini par une fonction qui prends la donnée liée à cet élément en premier argument. Nous appelons cette donnée `d`. Le deuxième argument est l'indexe, appellé `i` ici. Ce dernier représente la position d'un élément par rapport aux autres. Nous l'utilisons pour l'attribut `x` pour que le premier ait `0 * BAR_WIDTH` , le deuxième, `1 * BAR_WIDTH`, le troisième, `2 * BAR_WIDTH`... et ainsi de suite.
 

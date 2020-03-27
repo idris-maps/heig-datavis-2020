@@ -52,7 +52,7 @@ Le "mensonge" de l'article est le fait de parler de différences hommes-femmes a
 
 #### Consomation de porno et politique
 
-Dans le contexte très polarisé de la polique aux Etats-Unis, tous les moyens sont bons pour discréditer l'adversaire. La consomation de pornographie en est un.
+Dans le contexte très polarisé de la politique aux États-Unis, tous les moyens sont bons pour discréditer l'adversaire. La consommation de pornographie en est un.
 
 ![Clients pornhub et vote](images/porn_politics_1.png)
 
@@ -62,17 +62,17 @@ Comme discuté lors de la présentation de "PornHub insights", ceci ne dit rien 
 
 ![Kansas](images/porn_politics_2.png)
 
-Si l'adresse IP d'un utilisateur se situe "quelque part aux Etats-Unis", PornHub va imaginer qu'il est au Kansas.
+Si l'adresse IP d'un utilisateur se situe "quelque part aux États-Unis", PornHub va imaginer qu'il est au Kansas.
 
 Ceci ne contredit en rien la thèse du graphique. Au contraire, si le Kansas républicain ne consomme pas autant de pages PornHub qu'il n'y parait, la tendance est encore plus favorable à la théorie: les démocrates sont plus vicelards.
 
-Non seulement les données de PornHub sont potentiellement inexactes, utiliser les vues sur ce site pour représenter la consomation de pornographie est réducteur. Il existe d'autres moyens de consommer de la pornographie.
+Non seulement les données de PornHub sont potentiellement inexactes, utiliser les vues sur ce site pour représenter la consommation de pornographie est réducteur. Il existe d'autres moyens de consommer de la pornographie.
 
 Pour contrer le graphique au-dessus, un partisan démocrate a créé un graphique démontrant qu'au contraire, les républicains consomment plus de pornographie.
 
 ![Abonnements porno et vote](images/porn_politics_3.png)
 
-Cette fois la consomation de pornographie n'est plus représentée par le nombre de pages vues sur PornHub mais par le nombre d'abonnements à des sites pornographiques payants.
+Cette fois la consommation de pornographie n'est plus représentée par le nombre de pages vues sur PornHub mais par le nombre d'abonnements à des sites pornographiques payants.
 
 Mis à part le côté puéril d'essayer de discréditer ses adversaires en fonction de leur consommation supposée de pornographie, la morale est qu'en choisissant bien vos données, vous pouvez faire dire ce que vous voulez à un graphique.
 
@@ -80,7 +80,7 @@ Mis à part le côté puéril d'essayer de discréditer ses adversaires en fonct
 
 #### Le vaccin tue plus que la variole
 
-![Morts de la varioles et du vaccion](images/smallpox_1.png)
+![Morts de la varioles et du vaccin](images/smallpox_1.png)
 
 Ce graphique fictif créé par Alberto Cairo démontre que plus d'enfants meurent du vaccin contre la variole que de la maladie elle-même. Est-ce un argument pour arrêter de vacciner? À première vue, oui. Mais regardons à quoi correspondent ces chiffres.
 
@@ -100,4 +100,4 @@ Ceci est une carte du parcours de chez moi à la HEIG.
 
 Ne pouvant pas représenter chaque bâtiment, chaque champs, chaque arbre... que je passe en chemin, j'ai choisi de ne montrer que les moyens de transports et les lieux où je passe d'un moyen de transport à un autre. Il manque même des repères aussi grands que le Jura ou les lacs de Bienne et de Neuchâtel.
 
-Un cartographe ne vous montre que ce qu'il veut montrer. Ou peut montrer. J'aurais bien ajouté quelques détails pour des raisons ésthétiques mais je suis limité par mes talents de dessinateur. Trouver les données était facile, c'est ce que je faisais à chaque cours avant le "confinement". Mais ce n'est pas très intéressant. La difficulté est de trouver des données intéressantes.
+Un cartographe ne vous montre que ce qu'il veut montrer. Ou peut montrer. J'aurais bien ajouté quelques détails pour des raisons esthétiques mais je suis limité par mes talents de dessinateur. Trouver les données était facile, c'est ce que je faisais à chaque cours avant le "confinement". Mais ce n'est pas très intéressant. La difficulté est de trouver des données intéressantes.

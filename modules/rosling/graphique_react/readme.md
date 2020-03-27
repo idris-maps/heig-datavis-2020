@@ -76,7 +76,7 @@ input.addEventListener('input', e => {
 
 Nous importons `react` et la fonction `render` de `react-dom`. Les éléments `input` et `div` sont déjà dans le HTML.
 
-`Graph` est un composant react, par convention et pour les différencier des autres fonctions, ils commencent par une lettre majuscule. `Graph` prend un argument `year`, l'année, et retourne un élément `<p>`. Ce n'est pas à proprement parler un élément HTML mais ça en a l'aire. Et c'est tout l'intéret du JSX, d'avoir l'impression d'écrire des fonctions qui retournent du HTML.
+`Graph` est un composant react, par convention et pour les différencier des autres fonctions, ils commencent par une lettre majuscule. `Graph` prend un argument `year`, l'année, et retourne un élément `<p>`. Ce n'est pas à proprement parler un élément HTML mais ça en a l'aire. Et c'est tout l'intérêt du JSX, d'avoir l'impression d'écrire des fonctions qui retournent du HTML.
 
 Nous utilisons `render` pour ajouter le composant `Graph` à la `div`. Comme dans l'exemple avec `d3`, 2020 est l'année par défaut. À chaque fois que l'année change nous appelons `render` avec la nouvelle année.
 

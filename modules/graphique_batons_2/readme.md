@@ -109,4 +109,4 @@ svg.append('g')
   .call(axisY)
 ```
 
-Nous passons l'échelle `yScale` à la fonction `d3.axisLeft` qui génére l'axe. Le résultat est appellé sur un nouveau groupe pour être ajouté au DOM.
+Nous passons l'échelle `yScale` à la fonction `d3.axisLeft` qui génère l'axe. Le résultat est appellé sur un nouveau groupe pour être ajouté au DOM.
