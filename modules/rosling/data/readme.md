@@ -295,7 +295,7 @@ retourne
 }
 ```
 
-C'est ce que nous voulons. Appliquons `formatOne` a toutes les éléments.
+C'est ce que nous voulons. Appliquons `formatOne` a tous les éléments.
 
 ```js
 // une fonction pour vérifier que nous avons les valuers de toutes les années
@@ -532,7 +532,7 @@ const esperance_de_vie = require('./temp/esperance_de_vie.json')
 const pnb_p_habitant = require('./temp/pnb_p_habitant.json')
 ```
 
-Une fonction qui prends une collection (un des jeux de données `population`, `esperance_de_vie` et `pnb_p_habitant`) et la nom de la clé sous laquelle nous ajoutons les données. J'utilise l'identifiant `lex` pour l'espérance de vie comme dans le fichier excel, `gdp` pour le PNB par habitant (`gdppc_cppp` comme utilisé dans le fichier excel est un peu long) et `pop` pour la population.
+Une fonction qui prends une collection (un des jeux de données `population`, `esperance_de_vie` et `pnb_p_habitant`) et le nom de la clé sous laquelle nous ajoutons les données. J'utilise l'identifiant `lex` pour l'espérance de vie comme dans le fichier excel, `gdp` pour le PNB par habitant (`gdppc_cppp` comme utilisé dans le fichier excel est un peu long) et `pop` pour la population.
 
 ```js
 /*
@@ -606,7 +606,7 @@ C'est ce que nous voulons. Pour être sûr que chaque pays a des données pour t
 // les années qui nous intéressent
 const years = R.range(1800, 2021)
 /*
- * une fonction qui vérifie que nous avons le valeurs
+ * une fonction qui vérifie que nous avons les valeurs
  * de toutes les années pour une certaine clé
  */ 
 const hasAllYears = (collectionName, country) => {
