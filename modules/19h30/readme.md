@@ -1,6 +1,6 @@
 # Titres du 19h30
 
-Nous allons collecter les titres des sujets du journal de 19h30 de la RTS. Le serveur n'est pas aussi généreux que celui de Galaxus, duquel nous avons tiré un catalogue de chaussette. Il va falloir être un plus ingénieux.
+Nous allons collecter les titres des sujets du journal de 19h30 de la RTS. Le serveur n'est pas aussi généreux que celui de Galaxus, duquel nous avons tiré un [catalogue de chaussettes](../chaussettes_galaxus). Il va falloir être un plus ingénieux.
 
 ## Trouver la requête
 
