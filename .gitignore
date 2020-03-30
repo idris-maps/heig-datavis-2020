@@ -15,3 +15,4 @@ scans
 examples_site
 # autres
 modules/rosling/data/temp/*
+modules/19h30/scraped.ndjson
