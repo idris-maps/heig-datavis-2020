@@ -6,7 +6,7 @@ Que ce soit pour un travail journalistique, ou tout simplement pour voir les pri
 
 Dans la console développeur du navigateur (`ctrl-shift-k` sur firefox), allons dans l'onglet `network`.Puis ouvrons la [page liée aux chaussettes](https://www.galaxus.ch/fr/s8/producttype/chaussettes-782).
 
-Même avec un bloqueur de publicité, le navigateur fait 69 requêtes en ouvrant cette page. Il y a pas mal de photos, nous pouvons les ignorer. Ce qui nous intéresse ce sont les requêtes qui retourne du `json`. Il y en a quelque-unes et il va falloir aller voir ce que chacune d'elles fait. C'est généralement une bonne idée de commencer avec celles qui retournent le plus de données.
+Même avec un bloqueur de publicité, le navigateur fait 69 requêtes en ouvrant cette page. Il y a pas mal de photos, nous pouvons les ignorer. Ce qui nous intéresse ce sont les requêtes qui retournent du `json`. Il y en a quelque-unes et il va falloir aller voir ce que chacune d'elles fait. C'est généralement une bonne idée de commencer avec celles qui retournent le plus de données.
 
 ![Chaussettes Galaxus](images/galaxus_chaussettes.png)
 
@@ -16,7 +16,7 @@ Une fois la requête trouvée, je fais un click droit dessus et `Copy > Copy as 
 curl 'https://www.galaxus.ch/api/graphql' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0' -H 'Accept: */*' -H 'Accept-Language: fr-CH' --compressed -H 'Referer: https://www.galaxus.ch/fr/s8/producttype/chaussettes-782?tagIds=476' -H 'content-type: application/json' -H 'X-Dg-Portal: 22' -H 'X-Dg-Mandator: 406802' -H 'X-Dg-Country: ch' -H 'X-Dg-Userid: null' -H 'X-Dg-LoginStatus: loggedOut' -H 'X-Dg-CustomerType: standard' -H 'X-Dg-SessionZ: T39MoVBmuAGhzOiLCpydKA==' -H 'X-Dg-TestGroup: undefined' -H 'X-Dg-BuildId: 307177' -H 'X-Dg-ScrumTeam: StellaPolaris' -H 'X-Dg-RouteName: productTypeOverview' -H 'X-Dg-Correlation-Id: 0ad2988e-aaa7-43f3-8aac-c467b99ad75e' -H 'Origin: https://www.galaxus.ch' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'TE: Trailers' --data '[{"operationName":"GET_PRODUCT_TYPE_PRODUCTS_AND_FILTERS","variables":{"productTypeId":782,"queryString":"","offset":0,"limit":15,"sort":"BESTSELLER","siteId":null,"sectorId":8},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"cd2107b20ecd5954254487b28679b7a12d0a42139e5ea1a244fcb281539a6a48"}}}]'
 ```
 
-C'est une requête [GraphQl](https://fr.wikipedia.org/wiki/GraphQL), une convention pour intéragir avec un serveur, comme les [API REST](https://fr.wikipedia.org/wiki/Representational_state_transfer) discutées lors du [cours du 6 Mars](../../2020-03-06.md#api-rest). Le `QL` veut dire "Query Language", comme dans `SQL`. Ce n'est pas très lisible, mais la partie intéressante se trouve dans `--data`, vers la fin. Nous avons un `json` avec, entre autre, `limit: 15`.
+C'est une requête [GraphQL](https://fr.wikipedia.org/wiki/GraphQL), une convention pour intéragir avec un serveur, comme les [API REST](https://fr.wikipedia.org/wiki/Representational_state_transfer) discutées lors du [cours du 6 Mars](../../2020-03-06.md#api-rest). Le `QL` veut dire "Query Language", comme dans `SQL`. Ce n'est pas très lisible, mais la partie intéressante se trouve dans `--data`, vers la fin. Nous avons un `json` avec, entre autre, `limit: 15`.
 
 ```js
 [
@@ -220,4 +220,4 @@ node prepare > data.json
 
 Nous sommes maintenant les heureux propriétaires de tout le catalogue des chaussettes vendues sur Galaxus. Je doute qu'il y ait quelque chose d'intéressant à en tirer, à moins d'être dans le business de la chaussette.
 
-Ce qu'il y a à retenir est que si des données vous intéressent mais ne sont pas disponibles en "open data", il y a peut être un moyen de les trouver quand même. Si elles sont affichées sur une page web, elles existent et devrait être accessibles. Regardez les requêtes que fait le navigateur, essayez de les reproduire avec curl et modifiez les pour avoir ce que vous souhaitez.
+Ce qu'il y a à retenir est que si des données vous intéressent mais ne sont pas disponibles en "open data", il y a peut être un moyen de les trouver quand même. Si elles sont affichées sur une page web, elles existent et devraient être accessibles. Regardez les requêtes que fait le navigateur, essayez de les reproduire avec `curl` et modifiez les pour avoir ce que vous souhaitez.
