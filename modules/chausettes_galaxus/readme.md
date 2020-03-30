@@ -8,7 +8,7 @@ Dans la console développeur du navigateur (`ctrl-shift-k` sur firefox), allons 
 
 Même avec un bloqueur de publicité, le navigateur fait 69 requêtes en ouvrant cette page. Il y a pas mal de photos, nous pouvons les ignorer. Ce qui nous intéresse ce sont les requêtes qui retourne du `json`. Il y en a quelque-unes et il va falloir aller voir ce que chacune d'elles fait. C'est généralement une bonne idée de commencer avec celles qui retournent le plus de données.
 
-![Chaussettes Galaxus](images/chaussettes_galaxus.png)
+![Chaussettes Galaxus](images/galaxus_chaussettes.png)
 
 Une fois la requête trouvée, je fais un click droit dessus et `Copy > Copy as cURL`
 
