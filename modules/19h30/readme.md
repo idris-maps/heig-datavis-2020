@@ -16,7 +16,7 @@ En ouvrant l'URL dans un autre onglet du navigateur, nous voyons qu'elle retourn
 
 ![RTS API latestEpisodes](images/rts_api_latestEpisodes.png)
 
-Et chaque épisode contient une séries de `segments`, les sujets du jour.
+Et chaque épisode contient une série de `segments`, les sujets du jour.
 
 ![RTS API latestEpisodes segments](images/rts_api_latestEpisodes_segments.png)
 
@@ -67,7 +67,7 @@ const getLatestEpisodes = maxDate =>
 
 ### Sauver les données
 
-Une fois les données obtenues, nous devons les sauver quelque part. Il est possible que notre scripte retourne une erreur tôt ou tard. Si nous gardons les résultat en mémoire pour créer un fichier à la fin, nous risquons de tout perdre en cas d'erreur. Il vaut mieux sauver les données à chaque fois que nous les obtenons.
+Une fois les données obtenues, nous devons les sauver quelque part. Il est possible que notre scripte retourne une erreur tôt ou tard. Si nous gardons le résultat en mémoire pour créer un fichier à la fin, nous risquons de tout perdre en cas d'erreur. Il vaut mieux sauver les données à chaque fois que nous les obtenons.
 
 Nous allons sauver les données dans un fichier [`ndjson`](http://ndjson.org/), (new line delimited json), c'est à dire un fichier où chaque ligne représente un objet `json`. À chaque fois que nous recevons des données du serveur de la RTS, nous ajouterons une ligne à ce fichier.
 
