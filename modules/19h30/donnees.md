@@ -171,7 +171,7 @@ Pour avoir les titres du 11 Septembre 2001 combinons les deux:
 
 ```
 ndjson-filter "d.date === '2001-09-11'" < segments.ndjson \
-ndjson-map "d.title"
+| ndjson-map "d.title"
 ```
 
 ![Titres du 11 Septembre 2001](images/titres_2001-09-11.png)
@@ -196,56 +196,56 @@ Le résultat:
 
 ```json
 [
-	{
-		"firstTitle": "Hommage à Michael Jackson: entretien avec David Brun-Lambert, journaliste",
-		"date": "2009-07-07",
-		"duration": 102
-	},
-	{
-		"firstTitle": "L'Amérique en état de choc",
-		"date": "2001-09-12",
-		"duration": 79
-	},
-	{
-		"firstTitle": "Un immense drapeau américain a été déployé sur la Maison Blanche 48 heures après les attentats aux USA",
-		"date": "2001-09-13",
-		"duration": 72
-	},
-	{
-		"firstTitle": "Plusieurs patients français sont désormais soignés en Suisse dans différents cantons.",
-		"date": "2020-03-29",
-		"duration": 72
-	},
-	{
-		"firstTitle": "Habemus Papam: le 5e tour de scrutin aura été le bon",
-		"date": "2013-03-13",
-		"duration": 66
-	},
-	{
-		"firstTitle": "Elections: le nouveau Conseil national selon les projections, l'UDC en nette progression",
-		"date": "2007-10-21",
-		"duration": 62
-	},
-	{
-		"firstTitle": "Les nouveaux visages de la vague verte en Suisse romande.",
-		"date": "2019-10-20",
-		"duration": 62
-	},
-	{
-		"firstTitle": "On compte déjà 18 morts dans l'explosion d'une usine chimique à Toulouse",
-		"date": "2001-09-21",
-		"duration": 61
-	},
-	{
-		"firstTitle": "Des milliers de manifestants pour Swissair et contre les banques",
-		"date": "2001-10-04",
-		"duration": 58
-	},
-	{
-		"firstTitle": "Attentats aux USA : effondrement des 2 tours du World Trade Center",
-		"date": "2001-09-11",
-		"duration": 54
-	}
+  {
+    "firstTitle": "Hommage à Michael Jackson: entretien avec David Brun-Lambert, journaliste",
+    "date": "2009-07-07",
+    "duration": 102
+  },
+  {
+    "firstTitle": "L'Amérique en état de choc",
+    "date": "2001-09-12",
+    "duration": 79
+  },
+  {
+    "firstTitle": "Un immense drapeau américain a été déployé sur la Maison Blanche 48 heures après les attentats aux USA",
+    "date": "2001-09-13",
+    "duration": 72
+  },
+  {
+    "firstTitle": "Plusieurs patients français sont désormais soignés en Suisse dans différents cantons.",
+    "date": "2020-03-29",
+    "duration": 72
+  },
+  {
+    "firstTitle": "Habemus Papam: le 5e tour de scrutin aura été le bon",
+    "date": "2013-03-13",
+    "duration": 66
+  },
+  {
+    "firstTitle": "Elections: le nouveau Conseil national selon les projections, l'UDC en nette progression",
+    "date": "2007-10-21",
+    "duration": 62
+  },
+  {
+    "firstTitle": "Les nouveaux visages de la vague verte en Suisse romande.",
+    "date": "2019-10-20",
+    "duration": 62
+  },
+  {
+    "firstTitle": "On compte déjà 18 morts dans l'explosion d'une usine chimique à Toulouse",
+    "date": "2001-09-21",
+    "duration": 61
+  },
+  {
+    "firstTitle": "Des milliers de manifestants pour Swissair et contre les banques",
+    "date": "2001-10-04",
+    "duration": 58
+  },
+  {
+    "firstTitle": "Attentats aux USA : effondrement des 2 tours du World Trade Center",
+    "date": "2001-09-11",
+    "duration": 54
+  }
 ]
 ```
 
@@ -257,7 +257,7 @@ ndjson-filter "d.title.toLowerCase().includes('virus')" < segments.ndjson \
 | ndjson-map "{ month: d.date.split('-').filter((e, i) => i < 2).join('-'), duration: d.duration }"
 ```
 
-* `ndjson-filter "d.title.toLowerCase().includes('virus')" < segments.ndjson` filtre les sujets qui incluent `virus` dans le titre. (J'ai mis le titre en lettre minuscules pour aussi inclure `Virus`)
+* `ndjson-filter "d.title.toLowerCase().includes('virus')" < segments.ndjson` filtre les sujets qui incluent `virus` dans le titre. (J'ai mis le titre en lettres minuscules pour aussi inclure `Virus`)
 * `ndjson-sort "a.date > b.date ? 1 : 1"` ordonne les lignes par date
 * `ndjson-map "{ month: d.date.split('-').filter((e, i) => i < 2).join('-'), duration: d.duration }"` ne prends que le mois (`YYYY-MM` plutôt que la date `YYYY-MM-DD`) et la durée.
 
@@ -476,7 +476,7 @@ Le résultat:
 
 ![Utilisation du mot virus par mois](images/virus.png)
 
-Nous voyons clairement que le mot n'a jamais été autant utilisé que cette fin d'année. On voit à peine les utilisations avant Janvier 2020. Maintenant si nous souhaitons avoir le même graphique mais uniquement avec les mois avant, il suffit d'ajouter un filter à notre scripte: `ndjson-filter "d.date < '2020-01'"`.
+Nous voyons clairement que le mot n'a jamais été autant utilisé qu'en ce début d'année 2020. On voit à peine les utilisations avant Janvier 2020. Maintenant si nous souhaitons avoir le même graphique mais uniquement avec les mois avant, il suffit d'ajouter un filtre à notre scripte: `ndjson-filter "d.date < '2020-01'"`.
 
 ```
 ndjson-filter "d.title.toLowerCase().includes('virus')" < segments.ndjson \
@@ -522,7 +522,7 @@ Essayons de voir les mentions des mots "terrorisme", "terroriste"...
 
 ![Mention du terrorisme](images/terror.png)
 
-Sans surprises nous avons beaucoup de temps consacré à ce mot à la suite du 11 Septembre 2001. Mais je ne me souviens pas ce qui c'est passé en été 2005. Trouvons les titres:
+Sans surprise, nous avons beaucoup de temps consacré à ce mot à la suite du 11 Septembre 2001. Mais je ne me souviens pas ce qui c'est passé en été 2005. Trouvons les titres:
 
 ```
 ndjson-filter "d.title.toLowerCase().includes('terror')" < segments.ndjson \
@@ -530,7 +530,7 @@ ndjson-filter "d.title.toLowerCase().includes('terror')" < segments.ndjson \
 | ndjson-map "{ date: d.date, title: d.title }"
 ```
 
-![Attentats de Juillet 2005](attentats_londres.png)
+![Attentats de Juillet 2005](images/attentats_londres.png)
 
 Ce sont les attentats à Londres.
 
