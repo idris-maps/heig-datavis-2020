@@ -16,7 +16,14 @@ Une fois la requête trouvée, je fais un click droit dessus et `Copy > Copy as 
 curl 'https://www.galaxus.ch/api/graphql' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0' -H 'Accept: */*' -H 'Accept-Language: fr-CH' --compressed -H 'Referer: https://www.galaxus.ch/fr/s8/producttype/chaussettes-782?tagIds=476' -H 'content-type: application/json' -H 'X-Dg-Portal: 22' -H 'X-Dg-Mandator: 406802' -H 'X-Dg-Country: ch' -H 'X-Dg-Userid: null' -H 'X-Dg-LoginStatus: loggedOut' -H 'X-Dg-CustomerType: standard' -H 'X-Dg-SessionZ: T39MoVBmuAGhzOiLCpydKA==' -H 'X-Dg-TestGroup: undefined' -H 'X-Dg-BuildId: 307177' -H 'X-Dg-ScrumTeam: StellaPolaris' -H 'X-Dg-RouteName: productTypeOverview' -H 'X-Dg-Correlation-Id: 0ad2988e-aaa7-43f3-8aac-c467b99ad75e' -H 'Origin: https://www.galaxus.ch' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'TE: Trailers' --data '[{"operationName":"GET_PRODUCT_TYPE_PRODUCTS_AND_FILTERS","variables":{"productTypeId":782,"queryString":"","offset":0,"limit":15,"sort":"BESTSELLER","siteId":null,"sectorId":8},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"cd2107b20ecd5954254487b28679b7a12d0a42139e5ea1a244fcb281539a6a48"}}}]'
 ```
 
-C'est une requête [GraphQL](https://fr.wikipedia.org/wiki/GraphQL), une convention pour intéragir avec un serveur, comme les [API REST](https://fr.wikipedia.org/wiki/Representational_state_transfer) discutées lors du [cours du 6 Mars](../../2020-03-06.md#api-rest). Le `QL` veut dire "Query Language", comme dans `SQL`. Ce n'est pas très lisible, mais la partie intéressante se trouve dans `--data`, vers la fin. Nous avons un `json` avec, entre autre, `limit: 15`.
+C'est une requête [GraphQL](https://fr.wikipedia.org/wiki/GraphQL), une convention pour intéragir avec un serveur comme les [API REST](https://fr.wikipedia.org/wiki/Representational_state_transfer) discutées lors du [cours du 6 Mars](../../2020-03-06.md#api-rest). Le `QL` veut dire "Query Language", comme dans `SQL`.
+
+Avec les API REST les requêtes sont organisées en URL par "ressource", par example:
+
+* `https://mon-serveur.com/api/users`
+* `https://mon-serveur.com/api/products`
+
+Avec GraphQL l'URL est toujours la même. Dans ce cas: `https://www.galaxus.ch/api/graphql`. Vous obtenez différentes données en formulant une requête dans les données que vous envoyez au serveur. Dans notre requête pour les chaussettes, nous pouvons le voir sous `--data` à la fin de la requête. C'est un `json` qui ressemble à ça:
 
 ```js
 [
@@ -41,10 +48,11 @@ C'est une requête [GraphQL](https://fr.wikipedia.org/wiki/GraphQL), une convent
 ]
 ```
 
-15 produits sont affichés sur la page. On y voit aussi qu'il y a un peu plus de 2200 produits pour cette catégorie. Essayons de changer la limite à 2300 et sauvons le fichier en tant que [`chaussettes.json`](chaussettes.json):
+La partie intéressante est la limite du nombre de produits retournés, `"limit": 15`. 15 produits sont affichés sur la page. On y voit aussi qu'il y a un peu plus de 2200 produits pour cette catégorie. Essayons de changer la limite à 2300 et sauvons le fichier en tant que [`chaussettes.json`](chaussettes.json):
 
 ```
-curl 'https://www.galaxus.ch/api/graphql' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0' -H 'Accept: */*' -H 'Accept-Language: fr-CH' --compressed -H 'Referer: https://www.galaxus.ch/fr/s8/producttype/chaussettes-782?tagIds=476' -H 'content-type: application/json' -H 'X-Dg-Portal: 22' -H 'X-Dg-Mandator: 406802' -H 'X-Dg-Country: ch' -H 'X-Dg-Userid: null' -H 'X-Dg-LoginStatus: loggedOut' -H 'X-Dg-CustomerType: standard' -H 'X-Dg-SessionZ: T39MoVBmuAGhzOiLCpydKA==' -H 'X-Dg-TestGroup: undefined' -H 'X-Dg-BuildId: 307177' -H 'X-Dg-ScrumTeam: StellaPolaris' -H 'X-Dg-RouteName: productTypeOverview' -H 'X-Dg-Correlation-Id: 0ad2988e-aaa7-43f3-8aac-c467b99ad75e' -H 'Origin: https://www.galaxus.ch' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'TE: Trailers' --data '[{"operationName":"GET_PRODUCT_TYPE_PRODUCTS_AND_FILTERS","variables":{"productTypeId":782,"queryString":"","offset":0,"limit":15,"sort":"BESTSELLER","siteId":null,"sectorId":8},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"cd2107b20ecd5954254487b28679b7a12d0a42139e5ea1a244fcb281539a6a48"}}}]' > chaussettes.json
+curl 'https://www.galaxus.ch/api/graphql' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0' -H 'Accept: */*' -H 'Accept-Language: fr-CH' --compressed -H 'Referer: https://www.galaxus.ch/fr/s8/producttype/chaussettes-782?tagIds=476' -H 'content-type: application/json' -H 'X-Dg-Portal: 22' -H 'X-Dg-Mandator: 406802' -H 'X-Dg-Country: ch' -H 'X-Dg-Userid: null' -H 'X-Dg-LoginStatus: loggedOut' -H 'X-Dg-CustomerType: standard' -H 'X-Dg-SessionZ: T39MoVBmuAGhzOiLCpydKA==' -H 'X-Dg-TestGroup: undefined' -H 'X-Dg-BuildId: 307177' -H 'X-Dg-ScrumTeam: StellaPolaris' -H 'X-Dg-RouteName: productTypeOverview' -H 'X-Dg-Correlation-Id: 0ad2988e-aaa7-43f3-8aac-c467b99ad75e' -H 'Origin: https://www.galaxus.ch' -H 'DNT: 1' -H 'Connection: keep-alive' -H 'TE: Trailers' --data '[{"operationName":"GET_PRODUCT_TYPE_PRODUCTS_AND_FILTERS","variables":{"productTypeId":782,"queryString":"","offset":0,"limit":15,"sort":"BESTSELLER","siteId":null,"sectorId":8},"extensions":{"persistedQuery":{"version":1,"sha256Hash":"cd2107b20ecd5954254487b28679b7a12d0a42139e5ea1a244fcb281539a6a48"}}}]' \
+> chaussettes.json
 ```
 
 ## Préparer les données
