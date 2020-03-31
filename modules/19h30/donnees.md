@@ -263,7 +263,7 @@ ndjson-filter "d.title.toLowerCase().includes('virus')" < segments.ndjson \
 
 ![Durée par mois](images/duree_par_mois.png)
 
-J'ai essayé d'utiliser `ndjson-reduce` pour avoir la somme de la durée par mois mais le code devenait très long, illisible et difficile à débugger. Nous allons créer notre propre scripte pour cela. Pour le rendre utilisable en d'autres occasion je vais passer la clé sur laquelle nous souhaitons faire la somme, `duration` et la clé par laquelle nous souhaitons grouper les sommes, `month`.
+J'ai essayé d'utiliser `ndjson-reduce` pour avoir la somme de la durée par mois mais le code devenait très long, illisible et difficile à débugger. Nous allons créer notre propre scripte pour cela. Pour le rendre utilisable en d'autres occasions, je vais passer la clé sur laquelle nous souhaitons faire la somme, `duration`, et la clé par laquelle nous souhaitons grouper les sommes, `month`.
 
 [`scriptes/sum.js`](scriptes/sum.js)
 
@@ -336,7 +336,7 @@ Quand toutes les lignes ont été lues `reader.on('close')`, nous appliquons `re
 
 * Nous ordonnons le tableau par `by`
 * Nous renommons `by` et `sum` pour utiliser les clés passées en argument `R.map(d => ({ [keyToSumBy]: d.by, [keyToSum]: d.sum }))`
-* Transformons le résultat en ligne de caractères, `JSON.stringify` et l'envoyons à la console.
+* Transformons le résultat en ligne de caractères, `JSON.stringify`, et l'envoyons à la console, `console.log`.
 
 Utilisons ce scripte en passant les clés `duration` et `month`
 
@@ -498,7 +498,7 @@ Nous voyons qu'il y a eu 3 pics avant l'explosion de cette année:
 
 ## Réutiliser le scripte
 
-Maintenant que nous avons la tuyauterie en place pour voir le nombre de secondes dédiées à un sujet par mois, nous pouvons le réutiliser pour d'autres mots. Créons un scripte [bash]() auquel nous passerons un mot et qui créera un graphique sur l'utilisation mensuelle de ce mot.
+Maintenant que nous avons la tuyauterie en place pour voir le nombre de secondes dédiées à un sujet par mois, nous pouvons le réutiliser pour d'autres mots. Créons un scripte [bash](https://fr.wikipedia.org/wiki/Bourne-Again_shell) auquel nous passerons un mot et qui créera un graphique sur l'utilisation mensuelle de ce mot.
 
 [`wordByMonth.sh`](wordByMonth.sh)
 
