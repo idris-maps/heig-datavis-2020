@@ -174,7 +174,7 @@ ndjson-filter "d.date === '2001-09-11'" < segments.ndjson \
 ndjson-map "d.title"
 ```
 
-![Titres du 11 Septembre 2001](titres_2001-09-11.png)
+![Titres du 11 Septembre 2001](images/titres_2001-09-11.png)
 
 ## Les épisodes les plus longs
 
