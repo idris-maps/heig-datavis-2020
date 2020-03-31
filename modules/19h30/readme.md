@@ -114,7 +114,7 @@ loop(1, () => console.log('done'))
 
 ---
 
-#### La boucle pour aller chercher tous les épisodes
+### La boucle pour aller chercher tous les épisodes
 
 Nous souhaitons continuer jusqu'à l'an 2000 si possible.
 
@@ -189,6 +189,8 @@ Chaque ligne de `scraped.ndjson` contient 10 épisodes. Nous souhaitons avoir un
 Pour lire le fichier `scraped.ndjson`, nous utilisons la librairie [`readline`](https://nodejs.org/api/readline.html#readline_readline_createinterface_options). Comme `fs`, celle-ci vient avec `node`, nous n'avons pas besoin de l'installer.
 
 ```js
+const readline = require('readline')
+
 const reader = readline.createInterface({
   input: process.stdin,
 })
@@ -431,4 +433,12 @@ La commande pour faire tourner le scripte
 node scriptes/extractSegments < episodes.ndjson > segments.ndjson
 ```
 
-Les segments seront dans un fichier `segments.ndjson`
+Les segments sont dans le fichier [`segments.ndjson`](segments.ndjson).
+
+## Résumé
+
+* Nous avons trouvé une requête qui retourne les dix derniers épisodes du 19h30 à n'importe quelle date.
+* Nous avons créé un scripte [`scrape.js`](scriptes/scrape.js) qui va chercher les dix derniers épisodes en remontant le temps jusqu'à l'an 2000. Le résultat est le fichier `scraped.ndjson` où chaque ligne est un `json` contenant dix épisodes.
+* Nous avons un scripte [`extractEpisodes.js`](scriptes/extractEpisodes.js) pour extraire les épisodes de `scraped.ndjson`, faire quelques transformations et créer le fichier [`episodes.ndjson`](episodes.ndjson).
+* Nous avons extrait les `segments`, les sujets de chaque épisode, avec [`extractSegments.js`](scriptes/extractSegments.js) pour créer [`segments.ndjson`](segments.ndjson).
+

@@ -23,7 +23,7 @@ Avec les API REST les requêtes sont organisées en URL par "ressource", par exa
 * `https://mon-serveur.com/api/users`
 * `https://mon-serveur.com/api/products`
 
-Avec GraphQL l'URL est toujours la même. Dans ce cas: `https://www.galaxus.ch/api/graphql`. Vous obtenez différentes données en formulant une requête dans les données que vous envoyez au serveur. Dans notre requête pour les chaussettes, nous pouvons le voir sous `--data` à la fin de la requête. C'est un `json` qui ressemble à ça:
+Avec GraphQL l'URL est toujours la même. Dans ce cas: `https://www.galaxus.ch/api/graphql`. Vous obtenez différentes données en formulant une requête dans le message que vous envoyez au serveur. Dans notre requête pour les chaussettes, nous pouvons le voir sous `--data` à la fin de la requête. C'est un `json` qui ressemble à ça:
 
 ```js
 [
@@ -74,7 +74,7 @@ const products = R.path([0, 'data', 'productType', 'filterProductsV4', 'products
 console.log(products)
 ```
 
-Je ne sais pas comment font les développeurs de cette application. C'était pas du gâteau. Un produit ressemble à ça:
+Je ne sais pas comment font les développeurs de cette application. C'est pas du gâteau. Un produit ressemble à ça:
 
 ```js
 {
