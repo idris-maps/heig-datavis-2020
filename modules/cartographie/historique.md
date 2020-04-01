@@ -61,7 +61,7 @@ Pendant le [siècle d'or](https://fr.wikipedia.org/wiki/Si%C3%A8cle_d%27or_n%C3%
 
 ![Projection Mercator](https://camo.githubusercontent.com/32e54b29aba10da5924dc8cf5bb0ae15be06f869/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36322f557367735f6d61705f6d65726361746f722e737667)
 
-Cette projection est idéale pour la navigation puisqu'elle conserve les angles par rapport à la latitude. En sortant du port il est possible de calculé le bon cape pour arriver à destination. Il suffira de garder ce cape tout au long du voyage. La projection Mercator est encore le standard utilisé pour la plupart des cartes de nos jours.
+Cette projection est idéale pour la navigation puisqu'elle conserve les angles par rapport à la latitude. En sortant du port il est possible de calculer le bon cape pour arriver à destination. Il suffira de garder ce cape tout au long du voyage. La projection Mercator est encore le standard utilisé pour la plupart des cartes de nos jours.
 
 Le problème de la projection de Mercator est que les surfaces des terres sont déformées. Plus nous approchons des pôles, plus elles paraissent grandes.
 
@@ -73,7 +73,7 @@ Le site [The true size](https://thetruesize.com) permet de déplacer un pays ver
 
 Dans les années 1970 [Arno Peters](https://en.wikipedia.org/wiki/Arno_Peters), considérait que la projection Mercator était "eurocentrique". Comme elle représentait les régions plus proches des pôles plus grandes qu'elles ne le sont, l'Europe y prends trop de la place. Il créa sa propre projection où chaque terre est certes déformée mais correspond à sa taille réelle.
 
-![Projection Peters](https://en.wikipedia.org/wiki/Gall%E2%80%93Peters_projection#/media/File:Gall%E2%80%93Peters_projection_SW.jpg)
+![Projection Peters](https://upload.wikimedia.org/wikipedia/commons/3/34/Gall%E2%80%93Peters_projection_SW.jpg)
 
 D'autres n'ayant pas de problème avec la taille des terres mais avec le positionnement de la carte, on créé des projections où l'Europe n'est plus au centre.
 
