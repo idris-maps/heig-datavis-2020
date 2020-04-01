@@ -33,7 +33,7 @@ L'avantage principal de ce type de fichier est que nous n'avons pas besoin de ga
 
 ## La tuyauterie
 
-Nous avons vu que la fonction [`pipe` de `ramda`](https://ramdajs.com/docs/#pipe) permet d'appliquer plusieurs fonctions à la suite. Nous avons fait une opération similaire dans le terminal en créant par exemple le fichier `segments.ndjson`:
+Nous avons vu que la fonction [`pipe` de `ramda`](https://ramdajs.com/docs/#pipe) permet d'appliquer plusieurs fonctions à la suite. Nous avons fait une opération similaire dans la console en créant par exemple le fichier `segments.ndjson`:
 
 ```
 node scriptes/extractSegments < episodes.ndjson > segments.ndjson
