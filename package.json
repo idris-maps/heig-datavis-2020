@@ -16,7 +16,8 @@
     "build:recette:d3": "rm -rf recettes/d3/dist && parcel build recettes/d3/src/index.html --out-dir recettes/d3/dist",
     "build:recette:chartjs": "rm -rf recettes/chartjs/dist && parcel build recettes/chartjs/src/index.html --out-dir recettes/chartjs/dist",
     "rosling": "parcel modules/rosling/graphique_d3/src/index.html --out-dir modules/rosling/graphique_d3/dist",
-    "rosling-react": "parcel modules/rosling/graphique_react/src/index.html --out-dir modules/rosling/graphique_react/dist"
+    "rosling-react": "parcel modules/rosling/graphique_react/src/index.html --out-dir modules/rosling/graphique_react/dist",
+    "carte-d3": "parcel build modules/cartographie/st_roch/src/index.html --out-dir modules/cartographie/st_roch/dist"
   },
   "keywords": [],
   "author": "",
