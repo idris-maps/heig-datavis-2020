@@ -70,3 +70,7 @@ Vous pouvez trouver des données géographiques pour la Suisse sur [opendata.swi
 Les régions administratives (communes, districts et cantons), peuvent être téléchargées en GeoJSON [ici](https://observablehq.com/@idris-maps/swiss-geodata).
 
 **Attention** les géodonnées suisses sont souvent dans le [système de coordonnées suisses](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_coordonn%C3%A9es_g%C3%A9ographiques_suisse). Voyez le [cours sur la cartographie avec D3](https://observablehq.com/@idris-maps/la-cartographie-avec-d3) pour projeter ce type de systèmes de coordonnées. Si vous devez convertir les données en [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System), le format utilisé par open street map et la majorité des outils en ligne, voyez la librairie [`swiss-projection`](https://www.npmjs.com/package/swiss-projection).
+
+## Dessiner les géométries
+
+Si vous souhaitez représenter des géométries qui ne sont pas disponibles dans les jeux de données ci-dessus, vous pouvez les dessiner vous même [ici](https://idris-draw.surge.sh/) et les exporter au format GeoJSON en cliquant l'icône "Télécharger" dans le menu à gauche.
