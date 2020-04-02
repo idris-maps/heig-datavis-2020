@@ -58,3 +58,9 @@ node toNdjson \
 
 * [Code commenté](src/index.js)
 * [Résultat](http://heig-datavis2020.surge.sh/20200403/carte-d3/)
+
+## Représenter les arbres avec Leaflet
+
+* Comme vous devez également utiliser des fichiers CSS, regardez la [recette](../../../recettes/leaflet/readme.md)
+* [Code commenté](../../../recettes/leaflet/src/index.js)
+* [Résultat](http://heig-datavis2020.surge.sh/20200403/carte-leaflet/)
