@@ -476,7 +476,7 @@ Le résultat:
 
 ![Utilisation du mot virus par mois](images/virus.png)
 
-Nous voyons clairement que le mot n'a jamais été autant utilisé qu'en ce début d'année 2020. On voit à peine les utilisations avant Janvier 2020. Maintenant si nous souhaitons avoir le même graphique mais uniquement avec les mois avant, il suffit d'ajouter un filtre à notre scripte: `ndjson-filter "d.date < '2020-01'"`.
+Nous voyons clairement que le mot "virus" n'a jamais été autant utilisé qu'en ce début d'année 2020. On voit à peine les utilisations avant Janvier 2020. Maintenant si nous souhaitons avoir le même graphique mais uniquement avec les mois avant, il suffit d'ajouter un filtre à notre scripte: `ndjson-filter "d.date < '2020-01'"`.
 
 ```
 ndjson-filter "d.title.toLowerCase().includes('virus')" < segments.ndjson \
