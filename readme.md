@@ -6,6 +6,7 @@ Cours HEIG 2020
 * [28 Février 2020](2020-02-28.md)
 * [6 Mars 2020](2020-03-06.md)
 * [27 Mars 2020](2020-03-27.md)
+* [3 Avril 2020](2020-04-03.md)
 
 [Procédure pour les cours à distance](cours_a_distance.md)
 
@@ -18,6 +19,10 @@ Cours HEIG 2020
 * [Utiliser une API REST](2020-03-06.md#api-rest)
 * [Utiliser `ramda` pour manipuler des données](2020-03-06.md#utiliser-ramda-pour-manipuler-des-données)
 * [Préparation des données pour le graphique "Gapminder"](modules/rosling/data)
+* [Utiliser les "scraping" pour trouver des données](2020-04-03.md#le-scraping)
+* [Traiter des données avec la console](modules/19h30/donnees.md)
+* [Les données géographiques au format GeoJSON](https://observablehq.com/@idris-maps/donnees-cartographiques)
+* [Trouver des données cartographiques](modules/cartographie/trouver_des_donnees.md)
 
 ## Visualisation
 
@@ -37,11 +42,13 @@ Cours HEIG 2020
 * [Représenter un réseau](https://observablehq.com/@idris-maps/representer-un-reseau-avec-d3)
 * Explication détaillée de comment créer un graphique en bâtons [partie 1](modules/graphique_batons_1) [partie 2](modules/graphique_batons_2)
 * [Explication détaillée de comment recréer le graphique de Gapminder](modules/rosling/graphique_d3)
+* [La cartographie avec D3](https://observablehq.com/@idris-maps/la-cartographie-avec-d3)
 
 ### Autres librairies
 
 * [Même graphique en bâtons avec différentes librairies](https://observablehq.com/@idris-maps/graphiques-en-batons)
 * [Remplacer d3.select par react](modules/rosling/graphique_react)
+* [Leaflet pour les carte navigables](https://observablehq.com/@idris-maps/leaflet-et-fond-de-carte-en-tuiles)
 
 ## Web
 
