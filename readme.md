@@ -14,15 +14,21 @@ Cours HEIG 2020
 
 ## Données
 
+### Où en trouver
+
 * [Trouver des données ouvertes](2020-02-21.md#donn%C3%A9es-ouvertes)
-* [Utiliser les données aux formats JSON, CSV et XLS](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200228#formats)
 * [Utiliser une API REST](2020-03-06.md#api-rest)
+* [Utiliser les "scraping" pour trouver des données](2020-04-03.md#le-scraping)
+* [Trouver des données cartographiques](modules/cartographie/trouver_des_donnees.md)
+
+### Comment les manipuler
+
+* [Utiliser les données aux formats JSON, CSV et XLS](https://github.com/idris-maps/heig-datavis-2020/tree/master/20200228#formats)
 * [Utiliser `ramda` pour manipuler des données](2020-03-06.md#utiliser-ramda-pour-manipuler-des-données)
 * [Préparation des données pour le graphique "Gapminder"](modules/rosling/data)
-* [Utiliser les "scraping" pour trouver des données](2020-04-03.md#le-scraping)
 * [Traiter des données avec la console](modules/19h30/donnees.md)
 * [Les données géographiques au format GeoJSON](https://observablehq.com/@idris-maps/donnees-cartographiques)
-* [Trouver des données cartographiques](modules/cartographie/trouver_des_donnees.md)
+
 
 ## Visualisation
 
