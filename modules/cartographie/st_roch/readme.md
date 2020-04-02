@@ -6,7 +6,7 @@ J'ai choisi d'utiliser l'API open street map pour télécharger toutes les donn�
 
 ```
 curl "https://api.openstreetmap.org/api/0.6/map?bbox=6.645,46.779,6.65,46.783" \
-osmtogeojson > heig.json
+| osmtogeojson > heig.json
 ```
 
 En principe, il doit être possible de sortir les "features" d'un GeoJSON avec `ndjson-split`. Mais ça ne fonctionnait pas pour une raison que j'ignore. J'ai créé un scripte qui lit le GeoJSON et envoie chaque "feature" à la console.
@@ -56,5 +56,5 @@ node toNdjson \
 
 ## Les représenter avec D3
 
-* [Code](src/index.js)
+* [Code commenté](src/index.js)
 * [Résultat](http://heig-datavis2020.surge.sh/20200403/carte-d3/)

@@ -54,6 +54,9 @@ const groupeArbres = svg.append('g')
  * Pour les points nous ne pouvons pas utiliser "pathCreator",
  * nous utilisons directement la projection sur les coordonnées
  * 
+ * projection prends un point du système de coordonnées, [x, y]
+ * et retourne un point sur le svg au même format
+ * 
 */
 groupeArbres.selectAll('circle')
   .data(arbres.features)

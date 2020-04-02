@@ -12,13 +12,15 @@ Il y a plusieurs manières d'accèder aux données open street map.
 
 ### Pour avoir toutes les données sur une zone restreinte
 
-Vous pouvez [téléchargez](https://wiki.openstreetmap.org/wiki/Downloading_data) toutes les données à l'intérieur d'un rectangle défini directement des serveurs open street map.
+Vous pouvez [téléchargez](https://wiki.openstreetmap.org/wiki/Downloading_data) toutes les données, à l'intérieur d'un rectangle défini, directement des serveurs open street map.
 
 Par exemple pour la zone autour du bâtiment Saint-Roch de la HEIG:
 
 ```
 curl "https://api.openstreetmap.org/api/0.6/map?bbox=6.645,46.779,6.65,46.783" > heig.osm
 ```
+
+La partie `bbox=6.645,46.779,6.65,46.783` est la définition du rectangle. Les coordonnées sont, dans l'ordre, la longitude minimum, 6.645, la latitude minimum, 46.779, la longitude maximum, 6.65 et la latitude maximum, 46.783.
 
 Le résultat est un fichier `.osm` qui est un dialecte XML, comme SVG ou HTML. Pour le convertir en GeoJSON, vous pouvez utiliser la librairie `osmtogeojson`.
 
@@ -59,12 +61,12 @@ Si vous avez utilisé la recherche pour trouver Yverdon dans Overpass Turbo, vou
 https://nominatim.openstreetmap.org/search?city=yverdon&format=json
 ```
 
-Vous pouvez voir le résultat [ici](https://nominatim.openstreetmap.org/search?city=yverdon&format=json). Pour faire d'autres types de requêtes, celle-ci est pour trouver une ville, voyez la [documentation](https://nominatim.org/release-docs/develop/api/Search/). Cette API est utile si vous souhaitez représenter un jeu de données sur une carte mais n'avez que les adresses et pas les coordonnées.
+Vous pouvez voir le résultat [ici](https://nominatim.openstreetmap.org/search?city=yverdon&format=json). Pour faire d'autres types de requêtes, non seulement pour trouver une ville comme ci-dessus mais pour trouver une région ou une adresse, voyez la [documentation](https://nominatim.org/release-docs/develop/api/Search/). Cette API est utile si vous souhaitez représenter un jeu de données sur une carte mais n'avez que les adresses et pas les coordonnées.
 
 ## Données administratives pour la Suisse
 
 Vous pouvez trouver des données géographiques pour la Suisse sur [opendata.swiss](https://opendata.swiss/fr/dataset?res_format=SHAPEFILE&keywords_en=official-geodata&page=2). Elles sont souvent au format `shapefile`.
 
-Les régions administratives (communes, districts et cantons), peuvent être téléchargées [ici](https://observablehq.com/@idris-maps/swiss-geodata).
+Les régions administratives (communes, districts et cantons), peuvent être téléchargées en GeoJSON [ici](https://observablehq.com/@idris-maps/swiss-geodata).
 
-**Attention** les géodonnées suisses sont souvent dans le [système de coordonnées suisses](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_coordonn%C3%A9es_g%C3%A9ographiques_suisse). Voyez le [cours sur la cartographie avec D3](https://observablehq.com/@idris-maps/la-cartographie-avec-d3) pour projeter ce type de systèmes de coordonnées. Si vous devez convertir les données en [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System), le format utilisé par open street map, voyez la librairie [`swiss-projection`](https://www.npmjs.com/package/swiss-projection).
+**Attention** les géodonnées suisses sont souvent dans le [système de coordonnées suisses](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_coordonn%C3%A9es_g%C3%A9ographiques_suisse). Voyez le [cours sur la cartographie avec D3](https://observablehq.com/@idris-maps/la-cartographie-avec-d3) pour projeter ce type de systèmes de coordonnées. Si vous devez convertir les données en [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System), le format utilisé par open street map et la majorité des outils en ligne, voyez la librairie [`swiss-projection`](https://www.npmjs.com/package/swiss-projection).

@@ -51,19 +51,17 @@ Le monde islamique, alors à son apogée, avait non seulement gardé les écrits
 
 ![Carte d'al-Idrissi](images/al-idrissi.png)
 
-Cette carte qui date de la même époque que la carte en TO européenne, est dessinée par [al-Idrissi](https://fr.wikipedia.org/wiki/Al_Idrissi) un cartographe travaillant pour Roger II, le roi de Sicile.
-
-Bien qu'approximative, elle est une tentative de représenter le monde de manière exacte plutôt que symbolique. L'orientation de cette carte est avec le Sud vers le haut de la carte. Dans la plupart des cartes d'aujourd'hui le Nord est vers le haut. Pour nous elle est à l'envers.
+Cette carte qui date de la même époque que la carte en TO européenne. Bien qu'approximative, elle est une tentative de représenter le monde de manière exacte plutôt que symbolique. L'orientation de cette carte est avec le Sud vers le haut de la carte. Dans la plupart des cartes d'aujourd'hui le Nord est vers le haut. Pour nous elle est à l'envers.
 
 ### Mercator
 
-Pendant le [siècle d'or](https://fr.wikipedia.org/wiki/Si%C3%A8cle_d%27or_n%C3%A9erlandais), les néerlandais partent à la découverte du monde. Un monde qu'il vaut mieux cartographier pour savoir où on est. C'est alors que [Gérard Mercator](https://fr.wikipedia.org/wiki/G%C3%A9rard_Mercator) invente la projection qui porte son nom.
+Pendant le [siècle d'or](https://fr.wikipedia.org/wiki/Si%C3%A8cle_d%27or_n%C3%A9erlandais), les néerlandais partent à la découverte du monde. Un monde qu'il vaut mieux cartographier pour savoir où on est. Et où on va. C'est alors que [Gérard Mercator](https://fr.wikipedia.org/wiki/G%C3%A9rard_Mercator) invente la projection qui porte son nom.
 
 ![Projection Mercator](https://camo.githubusercontent.com/32e54b29aba10da5924dc8cf5bb0ae15be06f869/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36322f557367735f6d61705f6d65726361746f722e737667)
 
 Cette projection est idéale pour la navigation puisqu'elle conserve les angles par rapport à la latitude. En sortant du port il est possible de calculer le bon cape pour arriver à destination. Il suffira de garder ce cape tout au long du voyage. La projection Mercator est encore le standard utilisé pour la plupart des cartes de nos jours.
 
-Le problème de la projection de Mercator est que les surfaces des terres sont déformées. Plus nous approchons des pôles, plus elles paraissent grandes.
+Le problème de la projection de Mercator est que les surfaces des terres sont déformées. Plus nous approchons des pôles, plus elles paraissent grandes. Tous les points sur la carte qui suit sont de la même taille sur une sphère.
 
 ![Déformation Mercator](https://camo.githubusercontent.com/d93a9dbfe48a95ce27e002e7f129c80dfd47c1b4/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f322f32342f546973736f745f696e64696361747269785f776f726c645f6d61705f4d65726361746f725f70726f6a2e737667)
 
@@ -75,7 +73,7 @@ Dans les années 1970 [Arno Peters](https://en.wikipedia.org/wiki/Arno_Peters), 
 
 ![Projection Peters](https://upload.wikimedia.org/wikipedia/commons/3/34/Gall%E2%80%93Peters_projection_SW.jpg)
 
-D'autres n'ayant pas de problème avec la taille des terres mais avec le positionnement de la carte, on créé des projections où l'Europe n'est plus au centre.
+D'autres n'ayant pas de problème avec la taille des terres mais avec le positionnement de la carte, ont créé des projections où l'Europe n'est plus au centre.
 
 Comme cette carte japonaise.
 
@@ -111,4 +109,4 @@ Dans le contexte de l'[annexion de la Crimée](https://fr.wikipedia.org/wiki/Cri
 
 Google maps a choisi de montrer la Crimée faisant partie de la Russie [à ses clients russes](https://www.theguardian.com/technology/2014/apr/22/google-maps-russia-crimea-federation). Et faisant partie de l'Ukraine pour le reste du monde.
 
-Ceci n'est pas possible pour le jeu de données collaboratif de Open Street Map. C'est le même jeu de données pour tout le monde. D'après la [discussion sur le forum](https://help.openstreetmap.org/questions/35048/why-crimea-is-in-russian-federation), il a été décidé d'appliquer la règle dite de ["On the ground rule"](https://wiki.openstreetmap.org/wiki/Disputes#On_the_Ground_Rule). La réalité sur le terrain est ce qui décide plutôt que la situation légale. La Crimée y fait partie de la Russie.
+Ceci n'est pas possible pour le jeu de données collaboratif de [Open Street Map](https://fr.wikipedia.org/wiki/OpenStreetMap). C'est le même jeu de données pour tout le monde. D'après la [discussion sur le forum](https://help.openstreetmap.org/questions/35048/why-crimea-is-in-russian-federation), il a été décidé d'appliquer la règle dite de ["On the ground rule"](https://wiki.openstreetmap.org/wiki/Disputes#On_the_Ground_Rule). La réalité sur le terrain est ce qui décide plutôt que la situation légale. La Crimée y fait partie de la Russie.
