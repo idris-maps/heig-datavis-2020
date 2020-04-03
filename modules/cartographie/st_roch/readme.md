@@ -9,22 +9,30 @@ curl "https://api.openstreetmap.org/api/0.6/map?bbox=6.645,46.779,6.65,46.783" \
 | osmtogeojson > heig.json
 ```
 
-En principe, il doit être possible de sortir les "features" d'un GeoJSON avec `ndjson-split`. Mais ça ne fonctionnait pas pour une raison que j'ignore. J'ai créé un scripte qui lit le GeoJSON et envoie chaque "feature" à la console.
-
-[`toNdjson.js`](toNdjson.js)
+`heig.json`, qui est une `FeatureCollection` de GeoJSON, a ce format:
 
 ```js
-const data = require('./heig.json')
-
-data.features.map(d => console.log(JSON.stringify(d)))
+{
+  "type": "FeatureCollection",
+  "features": [
+    // tous les éléments, "features", sont ici
+  ]
+}
 ```
 
-Après j'ai utilisé `ndjson-filter` pour tirer les données qui m'intéressent. Et `ndjson-reduce | ndjson-map "{type: 'FeatureCollection', features: d}"` pour reconvertir les "features" en collection GeoJSON, comme expliqué [ici](https://github.com/mbostock/ndjson-cli#ndjson_reduce)
+Je vais tirer trois jeux de données de ce fichier: les arbres, les routes et le bâtiments. Dans les trois cas je vais:
+
+* ouvrir le fichier avec `ndjson-cat heig.json`
+* le transformer en `ndjson` avec `ndjson-split "d.features"`.
+* utiliser `ndjson-filter` pour faire mes séléctions
+* recréer un tableau de tous les `Feature`s avec `ndjson-reduce`
+* recréer une `FeatureCollection` avec `ndjson-map "{type: 'FeatureCollection', features: d}"`
 
 Pour les arbres j'ai pris les géométries de type `Point` et les éléments avec `natural: tree`.
 
-```
-node toNdjson \
+```bash
+ndjson-cat heig.json \
+| ndjson-split "d.features" \
 | ndjson-filter "d.geometry.type === 'Point'" \
 | ndjson-filter "d.properties.natural === 'tree'" \
 | ndjson-reduce \
@@ -34,8 +42,9 @@ node toNdjson \
 
 Pour les routes, j'ai pris les géométries de type `LineString` et les éléments avec une clé `highway`.
 
-```
-node toNdjson \
+```bash
+ndjson-cat heig.json \
+| ndjson-split "d.features" \
 | ndjson-filter "d.geometry.type === 'LineString'" \
 | ndjson-filter "d.properties.highway" \
 | ndjson-reduce \
@@ -45,8 +54,9 @@ node toNdjson \
 
 Pour les bâtiments, j'ai pris les géométries de type `Polygon` et les éléments avec une clé `building`
 
-```
-node toNdjson \
+```bash
+ndjson-cat heig.json \
+| ndjson-split "d.features" \
 | ndjson-filter "d.geometry.type === 'Polygon'" \
 | ndjson-filter "d.properties.building" \
 | ndjson-reduce \

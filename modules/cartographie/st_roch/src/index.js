@@ -10,9 +10,10 @@ const WIDTH = 800
 const HEIGHT = 500
 
 // la projection
-const projection = geoMercator().fitExtent([[0, 0], [WIDTH, HEIGHT]], batiments)
+const projection = geoMercator()
+  .fitExtent([[0, 0], [WIDTH, HEIGHT]], batiments) // centrer la carte sur les bâtiments
 
-// le constructeur d'attribut "d" pour <path />
+// le constructeur d'attribut "d" pour les éléments <path>
 const pathCreator = geoPath().projection(projection)
 
 // le svg
