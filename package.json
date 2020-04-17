@@ -28,6 +28,7 @@
     "billboard.js": "^1.11.1",
     "body-parser": "^1.19.0",
     "chart.js": "^2.9.3",
+    "cheerio": "^1.0.0-rc.3",
     "d3": "^5.15.0",
     "dayjs": "^1.8.23",
     "express": "^4.17.1",
