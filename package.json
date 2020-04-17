@@ -19,12 +19,14 @@
     "build:recette:leaflet": "rm -rf recettes/leaflet/dist && parcel build recettes/leaflet/src/index.html --out-dir recettes/leaflet/dist",
     "rosling": "parcel modules/rosling/graphique_d3/src/index.html --out-dir modules/rosling/graphique_d3/dist",
     "rosling-react": "parcel modules/rosling/graphique_react/src/index.html --out-dir modules/rosling/graphique_react/dist",
-    "carte-d3": "parcel build modules/cartographie/st_roch/src/index.html --out-dir modules/cartographie/st_roch/dist"
+    "carte-d3": "parcel build modules/cartographie/st_roch/src/index.html --out-dir modules/cartographie/st_roch/dist",
+    "carte-bars": "parcel build modules/turf/src/index.html --out-dir modules/turf/dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@turf/turf": "^5.1.6",
     "billboard.js": "^1.11.1",
     "body-parser": "^1.19.0",
     "chart.js": "^2.9.3",
@@ -36,6 +38,7 @@
     "leaflet-defaulticon-compatibility": "^0.1.1",
     "node-fetch": "^2.6.0",
     "npm": "^6.14.3",
+    "osmtogeojson": "^3.0.0-beta.4",
     "ramda": "^0.27.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
