@@ -1,32 +1,12 @@
-# Carte des votations du 9 Février par district
+// importer les librairies
+import { select, geoPath, geoMercator } from 'd3'
+import { feature } from 'topojson-client'
 
-Le [résultat](https://heig-datavis2020.surge.sh/20200424/votations/)
+// importer les données
+import meta from './meta.json'
+import topojson from './data.json'
 
-## Préparation des données
-
-Voir le scripte [`prepareData.sh`](temp/prepareData.sh)
-
-Librairies qui doivent être installée globalement pour faire tourner le scripte:
-
-* [`shapfile`](https://www.npmjs.com/package/shapefile) pour convertir les fichiers `shp` en `geojson`
-* [`ndjson-cli`](https://github.com/mbostock/ndjson-cli) pour manipuler les données
-* [`swiss-projection`](https://github.com/idris-maps/swiss-projection) pour convertir les coordonnées suisses en WGS84 (pour pouvoir utiliser la projection mercator)
-* [`topojson`](https://github.com/topojson/topojson) pour transformer les `geojson` en `topjson`
-
-Le résultat sont deux fichiers:
-
-* [`src/meta.json`](src/meta.json) avec les noms et identifiants des objets de votation
-* [`src/data.json`](src/data.json) un `topojson` avec les districts et les résultats des votations
-
-## Le scripte de la page
-
-Lisez le code commenté: [`src/index.js`](src/index.js)
-
-### Un élément `<select>` pour choisir la votation
-
-Nous prenons les données de `meta.json` pour ajouter les éléments `<option>`
-
-```js
+// ajouter les objets de votation à l'élément "select"
 const selectVotation = document.getElementById('select-votation')
 
 select(selectVotation).selectAll('option')
@@ -35,31 +15,24 @@ select(selectVotation).selectAll('option')
   .append('option')
   .attr('value', d => d.id)
   .text(d => d.name)
-```
 
-### Ajouter un élément `<svg>`
-
-```js
+// définir la taille de la carte
 const WIDTH = 1000
 const HEIGHT = 600
 const carte = select('#carte')
   .append('svg')
   .attr('viewBox', `0 0 ${WIDTH} ${HEIGHT}`)
-```
 
-### Ajouter les districts
-
-La fonction [`feature` de `topojson`](https://github.com/topojson/topojson-client#feature) pour transformer nos données `data.json` en collection `geojson`
-
-```js
+// les districts sous forme de geojson
 const collection = feature(topojson, topojson.objects.districts)
-```
 
-La projection, le créateur d'attribut `d` et une fonction pour la couleur en fonction du vote.
-
-```js
+// la projection pour faire entrer les coordonnées dans le cadre
 const projection = geoMercator().fitExtent([[20, 20], [WIDTH - 20, HEIGHT - 20]], collection)
+
+// le créateur d'attribut "d" pour l'élément <path>
 const pathCreator = geoPath().projection(projection)
+
+// une fonction pour la couleur des districts en fonction des votes OUI
 const getColor = vote => {
   if (vote < 40) { return '#d73027' }
   if (vote < 45) { return '#fc8d59' }
@@ -69,11 +42,8 @@ const getColor = vote => {
   if (vote < 60) { return '#91cf60' }
   return '#1a9850'
 }
-```
 
-Dessiner les districts
-
-```js
+// dessiner les districts
 const districts = carte.selectAll('path')
   .data(collection.features)
   .enter()
@@ -81,24 +51,17 @@ const districts = carte.selectAll('path')
   .attr('d', d => pathCreator(d))
   .attr('fill', d => getColor(d.properties[meta[0].id]))
   .attr('stroke', 'black')
-```
 
-La couleur par défaut est basée sur les résultats de la première votation dans `meta`.
-
-### Changer la couleur des districts quand une votation est choisie
-
-```js
+// changer la couleur quand une votation est selectionnée
 selectVotation.addEventListener('change', e => {
   const votationId = e.target.value
   districts
     .transition()
     .attr('fill', d => getColor(d.properties[votationId]))
 })
-```
 
-### La légende
 
-```js
+// une légende pour expliquer les couleurs
 const colorData = [
   { label: '<40', color: '#d73027' },
   { label: '<45', color: '#fc8d59' },
@@ -139,4 +102,3 @@ legend.selectAll('text')
   .attr('text-anchor', 'middle')
   .attr('fill', 'white')
   .text(d => d.label)
-```

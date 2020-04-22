@@ -26,11 +26,16 @@ unzip temp/geo_ch.zip -d temp
 
 # créer un fichier features.json
 # c'est un tableau où chaque élément est un "feature" représentant un district
-shp2json temp/ggg_2018-LV95/shp/g1b18.shp | ndjson-split 'd.features' | ndjson-reduce > temp/features.json
+shp2json temp/ggg_2018-LV95/shp/g1b18.shp \
+  | ndjson-split 'd.features' \
+  | lv95ToWgs \
+  | ndjson-reduce > temp/features.json
 
 # joindre les données géographiques (features.json) et les votations (votes_by_district.json)
+node scripts/join > temp/districts.json
+
 # transformer le résultat en topojson
-node scripts/join | geo2topo > src/data.json
+geo2topo temp/districts.json > src/data.json
 
 # effacer le dossier temp
 rm -rf temp

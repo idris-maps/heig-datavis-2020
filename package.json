@@ -19,7 +19,8 @@
     "build:recette:leaflet": "rm -rf recettes/leaflet/dist && parcel build recettes/leaflet/src/index.html --out-dir recettes/leaflet/dist",
     "rosling": "parcel modules/rosling/graphique_d3/src/index.html --out-dir modules/rosling/graphique_d3/dist",
     "rosling-react": "parcel modules/rosling/graphique_react/src/index.html --out-dir modules/rosling/graphique_react/dist",
-    "carte-d3": "parcel build modules/cartographie/st_roch/src/index.html --out-dir modules/cartographie/st_roch/dist"
+    "carte-d3": "parcel build modules/cartographie/st_roch/src/index.html --out-dir modules/cartographie/st_roch/dist",
+    "carte-votations": "parcel build modules/votations/src/index.html --out-dir modules/votations/dist"
   },
   "keywords": [],
   "author": "",
@@ -40,6 +41,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "surge": "^0.21.3",
+    "topojson-client": "^3.1.0",
     "xlsx": "^0.15.5"
   },
   "devDependencies": {
