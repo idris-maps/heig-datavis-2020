@@ -67,13 +67,13 @@ Liens
 
 ## Web
 
-### javascript
+### Javascript
 
 * [Structures de données](2020-02-28.md#utiliser-les-donn%C3%A9es-en-javascript)
 * [Déstructurer objects et tableaux](2020-03-06.md#déstructurer-en-javascript)
 * [Utiliser `.reduce`](2020-03-06.md#reduce-pour-autre-chose-que-faire-la-somme)
 
-## autres
+### Autres
 
 * [Paradigmes de programmation](modules/paradigmes.md)
 * [Publier un site](2020-04-24.md#publier-un-site)
