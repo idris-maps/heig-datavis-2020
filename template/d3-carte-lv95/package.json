@@ -1,0 +1,15 @@
+{
+  "name": "template-d3-carte-lv95",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^5.15.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
