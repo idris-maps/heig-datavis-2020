@@ -1,8 +1,6 @@
 # Titres de super league
 
-Nous avons vu que pour les "applications monopage", nous pouvions observer les requêtes du navigateur pour les imiter et récupérer des données. Toutes les pages web ne sont pas des "applications monopage", parfois le serveur ne retourne qu'une page HTML contenant déjà toutes les données.
-
-Wikipedia par exemple contient beaucoup de données intéressantes mais ne sert que des pages HTML. Pour démontrer comment "scraper" ce type de site, nous allons télécharger le nombre de titres de "Super league" par club de [cette table](https://fr.wikipedia.org/wiki/Championnat_de_Suisse_de_football#Palmar%C3%A8s_par_club).
+Comment tirer des données d'une page HTML.
 
 ## Télécharger la page
 
@@ -97,7 +95,7 @@ Dans Chrome:
 #mw-content-text > div > table:nth-child(36) > tbody
 ```
 
-Il y a plusieurs manière de faire des [séléctions CSS](https://developer.mozilla.org/fr/docs/Apprendre/CSS/Building_blocks/Selectors/S%C3%A9lecteurs_de_type_classe_ID). Les deux marchent.
+Il y a plusieurs manière de faire des [séléctions CSS](https://developer.mozilla.org/fr/docs/Apprendre/CSS/Building_blocks/Selectors). Les deux marchent.
 
 Utilisons notre sélecteur pour définir `tbody`:
 
