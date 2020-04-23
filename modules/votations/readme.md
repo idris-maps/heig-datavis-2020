@@ -4,7 +4,7 @@ Le [résultat](https://heig-datavis2020.surge.sh/20200424/votations/)
 
 ## Préparation des données
 
-Voir le scripte [`prepareData.sh`](temp/prepareData.sh)
+Voir le scripte [`prepareData.sh`](scripts/prepareData.sh)
 
 Librairies qui doivent être installée globalement pour faire tourner le scripte:
 

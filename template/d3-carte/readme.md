@@ -7,6 +7,6 @@ Creez un nouveau dossier au nom de votre projet, copiez cette mise en place et i
 ```
 mkdir mon-projet
 cd mon-projet
-npx degit idris-maps/heig-datavis-2020/templates/d3-carte
+npx degit idris-maps/heig-datavis-2020/template/d3-carte
 npm install
 ```

@@ -9,6 +9,6 @@ Creez un nouveau dossier au nom de votre projet, copiez cette mise en place et i
 ```
 mkdir mon-projet
 cd mon-projet
-npx degit idris-maps/heig-datavis-2020/templates/billboard-batons
+npx degit idris-maps/heig-datavis-2020/template/billboard-batons
 npm install
 ```
