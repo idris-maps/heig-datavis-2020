@@ -1,5 +1,17 @@
 # Projets
 
+## Contenu du `readme.md` du projet
+
+Le fichier `readme.md` du projet doit contenir:
+
+* D'où viennent les données (où, qui, pourquoi...)
+* Comment elles ont été transformées
+* Un lien vers le code source de votre visualisation
+* Un lien vers votre visualisation publiée
+* Quel scripte je dois utiliser pour recréer le site à partir de votre code
+
+## Liens
+
 * Adrien - [Système solaire](https://github.com/AdriWard/VisuelDon/tree/master/projet)
 * Andrea - [Pendulaires](https://github.com/Andreanefer/VisualDonM47/tree/master/projet)
 * Audrey, Michelle et Majka - [Spotify](https://github.com/AudilaraZ/VisualDon/tree/master/projet)
