@@ -19,7 +19,7 @@ Le fichier `readme.md` du projet doit contenir:
 * Ingrid et Julie - [Confinement](https://github.com/julie-greset/visualdon/tree/master/projet)
 * Jean, Philippe et Leonard - [Jeux vidéos](https://github.com/nobrega1/ProjetDataVis)
 * Kevin - [Corona](https://github.com/Saiykoh/VisuDon/tree/master/projet)
-* Laurie et Olivia - [Tinder](https://github.com/loumloum/VisualDon/tree/master/projet)
+* Laurie et Olivia - [Tinder](https://github.com/loumloum/projetTinder)
 * Leyna et Soraya - [Corona](https://github.com/Soraya97/VisualDon/tree/master/projet)
 * Robin - [Penis](https://github.com/robiiiiiiiiiiiin/VisualDon/tree/master/projet)
 * Stéphane - [Marché du travail pour ingénieurs médias](https://github.com/Stephane-panda/datavis/tree/master/projet)
