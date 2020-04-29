@@ -8,6 +8,7 @@ Cours HEIG 2020
 * [27 Mars 2020](2020-03-27.md)
 * [3 Avril 2020](2020-04-03.md)
 * [24 Avril 2020](2020-04-24.md)
+* [1er Mai 2020](2020-05-01.md)
 
 Liens
 
@@ -64,6 +65,7 @@ Liens
 * [Même graphique en bâtons avec différentes librairies](https://observablehq.com/@idris-maps/graphiques-en-batons)
 * [Remplacer d3.select par react](modules/rosling/graphique_react)
 * [Leaflet pour les carte navigables](https://observablehq.com/@idris-maps/leaflet-et-fond-de-carte-en-tuiles)
+* [Billboard pour les graphiques les plus communs](2020-05-01.md)
 
 ## Web
 
@@ -72,8 +74,10 @@ Liens
 * [Structures de données](2020-02-28.md#utiliser-les-donn%C3%A9es-en-javascript)
 * [Déstructurer objects et tableaux](2020-03-06.md#déstructurer-en-javascript)
 * [Utiliser `.reduce`](2020-03-06.md#reduce-pour-autre-chose-que-faire-la-somme)
+* [Dessiner sur un canvas](2020-05-01.md#canvas)
 
 ### Autres
 
 * [Paradigmes de programmation](modules/paradigmes.md)
 * [Publier un site](2020-04-24.md#publier-un-site)
+* [Utilisations et valeur des données](2020-05-01.md#utilisation-des-donn%C3%A9es)
