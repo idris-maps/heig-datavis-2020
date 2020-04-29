@@ -21,7 +21,8 @@
     "rosling-react": "parcel modules/rosling/graphique_react/src/index.html --out-dir modules/rosling/graphique_react/dist",
     "carte-d3": "parcel build modules/cartographie/st_roch/src/index.html --out-dir modules/cartographie/st_roch/dist",
     "carte-votations": "parcel build modules/votations/src/index.html --out-dir modules/votations/dist",
-    "carte-bars": "parcel build modules/turf/src/index.html --out-dir modules/turf/dist"
+    "carte-bars": "parcel build modules/turf/src/index.html --out-dir modules/turf/dist",
+    "transition-billboard": "parcel build modules/transitions-billboard/src/index.html --out-dir modules/transitions-billboard/dist"
   },
   "keywords": [],
   "author": "",
