@@ -40,7 +40,7 @@
     "leaflet": "^1.6.0",
     "leaflet-defaulticon-compatibility": "^0.1.1",
     "node-fetch": "^2.6.0",
-    "npm": "^6.14.3",
+    "npm": "^6.14.6",
     "osmtogeojson": "^3.0.0-beta.4",
     "ramda": "^0.27.0",
     "react": "^16.13.0",
